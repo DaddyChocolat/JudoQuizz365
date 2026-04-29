@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="E.F. NGATCHA TCHAKOTE — Quiz Judo 365">
+<meta name="copyright" content="© 2025 E.F. NGATCHA TCHAKOTE. Tous droits réservés.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Jour 3 — Technique & Entraînement</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;900&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Space+Mono:wght@400;700&family=Noto+Serif+JP:wght@200;400;700&display=swap');
+
+:root {
+  --paper:   #f8f6f1;
+  --white:   #ffffff;
+  --snow:    #f2efe8;
+  --line:    #ddd8ce;
+  --line2:   #c8c2b5;
+  --ink:     #18150f;
+  --ink2:    #3d3828;
+  --ink3:    #7a7260;
+  --rust:    #c04a1a;   /* technique — feu */
+  --rust-lt: rgba(192,74,26,0.08);
+  --ochre:   #d4900a;
+  --jade:    #3a6e52;
+  --jade-lt: rgba(58,110,82,0.09);
+  --wrong:   #9b2020;
+  --wrong-lt:rgba(155,32,32,0.07);
+  --navy:    #1a2e50;
+  --sh:      0 2px 16px rgba(24,21,15,0.08);
+  --sh2:     0 8px 36px rgba(24,21,15,0.12);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Lora', Georgia, serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Anti-devtools */
+body.devtools-open { pointer-events: none; }
+
+/* ── DECO BACKGROUND ── */
+.deco-grid {
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.deco-circle {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.dc1 { width:700px; height:700px; top:-300px; right:-200px;
+  background: radial-gradient(circle, rgba(192,74,26,0.06) 0%, transparent 65%); }
+.dc2 { width:500px; height:500px; bottom:-150px; left:-150px;
+  background: radial-gradient(circle, rgba(26,46,80,0.05) 0%, transparent 65%); }
+
+.deco-kanji {
+  position: fixed;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+  color: rgba(24,21,15,0.03);
+}
+.dk1 { font-size: 380px; top:-60px; right:-40px; line-height:1; }
+.dk2 { font-size: 240px; bottom:20px; left:-20px; line-height:1; }
+
+/* ── PAGE ── */
+.page {
+  position: relative; z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 36px 24px 80px;
+}
+
+/* ── HEADER ── */
+header { margin-bottom: 36px; }
+
+.top-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-bottom: 28px;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: var(--sh);
+}
+
+.strip-left {
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  border-right: 1px solid var(--line);
+  flex: 1;
+}
+
+.strip-series {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ink3);
+}
+
+.strip-day {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--rust);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.strip-mid {
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-right: 1px solid var(--line);
+  min-width: 100px;
+}
+
+.level-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: #4a9e6b;
+  box-shadow: 0 0 0 4px rgba(74,158,107,0.15);
+}
+
+.level-lbl {
+  font-family: 'Space Mono', monospace;
+  font-size: 7px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #4a9e6b;
+}
+
+.strip-right {
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+}
+
+.sig-n {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ochre);
+  letter-spacing: 0.3px;
+}
+
+.sig-g {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.belt-bar {
+  width: 22px; height: 5px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, #3a6e52, #56a376);
+}
+
+.sig-kyu {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: var(--jade);
+  text-transform: uppercase;
+}
+
+/* HERO TITLE BLOCK */
+.hero-block {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 0;
+  box-shadow: var(--sh2);
+}
+
+.hero-accent-bar {
+  height: 5px;
+  background: linear-gradient(90deg, var(--rust), var(--ochre), var(--rust));
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 0;
+}
+
+.hero-text {
+  padding: 32px 36px;
+  border-right: 1px solid var(--line);
+}
+
+.hero-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-label::after { content:''; flex:1; height:1px; background: var(--line); }
+
+.hero-h1 {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(26px, 4.5vw, 46px);
+  font-weight: 900;
+  line-height: 1.0;
+  color: var(--ink);
+  letter-spacing: -1.5px;
+}
+
+.hero-h1 span { color: var(--rust); display: block; }
+
+.hero-desc {
+  font-size: 13px;
+  color: var(--ink3);
+  margin-top: 10px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.hero-stat {
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: var(--snow);
+  text-align: center;
+}
+
+.stat-num {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 52px;
+  font-weight: 900;
+  color: var(--rust);
+  line-height: 1;
+  letter-spacing: -3px;
+}
+
+.stat-lbl {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink3);
+  line-height: 1.4;
+  text-align: center;
+}
+
+.stat-kanji {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 28px;
+  color: rgba(192,74,26,0.2);
+  line-height: 1;
+  margin-top: 4px;
+}
+
+/* ── HUD ROW ── */
+.hud-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin: 20px 0 8px;
+}
+
+.hud-cell {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 10px 8px;
+  text-align: center;
+}
+
+.hv {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  display: block;
+  letter-spacing: -1px;
+}
+
+.hl {
+  font-family: 'Space Mono', monospace;
+  font-size: 7px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-top: 3px;
+  display: block;
+}
+
+/* ── PROGRESS ── */
+.prog-track {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 28px;
+  height: 5px;
+}
+
+.ps {
+  flex: 1;
+  background: var(--line);
+  border-radius: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.ps::after {
+  content:'';
+  position:absolute; inset:0;
+  background: linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent);
+  transform: translateX(-100%);
+}
+.ps.ok  { background: var(--jade); }
+.ps.ok::after { animation: shim 0.5s ease forwards; }
+.ps.ng  { background: var(--wrong); opacity:0.65; }
+.ps.cur { background: var(--rust); box-shadow: 0 0 8px rgba(192,74,26,0.5); animation: blink 1.4s ease infinite; }
+@keyframes shim { to { transform: translateX(100%); } }
+@keyframes blink { 0%,100%{opacity:1}50%{opacity:0.6} }
+
+/* ── QUESTION CARD ── */
+.q-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--sh2);
+  margin-bottom: 14px;
+  animation: cardIn 0.4s cubic-bezier(0.34,1.2,0.64,1);
+}
+
+@keyframes cardIn {
+  from { opacity:0; transform: translateY(18px) scale(0.99); }
+  to   { opacity:1; transform: translateY(0) scale(1); }
+}
+
+.qc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: var(--snow);
+  border-bottom: 1px solid var(--line);
+}
+
+.qc-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--ink3);
+  text-transform: uppercase;
+}
+
+.qc-cat {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border: 1px solid rgba(192,74,26,0.25);
+  color: var(--rust);
+  background: var(--rust-lt);
+  border-radius: 2px;
+}
+
+.qc-body {
+  padding: 28px 28px 24px;
+}
+
+.q-text {
+  font-size: clamp(17px, 2.8vw, 22px);
+  font-weight: 500;
+  line-height: 1.58;
+  color: var(--ink);
+  margin-bottom: 26px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+
+.q-text::before {
+  content: '"';
+  font-family: 'Unbounded', sans-serif;
+  font-size: 60px;
+  color: var(--rust);
+  opacity: 0.1;
+  position: absolute;
+  top: -10px; left: -6px;
+  line-height: 1;
+}
+
+/* ── OPTIONS ── */
+.opts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+@media (max-width: 560px) { .opts { grid-template-columns: 1fr; } }
+
+.opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px 15px;
+  border: 1.5px solid var(--line);
+  border-radius: 3px;
+  background: var(--snow);
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Lora', serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink2);
+  transition: all 0.16s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.opt::before {
+  content:'';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--rust);
+  transform: scaleY(0);
+  transition: transform 0.2s ease;
+  transform-origin: bottom;
+}
+
+.opt:hover:not(:disabled)::before { transform: scaleY(1); }
+.opt:hover:not(:disabled) {
+  border-color: var(--rust);
+  background: var(--white);
+  color: var(--ink);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(192,74,26,0.1);
+}
+
+.opt-l {
+  width: 24px; height: 24px;
+  border: 1.5px solid var(--line2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink3);
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: all 0.18s;
+}
+
+.opt:hover:not(:disabled) .opt-l { border-color: var(--rust); color: var(--rust); }
+
+.opt.correct { border-color: var(--jade); background: var(--jade-lt); animation: popIn 0.35s ease; }
+.opt.correct::before { background: var(--jade); transform: scaleY(1); }
+.opt.correct .opt-l { background: var(--jade); border-color: var(--jade); color: #fff; }
+
+.opt.wrong { border-color: var(--wrong); background: var(--wrong-lt); }
+.opt.wrong::before { background: var(--wrong); transform: scaleY(1); }
+.opt.wrong .opt-l { background: var(--wrong); border-color: var(--wrong); color: #fff; }
+
+.opt.reveal { border-color: rgba(58,110,82,0.45); background: rgba(58,110,82,0.04); }
+.opt.reveal::before { background: var(--jade); transform: scaleY(1); }
+.opt.reveal .opt-l { border-color: var(--jade); color: var(--jade); }
+
+@keyframes popIn {
+  0%  { transform: scale(0.98); }
+  60% { transform: scale(1.01); }
+  100%{ transform: scale(1); }
+}
+
+/* ── EXPLICATION ── */
+.expl {
+  display: none;
+  margin-top: 18px;
+  padding: 14px 18px;
+  background: rgba(212,144,10,0.05);
+  border-left: 3px solid var(--ochre);
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--ink2);
+  font-style: italic;
+  animation: fadeUp 0.3s ease;
+}
+.expl.show { display: block; }
+.expl strong { font-style: normal; color: var(--ink); font-weight: 700; }
+.expl .jp {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 12px;
+  color: var(--rust);
+  margin-right: 4px;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(5px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* ── NAV ── */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-hint {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--ink3);
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.btn-next {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  background: var(--rust);
+  color: #fff;
+  border: none;
+  padding: 12px 26px;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 14px rgba(192,74,26,0.25);
+}
+.btn-next.show { display: flex; }
+.btn-next:hover { background: var(--ink); transform: translateX(2px); }
+.btn-next .arr { font-size: 16px; font-family: sans-serif; }
+
+/* ── RESULTS ── */
+.results { display:none; }
+.results.show { display:block; animation: cardIn 0.5s ease; }
+
+.res-wrap {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--sh2);
+}
+
+.res-hero {
+  background: var(--ink);
+  padding: 52px 44px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.res-hero::before {
+  content: '技';
+  position: absolute;
+  top:50%; left:50%;
+  transform: translate(-50%,-50%);
+  font-family: 'Noto Serif JP', serif;
+  font-size: 320px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.03);
+  pointer-events: none;
+}
+
+.res-crosshair {
+  position: absolute;
+  top: 20px; right: 24px;
+  width: 40px; height: 40px;
+  border: 1px solid rgba(192,74,26,0.4);
+  border-radius: 50%;
+}
+.res-crosshair::before,
+.res-crosshair::after {
+  content:'';
+  position:absolute;
+  background: rgba(192,74,26,0.4);
+}
+.res-crosshair::before { width:1px; height:100%; left:50%; top:0; }
+.res-crosshair::after  { height:1px; width:100%; top:50%; left:0; }
+
+.res-lbl {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 12px;
+}
+
+.res-score-big {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(80px, 16vw, 120px);
+  font-weight: 900;
+  line-height: 1;
+  color: #fff;
+  letter-spacing: -4px;
+  text-shadow: 0 0 60px rgba(192,74,26,0.4);
+}
+.res-score-big span { color: var(--rust); }
+
+.res-mention {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 3px;
+  margin-top: 8px;
+}
+
+.res-body {
+  padding: 36px 44px;
+  text-align: center;
+}
+
+.res-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(16px, 3vw, 24px);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+
+.res-msg {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--ink2);
+  font-style: italic;
+  max-width: 460px;
+  margin: 0 auto 28px;
+}
+
+/* Waza categories */
+.waza-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: 28px;
+}
+
+.waza-cell {
+  background: var(--snow);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 12px 8px;
+  text-align: center;
+}
+
+.waza-jp {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px;
+  color: var(--rust);
+  display: block;
+  margin-bottom: 3px;
+}
+
+.waza-fr {
+  font-family: 'Space Mono', monospace;
+  font-size: 7px;
+  letter-spacing: 1.5px;
+  color: var(--ink3);
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.next-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 14px 20px;
+  margin-bottom: 22px;
+  background: var(--snow);
+}
+
+.next-lbl {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink3);
+}
+
+.next-val {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--rust);
+  letter-spacing: -0.3px;
+}
+
+.btn-restart {
+  display: block;
+  margin: 0 auto;
+  background: transparent;
+  border: 1.5px solid var(--rust);
+  color: var(--rust);
+  padding: 12px 36px;
+  font-family: 'Unbounded', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+.btn-restart:hover { background: var(--rust); color: #fff; }
+
+/* ── FOOTER ── */
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ft-l {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.ft-name {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ochre);
+}
+.ft-grade {
+  display: flex; align-items: center; gap: 6px;
+}
+.ft-belt { width:22px; height:5px; border-radius:1px; background: linear-gradient(90deg,#3a6e52,#56a376); }
+.ft-kyu  { font-family:'Space Mono',monospace; font-size:8px; letter-spacing:1.5px; color:var(--jade); text-transform:uppercase; }
+
+.ft-r {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: var(--ink3);
+  opacity: 0.45;
+  text-align: right;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-stat { display: none; }
+  .q-card { border-radius: 2px; }
+  .qc-body { padding: 20px 16px; }
+  .res-body, .res-hero { padding: 28px 20px; }
+  .waza-grid { grid-template-columns: repeat(3,1fr); }
+}
+</style>
+</head>
+<body>
+
+<div class="deco-grid"></div>
+<div class="deco-circle dc1"></div>
+<div class="deco-circle dc2"></div>
+<div class="deco-kanji dk1">技</div>
+<div class="deco-kanji dk2">柔</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="top-strip">
+      <div class="strip-left">
+        <span class="strip-series">Quiz Judo · Série 365 Jours</span>
+        <span class="strip-day">JOUR 3</span>
+      </div>
+      <div class="strip-mid">
+        <div class="level-dot"></div>
+        <span class="level-lbl">🟢 Débutant<br>Semaine 1</span>
+      </div>
+      <div class="strip-right">
+        <span class="sig-n">E.F. NGATCHA TCHAKOTE</span>
+        <div class="sig-g">
+          <div class="belt-bar"></div>
+          <span class="sig-kyu">3e Kyu · Ceinture Verte</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-block">
+      <div class="hero-accent-bar"></div>
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-label">Le Savez-Vous ? · Technique</div>
+          <h1 class="hero-h1">Technique &amp;<span>&amp; Entraînement</span></h1>
+          <p class="hero-desc">Nage-waza · Ne-waza · Ukemi · Uchi-komi · Randori · Kata — les fondamentaux du judoka — 10 questions</p>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num">10</div>
+          <div class="stat-lbl">Questions<br>S1 Débutant</div>
+          <div class="stat-kanji">技</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HUD -->
+  <div class="hud-row">
+    <div class="hud-cell"><span class="hv" id="hv-ok">0</span><span class="hl">Correct</span></div>
+    <div class="hud-cell"><span class="hv" id="hv-ng">0</span><span class="hl">Incorrect</span></div>
+    <div class="hud-cell"><span class="hv" id="hv-q">1/10</span><span class="hl">Question</span></div>
+    <div class="hud-cell"><span class="hv" id="hv-pct">—</span><span class="hl">Score</span></div>
+  </div>
+
+  <!-- Progress -->
+  <div class="prog-track" id="prog-track"></div>
+
+  <!-- Quiz -->
+  <div id="quiz-area">
+    <div class="q-card" id="q-card">
+      <div class="qc-top">
+        <span class="qc-num" id="q-num">Q.01 / 10</span>
+        <span class="qc-cat" id="q-cat">Technique</span>
+      </div>
+      <div class="qc-body">
+        <p class="q-text" id="q-text"></p>
+        <div class="opts" id="opts"></div>
+        <div class="expl" id="expl"></div>
+      </div>
+    </div>
+    <div class="nav">
+      <span class="nav-hint" id="nav-hint">Choisissez une réponse</span>
+      <button class="btn-next" id="btn-next">
+        <span id="btn-lbl">Suivant</span>
+        <span class="arr">→</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="results" id="results">
+    <div class="res-wrap">
+      <div class="res-hero">
+        <div class="res-crosshair"></div>
+        <div class="res-lbl">Jour 3 · Technique &amp; Entraînement · Semaine 1</div>
+        <div class="res-score-big" id="res-score">—</div>
+        <div class="res-mention" id="res-mention">—</div>
+      </div>
+      <div class="res-body">
+        <p class="res-title" id="res-title">—</p>
+        <p class="res-msg" id="res-msg">—</p>
+
+        <div class="waza-grid">
+          <div class="waza-cell"><span class="waza-jp">投技</span><span class="waza-fr">Nage-waza<br>Projections</span></div>
+          <div class="waza-cell"><span class="waza-jp">固技</span><span class="waza-fr">Katame-waza<br>Au sol</span></div>
+          <div class="waza-cell"><span class="waza-jp">受身</span><span class="waza-fr">Ukemi<br>Chutes</span></div>
+          <div class="waza-cell"><span class="waza-jp">打込</span><span class="waza-fr">Uchi-komi<br>Répétitions</span></div>
+          <div class="waza-cell"><span class="waza-jp">乱取</span><span class="waza-fr">Randori<br>Combat libre</span></div>
+          <div class="waza-cell"><span class="waza-jp">形</span><span class="waza-fr">Kata<br>Formes</span></div>
+        </div>
+
+        <div class="next-pill">
+          <div>
+            <div class="next-lbl">Prochain quiz — Jour 4</div>
+            <div class="next-val">Nutrition &amp; Sommeil / Récupération</div>
+          </div>
+        </div>
+        <button class="btn-restart" onclick="restart()">↺ Recommencer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="ft-l">
+      <span class="ft-name">E.F. NGATCHA TCHAKOTE</span>
+      <div class="ft-grade">
+        <div class="ft-belt"></div>
+        <span class="ft-kyu">3e Kyu · Ceinture Verte</span>
+      </div>
+    </div>
+    <div class="ft-r">Quiz Judo Quotidien · Série 365 Jours<br>Jour 3 / 365 · Technique &amp; Entraînement · 🟢 S1</div>
+  </footer>
+
+</div>
+
+<script>
+// ── Protection ──
+document.addEventListener('contextmenu',e=>{e.preventDefault();return false;});
+document.addEventListener('keydown',e=>{
+  if(e.key==='F12'||(e.ctrlKey&&['u','U','i','I','j','J','s','S'].includes(e.key))||(e.ctrlKey&&e.shiftKey)){
+    e.preventDefault();return false;
+  }
+});
+setInterval(()=>{
+  if(window.outerHeight-window.innerHeight>160||window.outerWidth-window.innerWidth>160){
+    document.body.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;font-size:16px;color:#c04a1a;text-align:center;padding:40px;">⚠️ Accès non autorisé.<br><small>© E.F. NGATCHA TCHAKOTE — Quiz Judo 365</small></div>';
+  }
+},600);
+
+// ── Questions ──
+const Q = [
+  {
+    cat: "Vocabulaire de base",
+    text: "Comment appelle-t-on l'ensemble des techniques de projection en judo ?",
+    opts: ["Ne-waza","Nage-waza","Katame-waza","Atemi-waza"],
+    ok: 1,
+    expl: "<span class='jp'>投技</span><strong>Nage-waza.</strong> Le Nage-waza regroupe toutes les techniques de projection debout. Il se divise en Tachi-waza (debout) et Sutemi-waza (sacrifice). C'est l'aspect le plus visible et spectaculaire du judo."
+  },
+  {
+    cat: "Vocabulaire de base",
+    text: "Que désigne le terme « Ne-waza » en judo ?",
+    opts: [
+      "Les techniques de frappe",
+      "Les techniques de projection",
+      "Les techniques au sol — immobilisations, étranglements, clés",
+      "Les exercices d'échauffement"
+    ],
+    ok: 2,
+    expl: "<span class='jp'>寝技</span><strong>Ne-waza — travail au sol.</strong> Le Ne-waza comprend : Osaekomi-waza (immobilisations), Shime-waza (étranglements) et Kansetsu-waza (clés articulaires). C'est une dimension essentielle du judo souvent négligée par les débutants."
+  },
+  {
+    cat: "Chutes — Ukemi",
+    text: "Pourquoi l'apprentissage des chutes (Ukemi) est-il la toute première priorité pour un judoka débutant ?",
+    opts: [
+      "Pour impressionner les partenaires d'entraînement",
+      "Pour se préparer à la compétition rapidement",
+      "Pour apprendre à tomber sans se blesser, condition de sécurité indispensable",
+      "Pour renforcer les muscles du dos uniquement"
+    ],
+    ok: 2,
+    expl: "<span class='jp'>受身</span><strong>Sécurité avant tout.</strong> Sans ukemi maîtrisé, tout entraînement est dangereux. L'ukemi enseigne à dissiper l'énergie de la chute via le claquement de bras et la rotation du corps. C'est le premier cadeau que le judo offre à ses pratiquants."
+  },
+  {
+    cat: "Chutes — Ukemi",
+    text: "Combien de types d'Ukemi fondamentaux existent en judo ?",
+    opts: ["2 types","3 types","4 types","5 types"],
+    ok: 2,
+    expl: "<span class='jp'>受身の種類</span><strong>4 types d'Ukemi.</strong> Ushiro-ukemi (chute arrière), Yoko-ukemi (chute latérale), Mae-ukemi (chute avant — roulé), Mae-mawari-ukemi (roulade avant). Chacun protège dans une direction de chute différente."
+  },
+  {
+    cat: "Uchi-komi",
+    text: "Qu'est-ce que l'Uchi-komi (打ち込み) et quelle est son utilité principale ?",
+    opts: [
+      "Un combat d'entraînement à intensité maximale",
+      "La répétition des entrées de technique sans projection — pour ancrer les automatismes",
+      "Un exercice de renforcement musculaire spécifique",
+      "Un kata pratiqué lors des passages de grade"
+    ],
+    ok: 1,
+    expl: "<span class='jp'>打込</span><strong>Répétition des entrées — automatisation.</strong> L'uchi-komi consiste à répéter l'entrée (kuzushi + tsukuri) sans réaliser la projection finale. Par milliers de répétitions, le corps mémorise le mouvement. C'est la base du travail technique quotidien du judoka."
+  },
+  {
+    cat: "Randori",
+    text: "Que signifie « Randori » (乱取り) et comment diffère-t-il d'un vrai combat de compétition ?",
+    opts: [
+      "C'est exactement comme une compétition, avec un arbitre et des points",
+      "C'est un combat libre d'entraînement mutuel sans enjeu de résultat — les deux judokas apprennent ensemble",
+      "C'est un exercice réservé aux ceintures noires uniquement",
+      "C'est la répétition d'un kata imposé par le sensei"
+    ],
+    ok: 1,
+    expl: "<span class='jp'>乱取</span><strong>Combat libre d'entraînement mutuel.</strong> Dans le randori, l'objectif n'est pas de « gagner » mais d'explorer et progresser ensemble. Les deux judokas offrent résistance et opportunités mutuellement. C'est l'essence de l'apprentissage du judo."
+  },
+  {
+    cat: "Postures & Déplacements",
+    text: "Comment s'appelle la posture naturelle de base en judo, debout, équilibrée et mobile ?",
+    opts: ["Jigo-tai","Shizentai","Kumi-kata","Kuzushi"],
+    ok: 1,
+    expl: "<span class='jp'>自然体</span><strong>Shizentai — posture naturelle.</strong> La shizentai est la position de base : pieds écartés à la largeur des épaules, genoux légèrement fléchis, dos droit, regard horizontal. Elle permet un déplacement fluide dans toutes les directions (tai-sabaki)."
+  },
+  {
+    cat: "Principes techniques",
+    text: "Que désigne le terme « Kuzushi » dans l'exécution d'une technique de judo ?",
+    opts: [
+      "La projection finale",
+      "L'entrée du corps (placement)",
+      "Le déséquilibre de l'adversaire — première phase obligatoire",
+      "La saisie du judogi (kumi-kata)"
+    ],
+    ok: 2,
+    expl: "<span class='jp'>崩し</span><strong>Kuzushi — le déséquilibre.</strong> Le kuzushi est la première des trois phases d'une technique : Kuzushi (déséquilibrer) → Tsukuri (placer le corps) → Kake (exécuter). Sans kuzushi, aucune projection efficace n'est possible, quelle que soit la force physique."
+  },
+  {
+    cat: "Kata",
+    text: "Qu'est-ce qu'un Kata en judo et à quoi sert-il ?",
+    opts: [
+      "Un combat de compétition codifié avec un arbitre",
+      "Une forme prédéfinie de techniques exécutées avec un partenaire, à des fins pédagogiques et de transmission",
+      "Un exercice de renforcement physique collectif",
+      "Un test imposé uniquement pour les passages de grade dan"
+    ],
+    ok: 1,
+    expl: "<span class='jp'>形</span><strong>Kata — forme codifiée.</strong> Le kata est une séquence de techniques prédéfinies réalisées avec un partenaire (uke et tori). Il sert à transmettre les principes profonds du judo, à perfectionner l'exécution technique et à préserver le patrimoine du judo. Le Nage-no-kata est le premier kata enseigné."
+  },
+  {
+    cat: "Saisies — Kumi-kata",
+    text: "Comment s'appelle la saisie classique du judogi en judo, une main sur le revers et l'autre sur la manche ?",
+    opts: ["Tai-sabaki","Kumi-kata","Tsugi-ashi","Nagekomi"],
+    ok: 1,
+    expl: "<span class='jp'>組み方</span><strong>Kumi-kata — la saisie.</strong> Le kumi-kata est l'art de saisir le judogi de l'adversaire. La saisie classique (une main sur le revers, une sur la manche) permet à la fois de contrôler, de sentir le déséquilibre et de préparer la technique. Un bon kumi-kata est la clé de toutes les projections."
+  }
+];
+
+let cur=0, score=0, wrongs=0, answered=false, log=[];
+
+function init(){
+  cur=0; score=0; wrongs=0; answered=false; log=[];
+  document.getElementById('results').classList.remove('show');
+  document.getElementById('quiz-area').style.display='';
+  buildTrack(); render();
+}
+
+function buildTrack(){
+  const t=document.getElementById('prog-track');
+  t.innerHTML='';
+  Q.forEach((_,i)=>{
+    const s=document.createElement('div');
+    s.className='ps'+(i===0?' cur':'');
+    s.id='pt'+i;
+    t.appendChild(s);
+  });
+}
+
+function updateTrack(){
+  Q.forEach((_,i)=>{
+    const s=document.getElementById('pt'+i);
+    if(!s)return;
+    s.className='ps';
+    if(i<log.length) s.classList.add(log[i]?'ok':'ng');
+    else if(i===cur) s.classList.add('cur');
+  });
+}
+
+function updateHUD(){
+  document.getElementById('hv-ok').textContent=score;
+  document.getElementById('hv-ng').textContent=wrongs;
+  document.getElementById('hv-q').textContent=`${cur+1}/10`;
+  document.getElementById('hv-pct').textContent=log.length>0?Math.round(score/log.length*100)+'%':'—';
+}
+
+function render(){
+  answered=false;
+  const q=Q[cur];
+  document.getElementById('q-num').textContent=`Q.${String(cur+1).padStart(2,'0')} / 10`;
+  document.getElementById('q-cat').textContent=q.cat;
+  document.getElementById('q-text').textContent=q.text;
+
+  const el=document.getElementById('opts');
+  el.innerHTML='';
+  ['A','B','C','D'].forEach((l,i)=>{
+    const b=document.createElement('button');
+    b.className='opt';
+    b.innerHTML=`<span class="opt-l">${l}</span><span>${q.opts[i]}</span>`;
+    b.onclick=()=>pick(i);
+    el.appendChild(b);
+  });
+
+  document.getElementById('expl').className='expl';
+  document.getElementById('expl').innerHTML='';
+  document.getElementById('btn-next').className='btn-next';
+  document.getElementById('nav-hint').textContent='Choisissez une réponse';
+  document.getElementById('btn-lbl').textContent=cur<Q.length-1?'Suivant':'Résultats';
+
+  const card=document.getElementById('q-card');
+  card.style.animation='none'; void card.offsetWidth;
+  card.style.animation='cardIn 0.4s cubic-bezier(0.34,1.2,0.64,1)';
+
+  updateHUD(); updateTrack();
+}
+
+function pick(idx){
+  if(answered)return; answered=true;
+  const q=Q[cur];
+  const btns=document.querySelectorAll('.opt');
+  btns.forEach(b=>b.disabled=true);
+
+  if(idx===q.ok){ btns[idx].classList.add('correct'); score++; log.push(true); }
+  else { btns[idx].classList.add('wrong'); btns[q.ok].classList.add('reveal'); wrongs++; log.push(false); }
+
+  const expl=document.getElementById('expl');
+  expl.innerHTML=q.expl; expl.classList.add('show');
+  document.getElementById('btn-next').classList.add('show');
+  document.getElementById('nav-hint').textContent='';
+  updateHUD(); updateTrack();
+}
+
+document.getElementById('btn-next').addEventListener('click',()=>{
+  cur++;
+  if(cur>=Q.length) showResults();
+  else render();
+});
+
+function showResults(){
+  document.getElementById('quiz-area').style.display='none';
+  document.getElementById('results').classList.add('show');
+  document.getElementById('res-score').innerHTML=`${score}<span>/10</span>`;
+
+  const p=score/Q.length;
+  let mention,title,msg;
+  if(p===1)    {mention='優秀 — Excellence';title='Maîtrise technique parfaite';msg='Exceptionnel ! Vous maîtrisez parfaitement le vocabulaire et les principes fondamentaux de la technique judo. Une base solide pour progresser vers les niveaux supérieurs.';}
+  else if(p>=.8){mention='良好 — Très bien';title='Solide base technique';msg='Très bonne maîtrise des fondamentaux. Quelques termes ou concepts méritent encore attention, mais votre base est robuste.';}
+  else if(p>=.6){mention='合格 — Bien';title='Bonne connaissance générale';msg='Les bases sont là. Approfondissez le vocabulaire technique et pratiquez les termes japonais — ils sont la clé de la compréhension du judo.';}
+  else          {mention='要努力 — À travailler';title='Les fondamentaux à consolider';msg='La technique est le cœur du judo. Commencez par mémoriser les 6 waza fondamentaux et leurs définitions. La régularité de l\'entraînement fait tout.';}
+
+  document.getElementById('res-mention').textContent=mention;
+  document.getElementById('res-title').textContent=title;
+  document.getElementById('res-msg').textContent=msg;
+}
+
+function restart(){ init(); }
+init();
+</script>
+</body>
+</html>

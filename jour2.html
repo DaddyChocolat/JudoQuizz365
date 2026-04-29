@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Jour 2 — Éthique & Code Moral du Judo</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&family=Noto+Serif+JP:wght@200;300;400;700&display=swap');
+
+:root {
+  --bg:        #f7f4ee;
+  --surface:   #ffffff;
+  --surface2:  #f0ece3;
+  --border:    #e2dbd0;
+  --border2:   #cfc8bb;
+  --ink:       #1e1a14;
+  --ink2:      #4a4235;
+  --ink3:      #7a7060;
+  --gold:      #b07d2a;
+  --gold-lt:   #d4a44c;
+  --gold-bg:   rgba(176,125,42,0.06);
+  --green:     #3d6b4f;
+  --green-lt:  rgba(61,107,79,0.1);
+  --red:       #8b2c2c;
+  --red-lt:    rgba(139,44,44,0.07);
+  --accent:    #2c4a7c;   /* bleu nuit — sagesse */
+  --shadow-sm: 0 2px 12px rgba(30,26,20,0.07);
+  --shadow-md: 0 6px 28px rgba(30,26,20,0.10);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── BACKGROUND DÉCOR ── */
+.bg-circle {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.bc1 {
+  width: 600px; height: 600px;
+  top: -200px; right: -180px;
+  background: radial-gradient(circle, rgba(176,125,42,0.07) 0%, transparent 70%);
+}
+.bc2 {
+  width: 400px; height: 400px;
+  bottom: -100px; left: -120px;
+  background: radial-gradient(circle, rgba(44,74,124,0.06) 0%, transparent 70%);
+}
+
+.bg-kanji {
+  position: fixed;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+.bk1 { font-size: 280px; top: 5%; right: -20px; color: rgba(30,26,20,0.025); line-height:1; }
+.bk2 { font-size: 180px; bottom: 10%; left: -10px; color: rgba(44,74,124,0.03); line-height:1; }
+
+/* ── PAGE ── */
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 36px 24px 80px;
+}
+
+/* ── HEADER ── */
+header {
+  margin-bottom: 40px;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bc-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border2);
+  color: var(--ink3);
+  background: var(--surface);
+}
+
+.bc-pill.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+}
+
+.bc-sep { color: var(--border2); font-size: 12px; }
+
+/* Signature */
+.sig {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.sig-name {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--gold);
+  letter-spacing: 0.3px;
+}
+
+.sig-grade {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.grade-belt {
+  width: 28px; height: 7px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, #3d6b4f, #5a9e74);
+  box-shadow: 0 1px 4px rgba(61,107,79,0.3);
+}
+
+.grade-txt {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 32px 36px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold), var(--accent));
+}
+
+.hero-left .tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-left .tag::before {
+  content: '';
+  width: 20px; height: 1px;
+  background: var(--accent);
+  opacity: 0.4;
+}
+
+.hero-left h1 {
+  font-family: 'Cormorant', serif;
+  font-size: clamp(30px, 5.5vw, 54px);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--ink);
+  letter-spacing: -0.5px;
+}
+
+.hero-left h1 em {
+  font-style: italic;
+  color: var(--accent);
+  display: block;
+}
+
+.hero-left .desc {
+  font-size: 13px;
+  color: var(--ink3);
+  margin-top: 10px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.hero-right {
+  text-align: center;
+  padding: 20px 24px;
+  border-left: 1px solid var(--border);
+}
+
+.hero-kanji {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 300;
+  font-size: 64px;
+  color: rgba(44,74,124,0.15);
+  line-height: 1;
+  display: block;
+}
+
+.hero-kanji-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: var(--ink3);
+  text-transform: uppercase;
+  margin-top: 4px;
+  display: block;
+}
+
+/* ── HUD ── */
+.hud {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin: 20px 0 10px;
+}
+
+.hud-cell {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 12px 10px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.hud-v {
+  font-family: 'Cormorant', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  display: block;
+}
+
+.hud-l {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-top: 3px;
+  display: block;
+}
+
+/* ── PROGRESS ── */
+.progress-wrap {
+  margin-bottom: 28px;
+  padding: 0 2px;
+}
+
+.prog-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.prog-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink3);
+}
+
+.prog-segs {
+  display: flex;
+  gap: 3px;
+  height: 6px;
+}
+
+.seg {
+  flex: 1;
+  border-radius: 2px;
+  background: var(--border);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.seg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+  transform: translateX(-100%);
+}
+
+.seg.ok { background: var(--green); }
+.seg.ok::after { animation: shim 0.5s ease forwards; }
+.seg.ng { background: var(--red); }
+.seg.cur {
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(176,125,42,0.5);
+  animation: pulse-seg 1.5s ease infinite;
+}
+
+@keyframes shim { to { transform: translateX(100%); } }
+@keyframes pulse-seg {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* ── QUESTION CARD ── */
+.q-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 36px 40px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+  animation: cardIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.q-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.q-num-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--ink3);
+}
+
+.q-cat {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(44,74,124,0.25);
+  color: var(--accent);
+  background: rgba(44,74,124,0.05);
+}
+
+.q-text {
+  font-family: 'Cormorant', serif;
+  font-size: clamp(19px, 3.2vw, 26px);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--ink);
+  margin-bottom: 30px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── OPTIONS ── */
+.opts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 580px) { .opts { grid-template-columns: 1fr; } }
+
+.opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--ink2);
+  transition: all 0.18s ease;
+}
+
+.opt:hover:not(:disabled) {
+  background: var(--surface);
+  border-color: var(--gold-lt);
+  color: var(--ink);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 14px rgba(176,125,42,0.12);
+}
+
+.opt-k {
+  min-width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--ink3);
+  flex-shrink: 0;
+  transition: all 0.18s ease;
+}
+
+.opt:hover:not(:disabled) .opt-k {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.opt.correct {
+  background: var(--green-lt);
+  border-color: var(--green);
+  color: var(--ink);
+  animation: bounce-in 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+.opt.correct .opt-k { background: var(--green); border-color: var(--green); color: #fff; }
+
+.opt.wrong {
+  background: var(--red-lt);
+  border-color: var(--red);
+  color: var(--ink3);
+}
+.opt.wrong .opt-k { background: var(--red); border-color: var(--red); color: #fff; }
+
+.opt.reveal {
+  background: var(--green-lt);
+  border-color: rgba(61,107,79,0.35);
+}
+.opt.reveal .opt-k { border-color: var(--green); color: var(--green); }
+
+@keyframes bounce-in {
+  0%  { transform: scale(0.97); }
+  60% { transform: scale(1.01); }
+  100%{ transform: scale(1); }
+}
+
+/* ── EXPLICATION ── */
+.expl {
+  display: none;
+  margin-top: 24px;
+  padding: 18px 22px;
+  background: var(--gold-bg);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 4px 4px 0;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--ink2);
+  font-style: italic;
+}
+.expl.show { display: block; animation: fadeUp 0.3s ease; }
+.expl strong { font-style: normal; color: var(--ink); font-weight: 600; }
+.expl .hilight {
+  display: inline-block;
+  background: rgba(176,125,42,0.12);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(6px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* ── NAV ── */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-info {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--ink3);
+  opacity: 0.55;
+}
+
+.btn-next {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 13px 26px;
+  border-radius: 4px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 14px rgba(44,74,124,0.25);
+}
+
+.btn-next.show { display: flex; }
+.btn-next:hover {
+  background: var(--ink);
+  transform: translateX(2px);
+  box-shadow: 0 4px 18px rgba(30,26,20,0.2);
+}
+.btn-next .ico { font-size: 16px; }
+
+/* ── RESULTS ── */
+.results { display:none; }
+.results.show { display:block; animation: cardIn 0.5s ease; }
+
+.res-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.res-top {
+  background: linear-gradient(135deg, var(--accent) 0%, #1a3060 100%);
+  padding: 48px 44px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.res-top::before {
+  content: '礼';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: 'Noto Serif JP', serif;
+  font-size: 300px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+
+.res-day-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 12px;
+}
+
+.res-score-big {
+  font-family: 'Cormorant', serif;
+  font-size: clamp(80px, 18vw, 130px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.2);
+}
+.res-score-big span { color: var(--gold-lt); }
+
+.res-mention {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 3px;
+  margin: 6px 0 0;
+}
+
+.res-bottom {
+  padding: 36px 44px;
+  text-align: center;
+}
+
+.res-title {
+  font-family: 'Cormorant', serif;
+  font-size: clamp(20px, 3.5vw, 30px);
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.res-msg {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--ink2);
+  font-style: italic;
+  max-width: 460px;
+  margin: 0 auto 28px;
+  font-family: 'Cormorant', serif;
+  font-size: 16px;
+}
+
+/* Code Moral recap */
+.moral-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 560px) { .moral-grid { grid-template-columns: repeat(2,1fr); } }
+
+.moral-pill {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 8px 6px;
+  text-align: center;
+}
+
+.moral-jp {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 16px;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.moral-fr {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: var(--ink3);
+  text-transform: uppercase;
+}
+
+.next-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 14px 20px;
+  margin-bottom: 24px;
+}
+
+.next-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink3);
+}
+
+.next-val {
+  font-family: 'Cormorant', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.btn-restart {
+  display: block;
+  margin: 0 auto;
+  background: transparent;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  padding: 12px 34px;
+  border-radius: 4px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-restart:hover { background: var(--accent); color: #fff; }
+
+/* ── FOOTER ── */
+footer {
+  margin-top: 44px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ft-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ft-name {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.ft-grade {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ft-belt {
+  width: 24px; height: 6px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, #3d6b4f, #5a9e74);
+}
+
+.ft-kyu {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: var(--green);
+  text-transform: uppercase;
+}
+
+.ft-right {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: var(--ink3);
+  opacity: 0.5;
+  text-align: right;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .q-card { padding: 24px 18px; }
+  .res-top, .res-bottom { padding: 32px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-circle bc1"></div>
+<div class="bg-circle bc2"></div>
+<div class="bg-kanji bk1">礼</div>
+<div class="bg-kanji bk2">道</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="top-row">
+      <div class="breadcrumb">
+        <span class="bc-pill">Série 365 Jours</span>
+        <span class="bc-sep">›</span>
+        <span class="bc-pill active">Jour 2</span>
+      </div>
+      <div class="sig">
+        <span class="sig-name">E.F. NGATCHA TCHAKOTE</span>
+        <div class="sig-grade">
+          <div class="grade-belt"></div>
+          <span class="grade-txt">3e Kyu · Ceinture Verte</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="hero-left">
+        <div class="tag">Le Savez-Vous ? · Quiz Judo Quotidien</div>
+        <h1>Éthique &amp;<em>Code Moral du Judo</em></h1>
+        <p class="desc">Les 8 valeurs fondamentales · Les principes de Kano · La philosophie du Budo — 10 questions</p>
+      </div>
+      <div class="hero-right">
+        <span class="hero-kanji">道徳</span>
+        <span class="hero-kanji-lbl">Code Moral</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HUD -->
+  <div class="hud">
+    <div class="hud-cell">
+      <span class="hud-v" id="hud-ok">0</span>
+      <span class="hud-l">Correct</span>
+    </div>
+    <div class="hud-cell">
+      <span class="hud-v" id="hud-wrong">0</span>
+      <span class="hud-l">Incorrect</span>
+    </div>
+    <div class="hud-cell">
+      <span class="hud-v" id="hud-q">1/10</span>
+      <span class="hud-l">Question</span>
+    </div>
+    <div class="hud-cell">
+      <span class="hud-v" id="hud-pct">—</span>
+      <span class="hud-l">Score</span>
+    </div>
+  </div>
+
+  <!-- Progress -->
+  <div class="progress-wrap">
+    <div class="prog-labels">
+      <span class="prog-lbl">Progression</span>
+      <span class="prog-lbl" id="prog-txt">Question 1 sur 10</span>
+    </div>
+    <div class="prog-segs" id="prog-segs"></div>
+  </div>
+
+  <!-- Quiz -->
+  <div id="quiz-area">
+    <div class="q-card" id="q-card">
+      <div class="q-meta">
+        <span class="q-num-badge" id="q-num">Q.01 / 10</span>
+        <span class="q-cat" id="q-cat">Code Moral</span>
+      </div>
+      <p class="q-text" id="q-text"></p>
+      <div class="opts" id="opts"></div>
+      <div class="expl" id="expl"></div>
+    </div>
+    <div class="nav">
+      <span class="nav-info" id="nav-info">— Choisissez votre réponse —</span>
+      <button class="btn-next" id="btn-next">
+        <span id="btn-lbl">Question suivante</span>
+        <span class="ico">→</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="results" id="results">
+    <div class="res-wrap">
+      <div class="res-top">
+        <div class="res-day-lbl">Jour 2 · Éthique &amp; Code Moral du Judo</div>
+        <div class="res-score-big" id="res-score">—</div>
+        <div class="res-mention" id="res-mention">—</div>
+      </div>
+      <div class="res-bottom">
+        <p class="res-title" id="res-title">—</p>
+        <p class="res-msg" id="res-msg">—</p>
+
+        <!-- Les 8 valeurs du Code Moral -->
+        <div class="moral-grid">
+          <div class="moral-pill"><span class="moral-jp">礼</span><span class="moral-fr">Courtoisie</span></div>
+          <div class="moral-pill"><span class="moral-jp">勇</span><span class="moral-fr">Courage</span></div>
+          <div class="moral-pill"><span class="moral-jp">誠</span><span class="moral-fr">Sincérité</span></div>
+          <div class="moral-pill"><span class="moral-jp">名誉</span><span class="moral-fr">Honneur</span></div>
+          <div class="moral-pill"><span class="moral-jp">謙遜</span><span class="moral-fr">Modestie</span></div>
+          <div class="moral-pill"><span class="moral-jp">尊敬</span><span class="moral-fr">Respect</span></div>
+          <div class="moral-pill"><span class="moral-jp">自制</span><span class="moral-fr">Maîtrise de soi</span></div>
+          <div class="moral-pill"><span class="moral-jp">友情</span><span class="moral-fr">Amitié</span></div>
+        </div>
+
+        <div class="next-box">
+          <div>
+            <div class="next-lbl">Prochain quiz — Jour 3</div>
+            <div class="next-val">Technique &amp; Entraînement</div>
+          </div>
+        </div>
+        <button class="btn-restart" onclick="restart()">↺ Recommencer ce quiz</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="ft-left">
+      <span class="ft-name">E.F. NGATCHA TCHAKOTE</span>
+      <div class="ft-grade">
+        <div class="ft-belt"></div>
+        <span class="ft-kyu">3e Kyu · Ceinture Verte</span>
+      </div>
+    </div>
+    <div class="ft-right">Quiz Judo Quotidien · Série 365 Jours<br>Jour 2 / 365 · Éthique &amp; Code Moral</div>
+  </footer>
+
+</div>
+
+<script>
+const Q = [
+  {
+    cat: "Les 8 Valeurs",
+    text: "Combien de valeurs fondamentales composent le Code Moral officiel du judo selon la Fédération Internationale de Judo (IJF) ?",
+    opts: ["6 valeurs","8 valeurs","10 valeurs","5 valeurs"],
+    ok: 1,
+    expl: "<strong>8 valeurs.</strong> Le Code Moral du judo repose sur : Courtoisie (礼), Courage (勇), Sincérité (誠), Honneur (名誉), Modestie (謙遜), Respect (尊敬), Maîtrise de soi (自制) et Amitié (友情). Chaque valeur guide le judoka dans sa pratique et dans sa vie."
+  },
+  {
+    cat: "Courtoisie — 礼",
+    text: "La courtoisie (礼 — Rei) en judo se manifeste concrètement par quel acte fondamental pratiqué avant et après chaque combat ou séance ?",
+    opts: ["La méditation silencieuse (mokuso)","Le salut (rei) debout ou en seiza","La récitation du Code Moral à voix haute","Le toucher des épaules de l'adversaire"],
+    ok: 1,
+    expl: "<strong>Le salut — Rei (礼).</strong> Le salut incarne la courtoisie en acte. Il signifie : « Je te respecte, je m'engage à combattre loyalement sans intention de te nuire. » Il est pratiqué debout (ritsu-rei) ou à genoux (za-rei) selon les situations."
+  },
+  {
+    cat: "Principes de Kano",
+    text: "Quel est le principe fondateur du judo formulé par Kano qui signifie « efficacité maximale avec un minimum d'énergie » ?",
+    opts: ["Jita Kyoei (自他共栄)","Seiryoku Zenyo (精力善用)","Ju no Ri (柔の理)","Kime no Kata"],
+    ok: 1,
+    expl: "<strong>Seiryoku Zenyo (精力善用).</strong> Ce principe enseigne à utiliser intelligemment son énergie — physique et mentale — pour obtenir le meilleur résultat possible. Il s'applique aussi bien au judo qu'à toutes les activités de la vie quotidienne."
+  },
+  {
+    cat: "Principes de Kano",
+    text: "Que signifie le second grand principe du judo « Jita Kyoei » (自他共栄) formulé par Jigoro Kano ?",
+    opts: ["La victoire par la force de l'esprit","La prospérité et le bénéfice mutuels — progresser ensemble","L'efficacité maximale du geste technique","Le respect de la tradition japonaise"],
+    ok: 1,
+    expl: "<strong>Jita Kyoei — Prospérité mutuelle (自他共栄).</strong> « Soi et les autres, prospérant ensemble. » Ce principe enseigne que le progrès individuel est inséparable du progrès collectif. On ne peut s'élever qu'en aidant les autres à s'élever. C'est le fondement de l'esprit du judo."
+  },
+  {
+    cat: "Maîtrise de soi",
+    text: "La maîtrise de soi (自制 — Jiko seigyo) en judo implique particulièrement quel comportement lors d'une défaite en compétition ?",
+    opts: ["Contester la décision de l'arbitre publiquement","Accepter la défaite avec dignité et sans manifestation de colère","Quitter le tatami immédiatement sans saluer","Demander une explication à l'adversaire"],
+    ok: 1,
+    expl: "<strong>Accepter la défaite avec dignité.</strong> La maîtrise de soi est la capacité à contrôler ses émotions dans la victoire comme dans la défaite. Un judoka qui conteste, crie ou se lamente trahit cette valeur fondamentale. Le salut après la défaite en est la plus haute expression."
+  },
+  {
+    cat: "Modestie — 謙遜",
+    text: "Comment la modestie (謙遜 — Kenson) se traduit-elle concrètement dans l'attitude d'un judoka de haut grade envers un débutant ?",
+    opts: ["En évitant de s'entraîner avec les débutants pour ne pas les blesser","En transmettant ses connaissances avec patience, sans se vanter de son grade","En portant son judogi le plus propre pour montrer l'exemple","En refusant les compliments de manière formelle"],
+    ok: 1,
+    expl: "<strong>Transmettre sans fierté mal placée.</strong> La modestie ne signifie pas nier ses compétences, mais les mettre au service des autres sans arrogance. Un senpai (senior) modeste fait grandir ses kohai (juniors) en partageant avec générosité, sans ostenter son grade."
+  },
+  {
+    cat: "Honneur — 名誉",
+    text: "Dans le contexte du judo, l'honneur (名誉 — Meiyo) est mis à l'épreuve notamment dans quelle situation de compétition ?",
+    opts: ["Lorsqu'on doit choisir sa catégorie de poids","Lorsqu'on reconnaît soi-même une faute technique (ippon) non vue par l'arbitre","Lorsqu'on porte le judogi de la bonne couleur","Lorsqu'on arrive en avance à l'échauffement"],
+    ok: 1,
+    expl: "<strong>Reconnaître la faute non vue par l'arbitre.</strong> L'honneur en judo va jusqu'à signaler à l'arbitre une touche valide que lui seul a perçue — même si cela coûte la victoire. Ce geste rare mais documenté dans l'histoire du judo est la plus haute expression de la valeur d'honneur."
+  },
+  {
+    cat: "Courage — 勇",
+    text: "Le courage (勇 — Yuki) dans la philosophie du judo ne se limite pas au courage physique. Quelle autre forme de courage Kano valorisait-il particulièrement ?",
+    opts: ["Le courage de combattre des adversaires plus lourds","Le courage moral — admettre ses erreurs, respecter ses engagements même difficiles","Le courage de s'entraîner par mauvais temps","Le courage de participer aux compétitions internationales"],
+    ok: 1,
+    expl: "<strong>Le courage moral.</strong> Kano distinguait le courage physique (facile à afficher) du courage moral : admettre ses torts, tenir ses engagements face à l'adversité, dire la vérité même quand elle dérange. Ce courage moral est le plus difficile et le plus précieux."
+  },
+  {
+    cat: "Sincérité — 誠",
+    text: "Comment la sincérité (誠 — Makoto) s'exprime-t-elle dans la relation entre un judoka et son sensei (enseignant) ?",
+    opts: ["En n'exprimant jamais de désaccord pour rester respectueux","En communiquant honnêtement ses difficultés, doutes et progrès sans feindre","En imitant parfaitement tous les gestes du sensei sans questionner","En arrivant toujours le premier au dojo"],
+    ok: 1,
+    expl: "<strong>Communiquer honnêtement.</strong> La sincérité dans la relation pédagogique implique de dire au sensei ce qui ne fonctionne pas, ce qu'on ne comprend pas, sans feindre la compréhension. Cette transparence est la condition du vrai progrès. Elle demande du courage et génère la confiance."
+  },
+  {
+    cat: "Amitié — 友情",
+    text: "L'amitié (友情 — Yūjō) dans le judo se construit principalement à travers quel élément quotidien de la pratique ?",
+    opts: ["Les repas partagés après l'entraînement","Le randori (練習) — le combat d'entraînement où l'on offre sa confiance à l'autre","Les réunions du club hors tatami","Les compétitions remportées ensemble"],
+    ok: 1,
+    expl: "<strong>Le randori (練習).</strong> Le randori est un acte de confiance profonde : on offre son corps à l'autre pour qu'il s'entraîne à projeter et immobiliser. Cette vulnérabilité partagée crée des liens d'amitié uniques. Le judo dit : « Celui qui t'a projeté le plus est souvent ton meilleur ami. »"
+  }
+];
+
+let cur=0, score=0, wrongs=0, answered=false, log=[];
+
+function init() {
+  cur=0; score=0; wrongs=0; answered=false; log=[];
+  document.getElementById('results').classList.remove('show');
+  document.getElementById('quiz-area').style.display='';
+  buildSegs(); render();
+}
+
+function buildSegs() {
+  const el=document.getElementById('prog-segs');
+  el.innerHTML='';
+  Q.forEach((_,i)=>{
+    const s=document.createElement('div');
+    s.className='seg'+(i===0?' cur':'');
+    s.id='sg'+i;
+    el.appendChild(s);
+  });
+}
+
+function updateSegs() {
+  Q.forEach((_,i)=>{
+    const s=document.getElementById('sg'+i);
+    if(!s)return;
+    s.className='seg';
+    if(i<log.length) s.classList.add(log[i]?'ok':'ng');
+    else if(i===cur) s.classList.add('cur');
+  });
+}
+
+function updateHUD() {
+  document.getElementById('hud-ok').textContent=score;
+  document.getElementById('hud-wrong').textContent=wrongs;
+  document.getElementById('hud-q').textContent=`${cur+1}/10`;
+  document.getElementById('hud-pct').textContent=
+    log.length>0 ? Math.round(score/log.length*100)+'%' : '—';
+  document.getElementById('prog-txt').textContent=
+    `Question ${Math.min(cur+1,10)} sur 10`;
+}
+
+function render() {
+  answered=false;
+  const q=Q[cur];
+  document.getElementById('q-num').textContent=`Q.${String(cur+1).padStart(2,'0')} / 10`;
+  document.getElementById('q-cat').textContent=q.cat;
+  document.getElementById('q-text').textContent=q.text;
+
+  const el=document.getElementById('opts');
+  el.innerHTML='';
+  ['A','B','C','D'].forEach((l,i)=>{
+    const b=document.createElement('button');
+    b.className='opt';
+    b.innerHTML=`<span class="opt-k">${l}</span><span>${q.opts[i]}</span>`;
+    b.onclick=()=>pick(i);
+    el.appendChild(b);
+  });
+
+  document.getElementById('expl').className='expl';
+  document.getElementById('expl').innerHTML='';
+  document.getElementById('btn-next').className='btn-next';
+  document.getElementById('nav-info').textContent='— Choisissez votre réponse —';
+  document.getElementById('btn-lbl').textContent=cur<Q.length-1?'Question suivante':'Voir les résultats';
+
+  const card=document.getElementById('q-card');
+  card.style.animation='none'; void card.offsetWidth;
+  card.style.animation='cardIn 0.45s cubic-bezier(0.34,1.56,0.64,1)';
+
+  updateHUD(); updateSegs();
+}
+
+function pick(idx) {
+  if(answered)return; answered=true;
+  const q=Q[cur];
+  const btns=document.querySelectorAll('.opt');
+  btns.forEach(b=>b.disabled=true);
+
+  if(idx===q.ok){ btns[idx].classList.add('correct'); score++; log.push(true); }
+  else { btns[idx].classList.add('wrong'); btns[q.ok].classList.add('reveal'); wrongs++; log.push(false); }
+
+  const expl=document.getElementById('expl');
+  expl.innerHTML=q.expl; expl.classList.add('show');
+  document.getElementById('btn-next').classList.add('show');
+  document.getElementById('nav-info').textContent='';
+  updateHUD(); updateSegs();
+}
+
+document.getElementById('btn-next').addEventListener('click',()=>{
+  cur++;
+  if(cur>=Q.length) showResults();
+  else render();
+});
+
+function showResults() {
+  document.getElementById('quiz-area').style.display='none';
+  document.getElementById('results').classList.add('show');
+
+  document.getElementById('res-score').innerHTML=`${score}<span>/10</span>`;
+
+  const pct=score/Q.length;
+  let mention,title,msg;
+  if(pct===1)    { mention='優秀 — Excellence absolue'; title='Maîtrise parfaite du Code Moral'; msg='Vous incarnez les 8 valeurs dans leur profondeur. Votre compréhension de la philosophie de Kano est digne d\'un vrai ambassadeur du judo.'; }
+  else if(pct>=.8){ mention='良好 — Très bien'; title='Solide compréhension éthique'; msg='Vos valeurs morales sont bien ancrées. Quelques nuances philosophiques restent à approfondir, mais l\'essentiel est maîtrisé.'; }
+  else if(pct>=.6){ mention='合格 — Bien'; title='Bonne connaissance des valeurs'; msg='Des bases solides. Relisez le Code Moral en lien avec les situations concrètes du dojo — c\'est là que les valeurs prennent tout leur sens.'; }
+  else           { mention='要努力 — À travailler'; title='Les valeurs méritent d\'être approfondies'; msg='Le Code Moral est l\'âme du judo. Sans lui, les techniques ne sont que de la force. Prenez le temps de méditer chaque valeur dans votre pratique quotidienne.'; }
+
+  document.getElementById('res-mention').textContent=mention;
+  document.getElementById('res-title').textContent=title;
+  document.getElementById('res-msg').textContent=msg;
+}
+
+function restart(){ init(); }
+init();
+</script>
+</body>
+</html>
