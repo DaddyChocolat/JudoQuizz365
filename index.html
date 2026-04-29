@@ -2,26 +2,29 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="author" content="E.F. NGATCHA TCHAKOTE — Quiz Judo 365">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Quiz Judo 365 Jours — E.F. NGATCHA TCHAKOTE — 3e Kyu Ceinture Verte">
-<meta name="author" content="E.F. NGATCHA TCHAKOTE">
-<meta name="theme-color" content="#f6f4ee">
-<link rel="manifest" href="manifest.json">
-<title>Quiz Judo 365 — E.F. NGATCHA TCHAKOTE</title>
+<title>Tableau de Bord — Quiz Judo 365</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+JP:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+JP:wght@200;400;700&display=swap');
 
 :root {
-  --bg:      #f6f4ee;
-  --white:   #ffffff;
-  --border:  #e4dfd5;
-  --ink:     #1c1a14;
-  --ink2:    #46412f;
-  --ink3:    #8a8272;
-  --gold:    #b07d2a;
-  --green:   #2e7d52;
-  --shadow:  0 2px 12px rgba(28,26,20,0.07);
-  --shadow2: 0 6px 30px rgba(28,26,20,0.10);
+  --bg:       #f6f4ee;
+  --white:    #ffffff;
+  --card:     #fdfcf9;
+  --border:   #e4dfd5;
+  --border2:  #cec8bc;
+  --ink:      #1c1a14;
+  --ink2:     #46412f;
+  --ink3:     #8a8272;
+  --green:    #2e7d52;   
+  --green-bg: rgba(46,125,82,0.07);
+  --teal:     #1a7070;   
+  --amber:    #b86a00;
+  --red:      #b02020;
+  --locked:   #e0dbce;
+  --locked-tx:#a39d8f;
+  --shadow:   0 4px 20px rgba(28,26,20,0.05);
 }
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
@@ -31,551 +34,416 @@ body {
   color: var(--ink);
   font-family: 'Plus Jakarta Sans', sans-serif;
   min-height: 100vh;
-  overflow-x: hidden;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
+/* ── DECORATION BACKGROUND ── */
 body::before {
   content: '';
   position: fixed; inset: 0;
-  background:
-    radial-gradient(ellipse 60% 40% at 90% 5%, rgba(176,125,42,0.07) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 5% 95%, rgba(46,125,82,0.05) 0%, transparent 60%);
-  pointer-events: none; z-index: 0;
+  background: radial-gradient(ellipse 60% 40% at 85% 10%, rgba(46,125,82,0.04) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
 }
 
-.bg-k {
-  position: fixed; font-family: 'Noto Serif JP', serif; font-weight: 700;
-  pointer-events: none; z-index: 0; user-select: none;
-  color: rgba(28,26,20,0.03);
+.bg-kanji {
+  position: fixed;
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 700;
+  font-size: 250px;
+  color: rgba(46,125,82,0.03);
+  z-index: 0;
+  pointer-events: none;
+  top: 10%; right: -5%;
 }
-.bk1 { font-size: 340px; top: -60px; right: -40px; line-height:1; }
-.bk2 { font-size: 220px; bottom: 0; left: -20px; line-height:1; }
 
 .page {
   position: relative; z-index: 1;
-  max-width: 860px; margin: 0 auto;
-  padding: 36px 20px 80px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px 100px;
 }
 
-/* ── HERO ── */
-.hero {
+/* ── HEADER & DASHBOARD ── */
+header {
+  margin-bottom: 40px;
   background: var(--white);
-  border: 1px solid var(--border);
+  padding: 32px 40px;
   border-radius: 16px;
-  overflow: hidden;
-  box-shadow: var(--shadow2);
-  margin-bottom: 28px;
-}
-
-.hero-top-band {
-  height: 6px;
-  background: linear-gradient(90deg, #b07d2a, #2e7d52, #1a7070, #b07d2a);
-  background-size: 200% 100%;
-  animation: bandSlide 4s linear infinite;
-}
-@keyframes bandSlide { 0%{background-position:0%}100%{background-position:200%} }
-
-.hero-body {
-  padding: 36px 36px 32px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 24px;
-  align-items: center;
-}
-
-.hero-left .eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; letter-spacing: 3px;
-  text-transform: uppercase; color: var(--gold);
-  margin-bottom: 10px;
-}
-
-.hero-left h1 {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(28px, 5vw, 52px);
-  line-height: 1.0; color: var(--ink);
-  letter-spacing: -0.5px;
-}
-.hero-left h1 em { font-style: italic; color: var(--gold); display: block; }
-
-.hero-left .desc {
-  font-size: 13px; color: var(--ink3);
-  margin-top: 10px; line-height: 1.6;
-}
-
-.hero-right {
-  text-align: center;
-  padding: 16px 20px;
-  border-left: 1px solid var(--border);
-  display: flex; flex-direction: column;
-  align-items: center; gap: 6px;
-  min-width: 110px;
-}
-
-.hero-kanji {
-  font-family: 'Noto Serif JP', serif;
-  font-weight: 200; font-size: 56px;
-  color: rgba(176,125,42,0.2); line-height: 1;
-}
-
-/* Signature block */
-.sig-block {
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap; gap: 10px;
-  padding: 14px 36px;
-  background: #faf8f3;
-  border-top: 1px solid var(--border);
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.sig-left { display: flex; flex-direction: column; gap: 3px; }
-.sig-name {
-  font-family: 'DM Serif Display', serif;
-  font-style: italic; font-size: 15px; color: var(--gold);
-}
-.sig-grade { display: flex; align-items: center; gap: 7px; }
-.sig-belt { width: 24px; height: 5px; border-radius: 1px; background: linear-gradient(90deg,#2e7d52,#4aad7a); }
-.sig-kyu {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 8px; letter-spacing: 1.5px;
-  color: var(--green); text-transform: uppercase;
-}
-
-.sig-right {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 8px; letter-spacing: 2px;
-  color: var(--ink3); opacity: 0.5;
-  text-align: right; line-height: 1.7;
-}
-
-/* ── STATS ROW ── */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  margin-bottom: 28px;
-}
-
-.stat-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px 12px;
-  text-align: center;
-  box-shadow: var(--shadow);
-}
-
-.stat-v {
-  font-family: 'DM Serif Display', serif;
-  font-size: 30px; color: var(--ink);
-  line-height: 1; display: block;
-}
-.stat-l {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 7px; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--ink3);
-  margin-top: 4px; display: block; line-height: 1.4;
-}
-
-/* ── SECTION TITLE ── */
-.section-title {
-  display: flex; align-items: center; gap: 12px;
-  margin-bottom: 14px;
-}
-.section-title h2 {
-  font-family: 'DM Serif Display', serif;
-  font-size: 20px; color: var(--ink); font-weight: 400;
-}
-.section-title::after {
-  content: ''; flex: 1; height: 1px; background: var(--border);
-}
-
-/* ── CYCLE WEEK ── */
-.week-cycle {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 28px;
-  box-shadow: var(--shadow);
-}
-
-.week-header {
-  padding: 14px 20px;
-  background: #faf8f3;
-  border-bottom: 1px solid var(--border);
-  display: flex; justify-content: space-between; align-items: center;
-}
-.week-header span {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; letter-spacing: 3px;
-  text-transform: uppercase; color: var(--ink3);
-}
-
-.week-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 0;
-}
-
-.day-cell {
-  padding: 16px 8px;
-  text-align: center;
-  border-right: 1px solid var(--border);
-  transition: background 0.2s;
-}
-.day-cell:last-child { border-right: none; }
-.day-cell:hover { background: #f5f2eb; }
-
-.day-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 8px; letter-spacing: 1px;
-  color: var(--ink3); margin-bottom: 6px; display: block;
-  text-transform: uppercase;
-}
-.day-icon { font-size: 20px; display: block; margin-bottom: 4px; }
-.day-name {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 7px; letter-spacing: 1px;
-  color: var(--ink2); text-transform: uppercase;
-  line-height: 1.4;
-}
-
-/* ── QUIZ LIST ── */
-.quiz-list {
+.hdr-left {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 32px;
+  gap: 8px;
 }
 
-.quiz-item {
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 700;
+}
+
+.main-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 36px;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.date-today {
+  font-size: 14px;
+  color: var(--ink2);
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 16px 20px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  text-decoration: none;
-  color: var(--ink);
-  transition: all 0.18s ease;
-  box-shadow: var(--shadow);
-  position: relative;
-  overflow: hidden;
+  gap: 6px;
+  margin-top: 4px;
 }
-
-.quiz-item::before {
+.date-today::before {
   content: '';
-  position: absolute; top: 0; left: 0;
-  width: 3px; height: 100%;
-  background: var(--gold);
-  transform: scaleY(0);
-  transition: transform 0.2s ease;
-  transform-origin: bottom;
+  display: inline-block;
+  width: 8px; height: 8px;
+  background: var(--amber);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(184,106,0,0.6);
 }
 
-.quiz-item:hover::before { transform: scaleY(1); }
-.quiz-item:hover {
-  border-color: var(--gold);
-  transform: translateX(4px);
-  box-shadow: var(--shadow2);
+.hdr-right {
+  text-align: right;
+  border-left: 2px solid var(--border);
+  padding-left: 24px;
 }
 
-.quiz-item.available { cursor: pointer; }
-.quiz-item.coming {
-  opacity: 0.5; cursor: not-allowed;
-  pointer-events: none;
-}
-
-.qi-day {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; font-weight: 500;
-  letter-spacing: 1px; color: var(--white);
-  background: var(--gold);
-  padding: 4px 10px; border-radius: 20px;
-  flex-shrink: 0; min-width: 52px; text-align: center;
-}
-
-.qi-day.available { background: var(--gold); }
-.qi-day.coming    { background: var(--ink3); }
-
-.qi-info { flex: 1; }
-.qi-title {
+.stat-value {
   font-family: 'DM Serif Display', serif;
-  font-size: 16px; color: var(--ink); line-height: 1.2;
+  font-size: 42px;
+  color: var(--teal);
+  line-height: 1;
 }
-.qi-meta {
-  display: flex; align-items: center; gap: 8px; margin-top: 4px;
-}
-.qi-theme {
+.stat-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 8px; letter-spacing: 1.5px;
-  text-transform: uppercase; color: var(--ink3);
-}
-.qi-lvl {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 8px; letter-spacing: 1px;
-  color: #2e8b57;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-top: 4px;
 }
 
-.qi-arrow {
-  font-size: 18px; color: var(--gold); flex-shrink: 0;
-  transition: transform 0.2s;
-}
-.quiz-item:hover .qi-arrow { transform: translateX(4px); }
-
-.qi-badge-done {
-  font-size: 16px; flex-shrink: 0;
+/* ── NIVEAUX & SEMAINES (ACCORDEON) ── */
+.levels-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-/* Coming soon section */
-.coming-soon {
+.niveau-card {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 24px;
-  text-align: center;
-  margin-bottom: 28px;
+  overflow: hidden;
   box-shadow: var(--shadow);
+  transition: transform 0.2s;
 }
 
-.cs-title {
+.niveau-header {
+  padding: 20px 24px;
+  background: linear-gradient(90deg, #fdfdfc, #f6faf7);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.niveau-titre {
   font-family: 'DM Serif Display', serif;
-  font-size: 18px; color: var(--ink3); margin-bottom: 6px;
-}
-.cs-sub {
-  font-size: 13px; color: var(--ink3); opacity: 0.7; line-height: 1.6;
+  font-size: 24px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* Footer */
-footer {
-  margin-top: 40px; padding-top: 16px;
-  border-top: 1px solid var(--border);
-  display: flex; justify-content: space-between;
-  align-items: center; flex-wrap: wrap; gap: 12px;
+.niveau-titre .badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  background: var(--green);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 1px;
 }
-.ft-l { display:flex; flex-direction:column; gap:4px; }
-.ft-name { font-family:'DM Serif Display',serif; font-style:italic; font-size:14px; color:var(--gold); }
-.ft-gr { display:flex; align-items:center; gap:6px; }
-.ft-belt { width:22px; height:5px; border-radius:1px; background:linear-gradient(90deg,#2e7d52,#4aad7a); }
-.ft-kyu  { font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:1.5px; color:var(--green); text-transform:uppercase; }
-.ft-r { font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:1.5px; color:var(--ink3); opacity:0.45; text-align:right; line-height:1.7; }
 
-@media(max-width:600px){
-  .hero-body { grid-template-columns:1fr; }
-  .hero-right { display:none; }
-  .stats { grid-template-columns:repeat(2,1fr); }
-  .week-grid { grid-template-columns:repeat(4,1fr); }
-  .week-grid .day-cell:nth-child(n+5) { border-top:1px solid var(--border); }
+.niveau-desc {
+  font-size: 13px;
+  color: var(--ink3);
+}
+
+.semaines-list {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.semaine-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.semaine-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ink2);
+  letter-spacing: 1px;
+}
+
+.jours-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ── BOUTONS JOURS ── */
+.btn-jour {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.btn-jour .jour-num {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.btn-jour .jour-lbl {
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+  opacity: 0.8;
+}
+
+/* État : Verrouillé */
+.btn-jour.locked {
+  background: var(--locked);
+  color: var(--locked-tx);
+  border: 1px dashed #cdc6b6;
+  pointer-events: none; /* Empêche le clic */
+}
+.btn-jour.locked::after {
+  content: '🔒';
+  position: absolute;
+  font-size: 10px;
+  top: 4px; right: 4px;
+  opacity: 0.5;
+}
+
+/* État : Débloqué */
+.btn-jour.unlocked {
+  background: var(--card);
+  color: var(--green);
+  border: 1.5px solid var(--green);
+  cursor: pointer;
+}
+.btn-jour.unlocked:hover {
+  background: var(--green);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46,125,82,0.2);
+}
+
+/* État : Dernier jour disponible (Le focus du jour) */
+.btn-jour.today {
+  background: var(--amber);
+  color: #fff;
+  border: 1.5px solid var(--amber);
+  animation: pulse 2s infinite;
+}
+.btn-jour.today:hover {
+  background: #a05c00;
+  transform: translateY(-2px);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(184,106,0, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(184,106,0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(184,106,0, 0); }
+}
+
+@media(max-width: 600px) {
+  .semaine-row { grid-template-columns: 1fr; gap: 12px; }
+  .hdr-right { text-align: left; border-left: none; padding-left: 0; border-top: 2px solid var(--border); padding-top: 16px; }
 }
 </style>
 </head>
 <body>
 
-<div class="bg-k bk1">道</div>
-<div class="bg-k bk2">柔</div>
-
-<div class="page">
-
-  <div class="hero">
-    <div class="hero-top-band"></div>
-    <div class="hero-body">
-      <div class="hero-left">
-        <div class="eyebrow">Le Savez-Vous ? · Série complète</div>
-        <h1>Quiz Judo<em>365 Jours</em></h1>
-        <p class="desc">Un quiz chaque jour sur l'histoire, la technique, l'éthique, la nutrition, la prévention et les règlements du judo. Progressez du niveau débutant au niveau maître en 52 semaines.</p>
-      </div>
-      <div class="hero-right">
-        <div class="hero-kanji">柔道</div>
-      </div>
+<div class="bg-kanji">道</div> <div class="page">
+  
+  <header>
+    <div class="hdr-left">
+      <div class="eyebrow">Dojo Quotidien</div>
+      <h1 class="main-title">Quiz Judo 365</h1>
+      <div class="date-today">Mercredi, 29 Avril 2026</div>
     </div>
-    <div class="sig-block">
-      <div class="sig-left">
-        <span class="sig-name">E.F. NGATCHA TCHAKOTE</span>
-        <div class="sig-grade">
-          <div class="sig-belt"></div>
-          <span class="sig-kyu">3e Kyu · Ceinture Verte</span>
-        </div>
-      </div>
-      <div class="sig-right">Quiz Judo Quotidien<br>Série 365 Jours · © 2025</div>
+    <div class="hdr-right">
+      <div class="stat-value" id="compteur-jours">0/364</div>
+      <div class="stat-label">Jours Débloqués</div>
     </div>
-  </div>
+  </header>
 
-  <div class="stats">
-    <div class="stat-card">
-      <span class="stat-v">365</span>
-      <span class="stat-l">Quiz<br>au total</span>
+  <div class="levels-container" id="levels-container">
     </div>
-    <div class="stat-card">
-      <span class="stat-v">3 650</span>
-      <span class="stat-l">Questions<br>uniques</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-v">8</span>
-      <span class="stat-l">Thématiques<br>couvertes</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-v">5 ⭐</span>
-      <span class="stat-l">Niveaux de<br>difficulté</span>
-    </div>
-  </div>
-
-  <div class="section-title"><h2>Cycle hebdomadaire</h2></div>
-  <div class="week-cycle">
-    <div class="week-header">
-      <span>Programme · 7 jours · Répété 52 fois sur l'année</span>
-      <span>🟢 Semaine 1 · Niveau Débutant</span>
-    </div>
-    <div class="week-grid">
-      <div class="day-cell">
-        <span class="day-num">J1</span>
-        <span class="day-icon">📜</span>
-        <span class="day-name">Histoire &amp; Culture</span>
-      </div>
-      <div class="day-cell">
-        <span class="day-num">J2</span>
-        <span class="day-icon">🙏</span>
-        <span class="day-name">Éthique &amp; Code Moral</span>
-      </div>
-      <div class="day-cell">
-        <span class="day-num">J3</span>
-        <span class="day-icon">🥋</span>
-        <span class="day-name">Technique &amp; Entraîn.</span>
-      </div>
-      <div class="day-cell">
-        <span class="day-num">J4</span>
-        <span class="day-icon">🥗</span>
-        <span class="day-name">Nutrition &amp; Sommeil</span>
-      </div>
-      <div class="day-cell">
-        <span class="day-num">J5</span>
-        <span class="day-icon">🩹</span>
-        <span class="day-name">Prévention &amp; Soins</span>
-      </div>
-      <div class="day-cell">
-        <span class="day-num">J6</span>
-        <span class="day-icon">🏆</span>
-        <span class="day-name">Compétition &amp; Règles</span>
-      </div>
-      <div class="day-cell">
-        <span class="day-num">J7</span>
-        <span class="day-icon">🧼</span>
-        <span class="day-name">Hygiène &amp; Judogi</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-title"><h2>Quiz disponibles</h2></div>
-  <div class="quiz-list">
-
-    <a href="jour1.html" class="quiz-item available">
-      <span class="qi-day available">JOUR 1</span>
-      <div class="qi-info">
-        <div class="qi-title">Histoire &amp; Culture du Judo</div>
-        <div class="qi-meta">
-          <span class="qi-theme">📜 Des origines à l'olympisme</span>
-          <span class="qi-lvl">🟢 S1 · Débutant</span>
-        </div>
-      </div>
-      <span class="qi-badge-done">✅</span>
-      <span class="qi-arrow">›</span>
-    </a>
-
-    <a href="jour2.html" class="quiz-item available">
-      <span class="qi-day available">JOUR 2</span>
-      <div class="qi-info">
-        <div class="qi-title">Éthique &amp; Code Moral</div>
-        <div class="qi-meta">
-          <span class="qi-theme">🙏 Les 8 valeurs · Principes de Kano</span>
-          <span class="qi-lvl">🟢 S1 · Débutant</span>
-        </div>
-      </div>
-      <span class="qi-badge-done">✅</span>
-      <span class="qi-arrow">›</span>
-    </a>
-
-    <a href="jour3.html" class="quiz-item available">
-      <span class="qi-day available">JOUR 3</span>
-      <div class="qi-info">
-        <div class="qi-title">Technique &amp; Entraînement</div>
-        <div class="qi-meta">
-          <span class="qi-theme">🥋 Nage-waza · Ne-waza · Ukemi · Kata</span>
-          <span class="qi-lvl">🟢 S1 · Débutant</span>
-        </div>
-      </div>
-      <span class="qi-badge-done">✅</span>
-      <span class="qi-arrow">›</span>
-    </a>
-
-    <a href="jour4.html" class="quiz-item available">
-      <span class="qi-day available">JOUR 4</span>
-      <div class="qi-info">
-        <div class="qi-title">Nutrition &amp; Récupération</div>
-        <div class="qi-meta">
-          <span class="qi-theme">🥗 Alimentation · Hydratation · Sommeil</span>
-          <span class="qi-lvl">🟢 S1 · Débutant</span>
-        </div>
-      </div>
-      <span class="qi-badge-done">✅</span>
-      <span class="qi-arrow">›</span>
-    </a>
-
-    <div class="quiz-item coming">
-      <span class="qi-day coming">JOUR 5</span>
-      <div class="qi-info">
-        <div class="qi-title">Prévention des blessures &amp; Soins</div>
-        <div class="qi-meta">
-          <span class="qi-theme">🩹 Blessures · Premiers secours · RICE</span>
-          <span class="qi-lvl">🟢 S1 · Débutant</span>
-        </div>
-      </div>
-      <span class="qi-badge-done">🔒</span>
-    </div>
-
-    <div class="quiz-item coming">
-      <span class="qi-day coming">JOUR 6</span>
-      <div class="qi-info">
-        <div class="qi-title">Compétition &amp; Règlements</div>
-        <div class="qi-meta">
-          <span class="qi-theme">🏆 Arbitrage · Scores · Catégories</span>
-          <span class="qi-lvl">🟢 S1 · Débutant</span>
-        </div>
-      </div>
-      <span class="qi-badge-done">🔒</span>
-    </div>
-
-    <div class="quiz-item coming">
-      <span class="qi-day coming">JOUR 7</span>
-      <div class="qi-info">
-        <div class="qi-title">Hygiène &amp; Judogi</div>
-        <div class="qi-meta">
-          <span class="qi-theme">🧼 Entretien · Corps · Tenue</span>
-          <span class="qi-lvl">🟢 S1 · Débutant</span>
-        </div>
-      </div>
-      <span class="qi-badge-done">🔒</span>
-    </div>
-
-  </div>
-
-  <div class="coming-soon">
-    <p class="cs-title">🔓 Semaines 2–52 — À venir</p>
-    <p class="cs-sub">De nouveaux quiz sont ajoutés chaque jour.<br>La difficulté augmente progressivement jusqu'au niveau Maître ⚫ en semaine 41–52.</p>
-  </div>
-
-  <footer>
-    <div class="ft-l">
-      <span class="ft-name">E.F. NGATCHA TCHAKOTE</span>
-      <div class="ft-gr">
-        <div class="ft-belt"></div>
-        <span class="ft-kyu">3e Kyu · Ceinture Verte</span>
-      </div>
-    </div>
-    <div class="ft-r">Quiz Judo Quotidien · Série 365 Jours<br>© 2025 · Tous droits réservés</div>
-  </footer>
 
 </div>
+
+<script>
+// ── CONFIGURATION DES NIVEAUX ET SEMAINES ──
+// Ton barème défini précédemment (Débutant -> Maître)
+const ARCHITECTURE = [
+  { niveau: '🟢 Débutant',    desc: 'Bases et fondamentaux',     debut: 1,  fin: 4 },
+  { niveau: '🟡 Intermédiaire',desc: 'Techniques et tactiques',   debut: 5,  fin: 12 },
+  { niveau: '🟠 Avancé',      desc: 'Préparation et stratégie',  debut: 13, fin: 26 },
+  { niveau: '🔴 Expert',      desc: 'Physiologie et détails',    debut: 27, fin: 40 },
+  { niveau: '⚫ Maître',      desc: 'Expertise totale (Pénalités)', debut: 41, fin: 52 }
+];
+
+// ── FONCTION PRINCIPALE D'INITIALISATION ──
+async function initDashboard() {
+  let joursDebloques = [];
+
+  try {
+    // 1. On essaie de lire le fichier généré par ton script Netlify (build.js)
+    // IMPORTANT : Ce fichier sera à la racine de ton site Netlify.
+    const reponse = await fetch('./available-days.json', { cache: "no-store" });
+    
+    if (reponse.ok) {
+      joursDebloques = await reponse.json();
+    } else {
+      throw new Error("Fichier introuvable");
+    }
+  } catch (erreur) {
+    // 2. FILET DE SÉCURITÉ POUR LE TEST EN LOCAL
+    // Si tu ouvres ce fichier sur ton PC sans Netlify, fetch() va échouer.
+    // On simule donc que les jours 1, 2, 3 et 4 sont débloqués.
+    console.warn("Fichier JSON non trouvé, utilisation des données de test locales.");
+    joursDebloques = [1, 2, 3, 4]; 
+  }
+
+  // Met à jour le compteur dans le header
+  document.getElementById('compteur-jours').textContent = `${joursDebloques.length}/364`;
+
+  // On génère l'interface
+  genererInterface(joursDebloques);
+}
+
+// ── GÉNÉRATION DYNAMIQUE DE L'INTERFACE ──
+function genererInterface(joursDebloques) {
+  const conteneur = document.getElementById('levels-container');
+  conteneur.innerHTML = ''; // On vide le conteneur
+
+  // On identifie le jour le plus élevé pour l'animation spéciale "Today"
+  const dernierJourDebloque = Math.max(...joursDebloques, 0);
+
+  // Pour chaque Niveau (Débutant, Intermédiaire...)
+  ARCHITECTURE.forEach(bloc => {
+    
+    // Création de la carte du niveau
+    const divNiveau = document.createElement('div');
+    divNiveau.className = 'niveau-card';
+    
+    // Header du niveau
+    divNiveau.innerHTML = `
+      <div class="niveau-header">
+        <div class="niveau-titre">
+          ${bloc.niveau} 
+          <span class="badge">S${bloc.debut}-S${bloc.fin}</span>
+        </div>
+        <div class="niveau-desc">${bloc.desc}</div>
+      </div>
+      <div class="semaines-list" id="semaines-${bloc.debut}"></div>
+    `;
+    conteneur.appendChild(divNiveau);
+
+    const semainesList = divNiveau.querySelector(`#semaines-${bloc.debut}`);
+
+    // Boucle sur les semaines de ce niveau spécifique
+    for (let s = bloc.debut; s <= bloc.fin; s++) {
+      
+      const divSemaine = document.createElement('div');
+      divSemaine.className = 'semaine-row';
+      
+      // Label de la semaine
+      divSemaine.innerHTML = `<div class="semaine-lbl">Semaine ${s}</div>`;
+      
+      const divJours = document.createElement('div');
+      divJours.className = 'jours-grid';
+
+      // Boucle sur les 7 jours de la semaine
+      for (let j = 1; j <= 7; j++) {
+        // Calcul du "Jour Absolu" (de 1 à 364)
+        let jourAbsolu = ((s - 1) * 7) + j;
+        
+        let btn = document.createElement('a');
+        btn.className = 'btn-jour';
+        btn.innerHTML = `<span class="jour-num">${jourAbsolu}</span><span class="jour-lbl">Jour</span>`;
+
+        // VÉRIFICATION CRUCIALE : Le jour est-il débloqué par Netlify ?
+        if (joursDebloques.includes(jourAbsolu)) {
+          // Le fichier html existe !
+          btn.href = `./quizzes/jour${jourAbsolu}.html`;
+          
+          // Est-ce le tout dernier jour débloqué ? (Celui à faire aujourd'hui)
+          if (jourAbsolu === dernierJourDebloque) {
+            btn.classList.add('today');
+            btn.title = "Quiz du jour à faire !";
+          } else {
+            btn.classList.add('unlocked');
+            btn.title = `Refaire le quiz du jour ${jourAbsolu}`;
+          }
+        } else {
+          // Le fichier n'existe pas encore sur le GitHub
+          btn.classList.add('locked');
+          btn.removeAttribute('href'); // Non cliquable
+          btn.title = `Ce quiz sera débloqué ultérieurement`;
+        }
+
+        divJours.appendChild(btn);
+      }
+
+      divSemaine.appendChild(divJours);
+      semainesList.appendChild(divSemaine);
+    }
+  });
+}
+
+// Lancement au chargement de la page
+initDashboard();
+</script>
 </body>
 </html>
