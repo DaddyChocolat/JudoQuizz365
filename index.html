@@ -309,7 +309,7 @@ header {
     <div class="hdr-left">
       <div class="eyebrow">Dojo Quotidien</div>
       <h1 class="main-title">Quiz Judo 365</h1>
-      <div class="date-today">Mercredi, 29 Avril 2026</div>
+      <div class="date-today" id="date-du-jour"></div>
     </div>
     <div class="hdr-right">
       <div class="stat-value" id="compteur-jours">0/364</div>
@@ -333,8 +333,22 @@ const ARCHITECTURE = [
   { niveau: '⚫ Maître',      desc: 'Expertise totale (Pénalités)', debut: 41, fin: 52 }
 ];
 
+// ── FONCTION POUR AFFICHER LA DATE DU JOUR AUTOMATIQUEMENT ──
+function afficherDateDuJour() {
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    let dateAujourdhui = new Date().toLocaleDateString('fr-FR', options);
+    
+    // Mettre la première lettre en majuscule (ex: "mercredi" devient "Mercredi")
+    dateAujourdhui = dateAujourdhui.charAt(0).toUpperCase() + dateAujourdhui.slice(1);
+    
+    // On injecte la date dans le HTML
+    document.getElementById('date-du-jour').textContent = dateAujourdhui;
+}
+  
 // ── FONCTION PRINCIPALE D'INITIALISATION ──
 async function initDashboard() {
+  // On met à jour la date tout de suite !
+  afficherDateDuJour();
   let joursDebloques = [];
 
   try {
