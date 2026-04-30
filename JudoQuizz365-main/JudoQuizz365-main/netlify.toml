@@ -1,0 +1,11 @@
+[build]
+  # Netlify va exécuter ce script à chaque fois que tu mets à jour GitHub
+  command = "node scripts/build.js"
+  # Le dossier à publier est la racine du projet
+  publish = "."
+
+# Petite règle pour éviter les erreurs de cache sur le fichier JSON
+[[headers]]
+  for = "/available-days.json"
+  [headers.values]
+    Cache-Control = "no-cache"
