@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="E.F. NGATCHA TCHAKOTE — Quiz Judo 365">
+<meta name="copyright" content="© 2025 E.F. NGATCHA TCHAKOTE. Tous droits réservés.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Jour 6 — Compétition & Règlements</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+JP:wght@200;400;700&display=swap');
+
+:root {
+  --bg:      #f5f4ef;
+  --white:   #ffffff;
+  --card:    #fdfcf8;
+  --snow:    #f0ede5;
+  --border:  #e3ddd3;
+  --border2: #ccc6b8;
+  --ink:     #18160f;
+  --ink2:    #3e3825;
+  --ink3:    #867d6a;
+  --blue:    #1a3a7c;   /* compétition — autorité */
+  --blue-bg: rgba(26,58,124,0.07);
+  --blue-bd: rgba(26,58,124,0.28);
+  --gold:    #b07a14;
+  --gold-bg: rgba(176,122,20,0.07);
+  --green:   #266644;
+  --green-bg:rgba(38,102,68,0.07);
+  --green-bd:rgba(38,102,68,0.28);
+  --red:     #9e2020;
+  --red-bg:  rgba(158,32,32,0.06);
+  --sh:      0 2px 12px rgba(24,22,15,0.07);
+  --sh2:     0 6px 30px rgba(24,22,15,0.11);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:'Lora',Georgia,serif;
+  min-height:100vh;overflow-x:hidden;
+  -webkit-user-select:none;user-select:none;
+}
+
+body::before{
+  content:'';position:fixed;inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 88% 6%, rgba(26,58,124,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 45% at 10% 94%, rgba(176,122,20,0.06) 0%, transparent 60%);
+  pointer-events:none;z-index:0;
+}
+
+.bg-k{position:fixed;font-family:'Noto Serif JP',serif;font-weight:700;pointer-events:none;z-index:0;user-select:none;color:rgba(24,22,15,0.03);}
+.bk1{font-size:320px;top:-50px;right:-30px;line-height:1;}
+.bk2{font-size:200px;bottom:0;left:-20px;line-height:1;}
+
+.page{position:relative;z-index:1;max-width:840px;margin:0 auto;padding:36px 22px 80px;}
+
+/* ── HEADER ── */
+header{margin-bottom:32px;}
+
+.top-bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:20px;}
+.left-tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+
+.pill{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:20px;border:1px solid var(--border2);color:var(--ink3);background:var(--white);}
+.pill.day{background:var(--blue);color:#fff;border-color:var(--blue);}
+.pill.lvl{color:var(--green);border-color:rgba(38,102,68,0.35);}
+
+.sig{display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
+.sig-nm{font-family:'Lora',serif;font-style:italic;font-size:14px;color:var(--gold);}
+.sig-gr{display:flex;align-items:center;gap:6px;}
+.sig-belt{width:22px;height:5px;border-radius:1px;background:linear-gradient(90deg,#266644,#45a872);}
+.sig-kyu{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--green);text-transform:uppercase;}
+
+/* Title card */
+.title-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);}
+.tc-band{height:5px;background:linear-gradient(90deg,var(--blue) 50%,var(--gold) 50%);}
+.tc-body{display:grid;grid-template-columns:1fr auto;gap:0;}
+.tc-main{padding:28px 32px;border-right:1px solid var(--border);}
+.tc-eye{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:10px;}
+.tc-h1{font-family:'Syne',sans-serif;font-size:clamp(26px,4.5vw,46px);font-weight:800;line-height:1.0;color:var(--ink);letter-spacing:-1px;}
+.tc-h1 em{font-style:italic;font-family:'Lora',serif;font-weight:400;color:var(--blue);display:block;margin-top:4px;font-size:0.85em;}
+.tc-sub{font-size:13px;color:var(--ink3);margin-top:10px;line-height:1.6;font-family:'Lora',serif;}
+.tc-side{padding:26px 20px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;min-width:115px;background:#f5f7fc;}
+.tc-num{font-family:'Syne',sans-serif;font-size:48px;font-weight:800;color:var(--blue);line-height:1;}
+.tc-lbl{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);text-align:center;line-height:1.5;}
+.tc-ico{font-size:20px;margin-top:4px;}
+
+/* ── HUD ── */
+.hud{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin:18px 0 8px;}
+.hc{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:10px 8px;text-align:center;}
+.hv{font-family:'Syne',sans-serif;font-size:24px;font-weight:700;color:var(--ink);line-height:1;display:block;}
+.hl{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-top:3px;display:block;}
+
+/* ── PROGRESS ── */
+.prog{display:flex;gap:3px;margin-bottom:24px;height:5px;}
+.ps{flex:1;border-radius:2px;background:var(--border);transition:all 0.3s ease;}
+.ps.ok{background:var(--green);}
+.ps.ng{background:var(--red);opacity:0.6;}
+.ps.cur{background:var(--gold);box-shadow:0 0 8px rgba(176,122,20,0.5);animation:blink 1.5s ease infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.65}}
+
+/* ── QUESTION CARD ── */
+.q-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);margin-bottom:14px;animation:cardIn 0.38s cubic-bezier(0.34,1.3,0.64,1);}
+@keyframes cardIn{from{opacity:0;transform:translateY(16px) scale(0.99);}to{opacity:1;transform:translateY(0) scale(1);}}
+
+.qc-stripe{height:3px;}
+.stripe-score{background:linear-gradient(90deg,var(--blue),#4a6ecc);}
+.stripe-arb  {background:linear-gradient(90deg,var(--gold),#e0a830);}
+.stripe-cat  {background:linear-gradient(90deg,var(--green),#50a870);}
+.stripe-reg  {background:linear-gradient(90deg,#8a30a0,#b860c8);}
+
+.qc-top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:var(--snow);border-bottom:1px solid var(--border);flex-wrap:wrap;gap:8px;}
+.qc-num{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--ink3);text-transform:uppercase;}
+.qc-cat{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;border:1px solid;}
+.qc-cat.score{color:var(--blue);border-color:var(--blue-bd);background:var(--blue-bg);}
+.qc-cat.arb  {color:var(--gold);border-color:rgba(176,122,20,0.3);background:var(--gold-bg);}
+.qc-cat.cat  {color:var(--green);border-color:var(--green-bd);background:var(--green-bg);}
+.qc-cat.reg  {color:#8a30a0;border-color:rgba(138,48,160,0.3);background:rgba(138,48,160,0.06);}
+
+.qc-body{padding:26px 22px 22px;}
+.q-text{font-family:'Lora',serif;font-size:clamp(17px,2.8vw,22px);line-height:1.55;color:var(--ink);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border);}
+
+/* ── OPTIONS ── */
+.opts{display:flex;flex-direction:column;gap:9px;}
+
+.opt{display:flex;align-items:flex-start;gap:12px;padding:13px 16px;border:1.5px solid var(--border);border-radius:8px;background:var(--card);cursor:pointer;text-align:left;font-family:'Lora',serif;font-size:14px;line-height:1.5;color:var(--ink2);transition:all 0.16s ease;}
+.opt:hover:not(:disabled){border-color:var(--blue);background:var(--blue-bg);color:var(--ink);transform:translateX(4px);}
+.opt-k{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--ink3);flex-shrink:0;margin-top:1px;transition:all 0.16s;}
+.opt:hover:not(:disabled) .opt-k{border-color:var(--blue);color:var(--blue);}
+
+.opt.correct{border-color:var(--green);background:var(--green-bg);color:var(--ink);animation:pop 0.35s ease;}
+.opt.correct .opt-k{background:var(--green);border-color:var(--green);color:#fff;}
+.opt.wrong{border-color:var(--red);background:var(--red-bg);color:var(--ink3);}
+.opt.wrong .opt-k{background:var(--red);border-color:var(--red);color:#fff;}
+.opt.reveal{border-color:var(--green-bd);background:rgba(38,102,68,0.04);}
+.opt.reveal .opt-k{border-color:var(--green);color:var(--green);}
+
+@keyframes pop{0%{transform:scale(0.99)}60%{transform:scale(1.01)}100%{transform:scale(1)}}
+
+.expl{display:none;margin-top:18px;padding:14px 18px;background:var(--gold-bg);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;font-family:'Lora',serif;font-size:13.5px;line-height:1.75;color:var(--ink2);}
+.expl.show{display:block;animation:fadeUp 0.3s ease;}
+.expl strong{color:var(--ink);font-weight:700;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── NAV ── */
+.nav{display:flex;justify-content:space-between;align-items:center;}
+.nav-hint{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--ink3);opacity:0.55;text-transform:uppercase;}
+.btn-next{display:none;align-items:center;gap:8px;background:var(--blue);color:#fff;border:none;padding:12px 26px;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border-radius:8px;transition:all 0.18s ease;box-shadow:0 3px 14px rgba(26,58,124,0.25);}
+.btn-next.show{display:flex;}
+.btn-next:hover{background:#0f2460;transform:translateX(2px);}
+
+/* ── RESULTS ── */
+.results{display:none;}
+.results.show{display:block;animation:cardIn 0.5s ease;}
+.res-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);}
+.res-top{padding:48px 40px 40px;text-align:center;background:linear-gradient(135deg,#f0f4fc 0%,#f5f2e8 100%);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.res-top::before{content:'競技';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Noto Serif JP',serif;font-size:240px;font-weight:700;color:rgba(26,58,124,0.04);pointer-events:none;white-space:nowrap;}
+.res-lbl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--ink3);margin-bottom:10px;}
+.res-score{font-family:'Syne',sans-serif;font-size:clamp(72px,16vw,110px);font-weight:800;line-height:1;color:var(--ink);}
+.res-score span{color:var(--blue);}
+.res-mention{font-family:'Noto Serif JP',serif;font-size:13px;color:var(--gold);letter-spacing:3px;margin-top:8px;}
+.res-body{padding:36px 40px;text-align:center;}
+.res-title{font-family:'Syne',sans-serif;font-size:clamp(17px,3vw,26px);font-weight:700;color:var(--ink);margin-bottom:10px;}
+.res-msg{font-family:'Lora',serif;font-size:14px;line-height:1.75;color:var(--ink2);max-width:460px;margin:0 auto 28px;}
+
+/* Scores recap */
+.scores-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:28px;}
+.sc-cell{background:var(--snow);border:1px solid var(--border);border-radius:8px;padding:12px 8px;text-align:center;}
+.sc-jp{font-family:'Noto Serif JP',serif;font-size:18px;color:var(--blue);display:block;margin-bottom:3px;}
+.sc-fr{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);line-height:1.4;}
+
+.next-box{display:inline-flex;flex-direction:column;align-items:center;gap:4px;background:#f5faf7;border:1px solid var(--green-bd);border-radius:8px;padding:14px 24px;margin-bottom:22px;}
+.next-lbl{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);}
+.next-val{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--green);}
+
+.btn-restart{display:block;margin:0 auto;background:transparent;border:1.5px solid var(--blue);color:var(--blue);padding:12px 36px;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;border-radius:8px;transition:all 0.18s;}
+.btn-restart:hover{background:var(--blue);color:#fff;}
+
+/* ── FOOTER ── */
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.ft-l{display:flex;flex-direction:column;gap:4px;}
+.ft-name{font-family:'Lora',serif;font-style:italic;font-size:14px;color:var(--gold);}
+.ft-gr{display:flex;align-items:center;gap:6px;}
+.ft-belt{width:22px;height:5px;border-radius:1px;background:linear-gradient(90deg,#266644,#45a872);}
+.ft-kyu{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--green);text-transform:uppercase;}
+.ft-r{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--ink3);opacity:0.45;text-align:right;line-height:1.7;}
+
+@media(max-width:600px){.tc-body{grid-template-columns:1fr;}.tc-side{display:none;}.scores-grid{grid-template-columns:repeat(3,1fr);}.qc-body{padding:20px 16px;}}
+</style>
+</head>
+<body>
+<div class="bg-k bk1">競</div>
+<div class="bg-k bk2">技</div>
+
+<div class="page">
+  <header>
+    <div class="top-bar">
+      <div class="left-tags">
+        <span class="pill day">Jour 6</span>
+        <span class="pill">Série 365 Jours</span>
+        <span class="pill lvl">🟢 Débutant · S1</span>
+      </div>
+      <div class="sig">
+        <span class="sig-nm">E.F. NGATCHA TCHAKOTE</span>
+        <div class="sig-gr"><div class="sig-belt"></div><span class="sig-kyu">3e Kyu · Ceinture Verte</span></div>
+      </div>
+    </div>
+    <div class="title-card">
+      <div class="tc-band"></div>
+      <div class="tc-body">
+        <div class="tc-main">
+          <div class="tc-eye">Le Savez-Vous ? · Quiz Judo Quotidien</div>
+          <h1 class="tc-h1">Compétition<em>&amp; Règlements</em></h1>
+          <p class="tc-sub">Les scores, l'arbitrage, les catégories de poids et les règles fondamentales d'un combat de judo — 10 questions claires.</p>
+        </div>
+        <div class="tc-side">
+          <div class="tc-num">10</div>
+          <div class="tc-lbl">Questions<br>Jour 6</div>
+          <div class="tc-ico">🏆⚖️</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="hud">
+    <div class="hc"><span class="hv" id="hv-ok">0</span><span class="hl">Correct</span></div>
+    <div class="hc"><span class="hv" id="hv-ng">0</span><span class="hl">Incorrect</span></div>
+    <div class="hc"><span class="hv" id="hv-q">1/10</span><span class="hl">Question</span></div>
+    <div class="hc"><span class="hv" id="hv-pct">—</span><span class="hl">Score</span></div>
+  </div>
+  <div class="prog" id="prog"></div>
+
+  <div id="quiz-area">
+    <div class="q-card" id="q-card">
+      <div class="qc-stripe" id="qc-stripe"></div>
+      <div class="qc-top">
+        <span class="qc-num" id="q-num">Q.01 / 10</span>
+        <span class="qc-cat" id="q-cat">Score</span>
+      </div>
+      <div class="qc-body">
+        <p class="q-text" id="q-text"></p>
+        <div class="opts" id="opts"></div>
+        <div class="expl" id="expl"></div>
+      </div>
+    </div>
+    <div class="nav">
+      <span class="nav-hint" id="nav-hint">Choisissez une réponse</span>
+      <button class="btn-next" id="btn-next"><span id="btn-lbl">Suivant</span><span>→</span></button>
+    </div>
+  </div>
+
+  <div class="results" id="results">
+    <div class="res-card">
+      <div class="res-top">
+        <div class="res-lbl">Jour 6 · Compétition &amp; Règlements · Semaine 1</div>
+        <div class="res-score" id="res-score">—</div>
+        <div class="res-mention" id="res-mention">—</div>
+      </div>
+      <div class="res-body">
+        <p class="res-title" id="res-title">—</p>
+        <p class="res-msg" id="res-msg">—</p>
+        <div class="scores-grid">
+          <div class="sc-cell"><span class="sc-jp">一本</span><span class="sc-fr">Ippon<br>Victoire totale</span></div>
+          <div class="sc-cell"><span class="sc-jp">技有</span><span class="sc-fr">Waza-ari<br>Demi-point</span></div>
+          <div class="sc-cell"><span class="sc-jp">反則</span><span class="sc-fr">Shido<br>Pénalité</span></div>
+          <div class="sc-cell"><span class="sc-jp">待て</span><span class="sc-fr">Matte<br>Stop !</span></div>
+          <div class="sc-cell"><span class="sc-jp">始め</span><span class="sc-fr">Hajime<br>Commencez !</span></div>
+          <div class="sc-cell"><span class="sc-jp">そこ</span><span class="sc-fr">Sono-mama<br>Ne bougez pas</span></div>
+        </div>
+        <div class="next-box">
+          <div class="next-lbl">Prochain quiz — Jour 7</div>
+          <div class="next-val">Hygiène &amp; Judogi</div>
+        </div>
+        <button class="btn-restart" onclick="restart()">↺ Recommencer</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="ft-l">
+      <span class="ft-name">E.F. NGATCHA TCHAKOTE</span>
+      <div class="ft-gr"><div class="ft-belt"></div><span class="ft-kyu">3e Kyu · Ceinture Verte</span></div>
+    </div>
+    <div class="ft-r">Quiz Judo Quotidien · Série 365 Jours<br>Jour 6 / 365 · Compétition &amp; Règlements · 🟢 S1</div>
+  </footer>
+</div>
+
+<script>
+document.addEventListener('contextmenu',e=>{e.preventDefault();return false;});
+document.addEventListener('keydown',e=>{if(e.key==='F12'||(e.ctrlKey&&['u','U','i','I','j','J','s','S'].includes(e.key))||(e.ctrlKey&&e.shiftKey)){e.preventDefault();return false;}});
+setInterval(()=>{if(window.outerHeight-window.innerHeight>160||window.outerWidth-window.innerWidth>160){document.body.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;font-size:16px;color:#1a3a7c;text-align:center;padding:40px;">⚠️ Accès non autorisé.<br><small>© E.F. NGATCHA TCHAKOTE — Quiz Judo 365</small></div>';}},600);
+
+/*
+  SCHÉMA BONNES RÉPONSES — Jour 6 (imprévisible, validé) :
+  Q1→C  Q2→A  Q3→D  Q4→B  Q5→A
+  Q6→D  Q7→C  Q8→B  Q9→D  Q10→A
+  Index: A=0  B=1  C=2  D=3
+  Distribution: A×3, B×2, C×2, D×3 ✓
+  Jamais 2 fois de suite identique ✓
+*/
+const Q=[
+  { // Q1 → C (index 2)
+    type:'score', cat:'Scores',
+    text:'Quel score permet de gagner immédiatement un combat de judo, sans attendre la fin du temps réglementaire ?',
+    opts:[
+      'Le Waza-ari — demi-point',
+      'Le Yuko — avantage mineur',
+      'L\'Ippon — point entier',
+      'Le Shido — pénalité infligée à l\'adversaire'
+    ],
+    ok:2,
+    expl:'<strong>L\'Ippon (一本).</strong> L\'ippon est la victoire totale et immédiate. Il est accordé lorsqu\'un judoka projette son adversaire sur le dos avec force, vitesse et contrôle, ou l\'immobilise au sol pendant 20 secondes, ou obtient un abandon (osaekomi ou soumission).'
+  },
+  { // Q2 → A (index 0)
+    type:'score', cat:'Scores',
+    text:'Que se passe-t-il si un judoka marque deux Waza-ari dans le même combat ?',
+    opts:[
+      'Cela équivaut à un Ippon et le combat est terminé immédiatement',
+      'Le judoka gagne seulement un avantage, pas la victoire',
+      'Il faut attendre la fin du temps pour connaître le résultat',
+      'Le deuxième Waza-ari n\'est pas comptabilisé'
+    ],
+    ok:0,
+    expl:'<strong>Deux Waza-ari = Ippon.</strong> Depuis la réforme du règlement IJF, deux Waza-ari (技有) accordés au même combattant équivalent à un Ippon et mettent fin au combat immédiatement. Le terme utilisé autrefois était "Waza-ari awasete Ippon".'
+  },
+  { // Q3 → D (index 3)
+    type:'arb', cat:'Arbitrage',
+    text:'Quel mot l\'arbitre prononce-t-il pour lancer le début d\'un combat de judo ?',
+    opts:[
+      'Matte — arrêtez',
+      'Sono-mama — ne bougez pas',
+      'Ippon — point complet',
+      'Hajime — commencez'
+    ],
+    ok:3,
+    expl:'<strong>Hajime (始め) — commencez !</strong> C\'est le mot que l\'arbitre prononce pour démarrer ou reprendre le combat. Son contraire est "Matte" (待て) qui signifie "arrêtez". Ces deux mots sont les plus importants du vocabulaire d\'arbitrage pour un judoka débutant.'
+  },
+  { // Q4 → B (index 1)
+    type:'arb', cat:'Arbitrage',
+    text:'Que signifie le Shido en compétition de judo ?',
+    opts:[
+      'Un point complet accordé pour une bonne projection',
+      'Une pénalité légère donnée à un judoka pour une faute mineure',
+      'Un temps mort demandé par le judoka',
+      'La fin du combat déclarée par l\'arbitre'
+    ],
+    ok:1,
+    expl:'<strong>Shido (指導) = pénalité légère.</strong> Le Shido est donné pour des fautes mineures : passivité, sortie de la zone de combat, fausse attaque, tenue incorrecte, etc. Trois Shido donnent un Hansoku-make (disqualification) à l\'adversaire, équivalent à un Ippon pour l\'adversaire.'
+  },
+  { // Q5 → A (index 0)
+    type:'arb', cat:'Arbitrage',
+    text:'Combien de temps l\'arbitre doit-il compter pour qu\'une immobilisation au sol devienne un Ippon ?',
+    opts:[
+      '20 secondes',
+      '10 secondes',
+      '30 secondes',
+      '15 secondes'
+    ],
+    ok:0,
+    expl:'<strong>20 secondes = Ippon.</strong> Une immobilisation (Osaekomi-waza) tenue 20 secondes donne un Ippon et met fin au combat. Entre 10 et 19 secondes, c\'est un Waza-ari. En dessous de 10 secondes, l\'immobilisation n\'est pas comptabilisée.'
+  },
+  { // Q6 → D (index 3)
+    type:'cat', cat:'Catégories de poids',
+    text:'En judo masculin aux Jeux Olympiques, combien de catégories de poids existent ?',
+    opts:[
+      '5 catégories',
+      '6 catégories',
+      '8 catégories',
+      '7 catégories'
+    ],
+    ok:3,
+    expl:'<strong>7 catégories masculines.</strong> Les 7 catégories de poids masculines aux JO sont : -60 kg, -66 kg, -73 kg, -81 kg, -90 kg, -100 kg et +100 kg. Il existe également 7 catégories féminines, de -48 kg à +78 kg, ainsi qu\'une épreuve mixte par équipes.'
+  },
+  { // Q7 → C (index 2)
+    type:'reg', cat:'Règlements',
+    text:'Quelle est la durée officielle d\'un combat de judo en compétition senior internationale ?',
+    opts:[
+      '3 minutes',
+      '6 minutes',
+      '4 minutes',
+      '5 minutes'
+    ],
+    ok:2,
+    expl:'<strong>4 minutes.</strong> Un combat senior international dure 4 minutes en temps réglementaire. En cas d\'égalité à la fin du temps (0-0), on passe en Golden Score : une période de temps illimité où le premier score ou la première pénalité décide du vainqueur.'
+  },
+  { // Q8 → B (index 1)
+    type:'reg', cat:'Règlements',
+    text:'Qu\'est-ce que le Golden Score en judo de compétition ?',
+    opts:[
+      'Un bonus de points accordé pour une belle technique',
+      'Une prolongation à durée illimitée où le premier score met fin au combat',
+      'Un combat supplémentaire de 2 minutes si les scores sont égaux',
+      'Un score spécial accordé par les juges pour l\'esthétique du combat'
+    ],
+    ok:1,
+    expl:'<strong>Prolongation à durée illimitée.</strong> Le Golden Score (ゴールデンスコア) est utilisé quand les deux judokas sont à égalité après le temps réglementaire. Le combat continue sans limite de temps jusqu\'à ce que l\'un des deux marque un Waza-ari, un Ippon ou reçoive un Shido.'
+  },
+  { // Q9 → D (index 3)
+    type:'reg', cat:'Règlements',
+    text:'Que se passe-t-il quand un judoka sort complètement de la zone de combat pendant une projection ?',
+    opts:[
+      'Il gagne automatiquement le point car il a repoussé son adversaire',
+      'La technique est validée si la projection a débuté dans la zone',
+      'Le combat est annulé et recommence au centre',
+      'L\'arbitre dit "Matte" et reprend le combat au centre — aucun point n\'est accordé si la sortie précède la projection'
+    ],
+    ok:3,
+    expl:'<strong>La projection doit débuter dans la zone.</strong> Si un judoka initie et complète sa technique dans la zone, le point est valable même si la chute a lieu hors zone. En revanche, si le judoka est sorti avant d\'initier la technique, l\'arbitre siffle "Matte" et aucun point n\'est accordé.'
+  },
+  { // Q10 → A (index 0)
+    type:'cat', cat:'Zones du tatami',
+    text:'Comment s\'appelle la zone de sécurité rouge qui entoure la zone de combat principale sur le tatami ?',
+    opts:[
+      'La zone de danger (kikaku)',
+      'La zone neutre (chūritu)',
+      'La zone d\'attente (machiai)',
+      'La zone de repos (yasumi)'
+    ],
+    ok:0,
+    expl:'<strong>La zone de danger (kikaku).</strong> Le tatami de compétition comporte une zone de combat centrale (généralement verte) et une bande rouge appelée "zone de danger". Quand un combattant entre dans cette bande, l\'arbitre peut siffler "Matte" pour reprendre au centre si l\'action ne progresse pas.'
+  }
+];
+
+let cur=0,score=0,wrongs=0,answered=false,log=[];
+
+function init(){cur=0;score=0;wrongs=0;answered=false;log=[];document.getElementById('results').classList.remove('show');document.getElementById('quiz-area').style.display='';buildProg();render();}
+
+function buildProg(){const p=document.getElementById('prog');p.innerHTML='';Q.forEach((_,i)=>{const s=document.createElement('div');s.className='ps'+(i===0?' cur':'');s.id='ps'+i;p.appendChild(s);});}
+
+function updateProg(){Q.forEach((_,i)=>{const s=document.getElementById('ps'+i);if(!s)return;s.className='ps';if(i<log.length)s.classList.add(log[i]?'ok':'ng');else if(i===cur)s.classList.add('cur');});}
+
+function updateHUD(){document.getElementById('hv-ok').textContent=score;document.getElementById('hv-ng').textContent=wrongs;document.getElementById('hv-q').textContent=`${cur+1}/10`;document.getElementById('hv-pct').textContent=log.length>0?Math.round(score/log.length*100)+'%':'—';}
+
+const stripeMap={score:'stripe-score',arb:'stripe-arb',cat:'stripe-cat',reg:'stripe-reg'};
+const catClassMap={score:'score',arb:'arb',cat:'cat',reg:'reg'};
+
+function render(){
+  answered=false;const q=Q[cur];
+  document.getElementById('q-num').textContent=`Q.${String(cur+1).padStart(2,'0')} / 10`;
+  const cat=document.getElementById('q-cat');cat.textContent=q.cat;cat.className='qc-cat '+catClassMap[q.type];
+  document.getElementById('qc-stripe').className='qc-stripe '+stripeMap[q.type];
+  document.getElementById('q-text').textContent=q.text;
+  const el=document.getElementById('opts');el.innerHTML='';
+  ['A','B','C','D'].forEach((l,i)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<span class="opt-k">${l}</span><span>${q.opts[i]}</span>`;b.onclick=()=>pick(i);el.appendChild(b);});
+  document.getElementById('expl').className='expl';document.getElementById('expl').innerHTML='';
+  document.getElementById('btn-next').className='btn-next';
+  document.getElementById('nav-hint').textContent='Choisissez une réponse';
+  document.getElementById('btn-lbl').textContent=cur<Q.length-1?'Suivant':'Voir les résultats';
+  const card=document.getElementById('q-card');card.style.animation='none';void card.offsetWidth;card.style.animation='cardIn 0.38s cubic-bezier(0.34,1.3,0.64,1)';
+  updateHUD();updateProg();
+}
+
+function pick(idx){
+  if(answered)return;answered=true;const q=Q[cur];
+  const btns=document.querySelectorAll('.opt');btns.forEach(b=>b.disabled=true);
+  if(idx===q.ok){btns[idx].classList.add('correct');score++;log.push(true);}
+  else{btns[idx].classList.add('wrong');btns[q.ok].classList.add('reveal');wrongs++;log.push(false);}
+  document.getElementById('expl').innerHTML=q.expl;document.getElementById('expl').classList.add('show');
+  document.getElementById('btn-next').classList.add('show');document.getElementById('nav-hint').textContent='';
+  updateHUD();updateProg();
+}
+
+document.getElementById('btn-next').addEventListener('click',()=>{cur++;if(cur>=Q.length)showResults();else render();});
+
+function showResults(){
+  document.getElementById('quiz-area').style.display='none';document.getElementById('results').classList.add('show');
+  document.getElementById('res-score').innerHTML=`${score}<span>/10</span>`;
+  const p=score/Q.length;let mention,title,msg;
+  if(p===1)    {mention='優秀 — Excellent';title='Parfaite connaissance des règlements';msg='Bravo ! Vous connaissez parfaitement les règles du judo de compétition. Un judoka qui comprend les règles combat avec plus d\'intelligence et de stratégie.';}
+  else if(p>=.8){mention='良好 — Très bien';title='Très bonne maîtrise des règles';msg='Vous maîtrisez l\'essentiel. Révisez les durées précises (immobilisation, temps de combat) et le système de pénalités pour atteindre la perfection.';}
+  else if(p>=.6){mention='合格 — Bien';title='Bonne connaissance générale';msg='Les grandes règles sont connues. Approfondissez le vocabulaire d\'arbitrage (Hajime, Matte, Sono-mama) et le système de scores pour progresser.';}
+  else          {mention='要努力 — À travailler';title='Les règlements méritent révision';msg='Connaître les règles est indispensable pour bien combattre. Relisez le rappel des scores (Ippon, Waza-ari, Shido) affiché dans les résultats et recommencez le quiz.';}
+  document.getElementById('res-mention').textContent=mention;document.getElementById('res-title').textContent=title;document.getElementById('res-msg').textContent=msg;
+}
+
+function restart(){init();}
+init();
+</script>
+</body>
+</html>
