@@ -793,11 +793,6 @@ document.addEventListener('keydown',e=>{
     e.preventDefault();return false;
   }
 });
-setInterval(()=>{
-  if(window.outerHeight-window.innerHeight>160||window.outerWidth-window.innerWidth>160){
-    document.body.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;font-size:16px;color:#b86a00;text-align:center;padding:40px;">⚠️ Accès non autorisé.<br><small>© E.F. NGATCHA TCHAKOTE — Quiz Judo 365</small></div>';
-  }
-},600);
 
 // ── Questions ──
 // TYPE : n = nutrition, s = sommeil/récupération
