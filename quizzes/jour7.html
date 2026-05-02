@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="E.F. NGATCHA TCHAKOTE — Quiz Judo 365">
+<meta name="copyright" content="© 2025 E.F. NGATCHA TCHAKOTE. Tous droits réservés.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Jour 7 — Hygiène & Judogi</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Kaisei+Opti:wght@400;700&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+JP:wght@200;300;400;700&display=swap');
+
+:root {
+  --washi:    #f4f0e6;
+  --washi2:   #ede8db;
+  --washi3:   #e4dece;
+  --white:    #fefcf8;
+  --border:   #ddd7c8;
+  --border2:  #c8c0ae;
+  --ink:      #1e1a10;
+  --ink2:     #433d2a;
+  --ink3:     #8a816a;
+  --indigo:   #2a3860;   /* nuit japonaise */
+  --indigo-bg:rgba(42,56,96,0.07);
+  --indigo-bd:rgba(42,56,96,0.25);
+  --teal:     #1a6060;   /* eau propre */
+  --teal-bg:  rgba(26,96,96,0.07);
+  --teal-bd:  rgba(26,96,96,0.28);
+  --sienna:   #8b4010;   /* judogi brun */
+  --sienna-bg:rgba(139,64,16,0.07);
+  --green:    #2a6840;
+  --green-bg: rgba(42,104,64,0.07);
+  --green-bd: rgba(42,104,64,0.28);
+  --red:      #982020;
+  --red-bg:   rgba(152,32,32,0.06);
+  --amber:    #9a6810;
+  --sh:       0 2px 16px rgba(30,26,16,0.08);
+  --sh2:      0 8px 36px rgba(30,26,16,0.12);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+
+body {
+  background: var(--washi);
+  color: var(--ink);
+  font-family: 'Kaisei Opti', 'Noto Serif JP', Georgia, serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+  position: relative;
+}
+
+/* Washi paper texture */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 0;
+}
+
+/* Sumi ink drops deco */
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse 55% 40% at 85% 5%, rgba(42,56,96,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 12% 95%, rgba(26,96,96,0.05) 0%, transparent 60%);
+  pointer-events: none; z-index: 0;
+}
+
+.bg-kanji {
+  position: fixed; font-family: 'Noto Serif JP', serif; font-weight: 700;
+  pointer-events: none; z-index: 0; user-select: none;
+  color: rgba(30,26,16,0.04); line-height: 1;
+}
+.bk1 { font-size: 340px; top: -60px; right: -30px; }
+.bk2 { font-size: 200px; bottom: 10px; left: -20px; }
+
+/* Vertical rule decoration */
+.v-rule {
+  position: fixed; top: 0; bottom: 0;
+  width: 1px; background: linear-gradient(180deg, transparent, rgba(30,26,16,0.06) 20%, rgba(30,26,16,0.06) 80%, transparent);
+  pointer-events: none; z-index: 0;
+}
+.vr1 { left: 48px; }
+.vr2 { right: 48px; }
+
+.page {
+  position: relative; z-index: 1;
+  max-width: 840px; margin: 0 auto;
+  padding: 40px 22px 80px;
+}
+
+/* ── HEADER ── */
+header { margin-bottom: 36px; }
+
+/* Japanese-style header banner */
+.header-banner {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: var(--sh2);
+  margin-bottom: 0;
+}
+
+.banner-left-rule {
+  position: absolute; top: 0; left: 0; bottom: 0;
+  width: 5px;
+  background: linear-gradient(180deg, var(--indigo), var(--teal));
+}
+
+.banner-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0;
+  padding: 0 0 0 5px;
+}
+
+.banner-text {
+  padding: 28px 32px 24px;
+  border-right: 1px solid var(--border);
+}
+
+.banner-eyebrow {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 12px;
+}
+.banner-eyebrow::after { content:''; flex:1; height:1px; background: var(--border); }
+
+.banner-h1 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(28px, 4.8vw, 50px);
+  font-weight: 800;
+  line-height: 1.0;
+  color: var(--ink);
+  letter-spacing: -1px;
+}
+.banner-h1 em {
+  font-style: italic;
+  color: var(--teal);
+  display: block;
+  font-weight: 400;
+  font-size: 0.82em;
+  margin-top: 4px;
+  letter-spacing: 0px;
+}
+
+.banner-sub {
+  font-size: 13px; color: var(--ink3);
+  margin-top: 10px; line-height: 1.65;
+  font-family: 'Kaisei Opti', serif;
+}
+
+.banner-aside {
+  padding: 24px 20px;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center; gap: 8px;
+  min-width: 120px;
+  background: var(--washi2);
+}
+
+.aside-kanji {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 300; font-size: 50px;
+  color: rgba(42,56,96,0.18); line-height: 1;
+}
+.aside-num {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 36px; font-weight: 700;
+  color: var(--indigo); line-height: 1;
+}
+.aside-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--ink3);
+  text-align: center; line-height: 1.5;
+}
+
+/* Signature strip */
+.sig-strip {
+  background: var(--washi2);
+  border: 1px solid var(--border);
+  border-top: none;
+  padding: 12px 20px 12px 25px;
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 10px;
+  border-radius: 0 0 3px 3px;
+}
+
+.sig-left { display: flex; flex-direction: column; gap: 3px; }
+.sig-nm {
+  font-family: 'Shippori Mincho', serif;
+  font-style: italic; font-size: 14px; color: var(--amber);
+  font-weight: 400;
+}
+.sig-gr { display: flex; align-items: center; gap: 7px; }
+.sig-belt { width: 22px; height: 5px; border-radius: 1px; background: linear-gradient(90deg,#2a6840,#4aae70); }
+.sig-kyu { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 1.5px; color: var(--green); text-transform: uppercase; }
+
+.sig-right {
+  display: flex; align-items: center; gap: 10px;
+}
+.sig-tags { display: flex; gap: 6px; }
+.s-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 2px; border: 1px solid;
+}
+.st-day { background: var(--indigo); color: #fff; border-color: var(--indigo); }
+.st-lvl { color: var(--green); border-color: rgba(42,104,64,0.35); background: transparent; }
+
+/* ── HUD ── */
+.hud {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 2px; margin: 18px 0 8px;
+}
+.hc {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 2px; padding: 10px 8px; text-align: center;
+}
+.hv { font-family: 'Shippori Mincho', serif; font-size: 26px; font-weight: 700; color: var(--ink); line-height: 1; display: block; }
+.hl { font-family: 'JetBrains Mono', monospace; font-size: 7px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink3); margin-top: 3px; display: block; }
+
+/* ── PROGRESS ── */
+.prog { display: flex; gap: 3px; margin-bottom: 24px; height: 5px; }
+.ps { flex: 1; border-radius: 1px; background: var(--border); transition: all 0.3s ease; }
+.ps.ok  { background: var(--green); }
+.ps.ng  { background: var(--red); opacity: 0.6; }
+.ps.cur { background: var(--indigo); box-shadow: 0 0 8px rgba(42,56,96,0.5); animation: blink 1.5s ease infinite; }
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.65}}
+
+/* ── QUESTION CARD ── */
+.q-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: var(--sh2);
+  margin-bottom: 14px;
+  animation: cardIn 0.4s cubic-bezier(0.34,1.2,0.64,1);
+  position: relative;
+}
+@keyframes cardIn { from{opacity:0;transform:translateY(16px) scale(0.99);}to{opacity:1;transform:translateY(0) scale(1);} }
+
+.qc-left-bar {
+  position: absolute; top: 0; left: 0; bottom: 0;
+  width: 4px; transition: background 0.3s;
+}
+.bar-hys { background: linear-gradient(180deg, var(--teal), #30a0a0); }
+.bar-jdg { background: linear-gradient(180deg, var(--sienna), #c06020); }
+.bar-snt { background: linear-gradient(180deg, var(--indigo), #5060a0); }
+
+.qc-top {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 20px 12px 24px;
+  background: var(--washi2);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap; gap: 8px;
+}
+.qc-num { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 3px; color: var(--ink3); text-transform: uppercase; }
+.qc-cat {
+  font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; padding: 4px 12px; border-radius: 2px; border: 1px solid;
+}
+.cat-hys { color: var(--teal);   border-color: var(--teal-bd);   background: var(--teal-bg); }
+.cat-jdg { color: var(--sienna); border-color: rgba(139,64,16,0.3); background: var(--sienna-bg); }
+.cat-snt { color: var(--indigo); border-color: var(--indigo-bd); background: var(--indigo-bg); }
+
+.qc-body { padding: 26px 22px 22px 26px; }
+
+.q-text {
+  font-family: 'Kaisei Opti', serif;
+  font-size: clamp(17px, 2.8vw, 22px);
+  line-height: 1.6; color: var(--ink);
+  margin-bottom: 24px; padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── OPTIONS ── */
+.opts { display: flex; flex-direction: column; gap: 9px; }
+
+.opt {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 13px 16px; border: 1px solid var(--border);
+  border-radius: 2px; background: var(--washi);
+  cursor: pointer; text-align: left;
+  font-family: 'Kaisei Opti', serif;
+  font-size: 14px; line-height: 1.5; color: var(--ink2);
+  transition: all 0.16s ease;
+}
+.opt:hover:not(:disabled) {
+  border-color: var(--teal);
+  background: var(--teal-bg);
+  color: var(--ink);
+  transform: translateX(4px);
+  box-shadow: 0 2px 12px rgba(26,96,96,0.1);
+}
+
+.opt-k {
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 1.5px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500;
+  color: var(--ink3); flex-shrink: 0; margin-top: 1px; transition: all 0.16s;
+}
+.opt:hover:not(:disabled) .opt-k { border-color: var(--teal); color: var(--teal); }
+
+.opt.correct { border-color: var(--green); background: var(--green-bg); color: var(--ink); animation: pop 0.35s ease; }
+.opt.correct .opt-k { background: var(--green); border-color: var(--green); color: #fff; }
+.opt.wrong   { border-color: var(--red); background: var(--red-bg); color: var(--ink3); }
+.opt.wrong   .opt-k { background: var(--red); border-color: var(--red); color: #fff; }
+.opt.reveal  { border-color: var(--green-bd); background: rgba(42,104,64,0.04); }
+.opt.reveal  .opt-k { border-color: var(--green); color: var(--green); }
+
+@keyframes pop{0%{transform:scale(0.99)}60%{transform:scale(1.01)}100%{transform:scale(1)}}
+
+.expl {
+  display: none; margin-top: 18px; padding: 14px 18px;
+  background: rgba(154,104,16,0.05);
+  border-left: 3px solid var(--amber);
+  font-size: 13.5px; line-height: 1.75; color: var(--ink2);
+  font-family: 'Kaisei Opti', serif;
+}
+.expl.show { display: block; animation: fadeUp 0.3s ease; }
+.expl strong { color: var(--ink); font-weight: 700; }
+@keyframes fadeUp{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── NAV ── */
+.nav { display: flex; justify-content: space-between; align-items: center; }
+.nav-hint {
+  font-family: 'JetBrains Mono', monospace; font-size: 9px;
+  letter-spacing: 2px; color: var(--ink3); opacity: 0.5; text-transform: uppercase;
+}
+.btn-next {
+  display: none; align-items: center; gap: 8px;
+  background: var(--indigo); color: #fff; border: none;
+  padding: 12px 26px;
+  font-family: 'Shippori Mincho', serif; font-size: 15px; font-weight: 600;
+  cursor: pointer; border-radius: 2px;
+  transition: all 0.18s ease;
+  box-shadow: 0 3px 14px rgba(42,56,96,0.25);
+}
+.btn-next.show { display: flex; }
+.btn-next:hover { background: var(--ink); transform: translateX(2px); }
+
+/* ── RESULTS ── */
+.results { display: none; }
+.results.show { display: block; animation: cardIn 0.5s ease; }
+
+.res-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 3px; overflow: hidden; box-shadow: var(--sh2);
+}
+
+.res-top {
+  padding: 52px 44px 44px; text-align: center;
+  background: linear-gradient(135deg, #f0f2f8 0%, #eef7f4 100%);
+  border-bottom: 1px solid var(--border);
+  position: relative; overflow: hidden;
+}
+.res-top::before {
+  content: '清潔';
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: 'Noto Serif JP', serif; font-size: 240px; font-weight: 700;
+  color: rgba(42,56,96,0.04); pointer-events: none; white-space: nowrap;
+}
+
+.res-lbl { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--ink3); margin-bottom: 10px; }
+.res-score { font-family: 'Shippori Mincho', serif; font-size: clamp(72px,16vw,110px); font-weight: 800; line-height: 1; color: var(--ink); }
+.res-score span { color: var(--indigo); }
+.res-mention { font-family: 'Noto Serif JP', serif; font-size: 13px; color: var(--teal); letter-spacing: 3px; margin-top: 8px; }
+
+.res-body { padding: 36px 44px; text-align: center; }
+.res-title { font-family: 'Shippori Mincho', serif; font-size: clamp(18px,3vw,26px); font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+.res-msg { font-family: 'Kaisei Opti', serif; font-size: 14px; line-height: 1.75; color: var(--ink2); max-width: 460px; margin: 0 auto 28px; }
+
+/* Semaine 1 complète banner */
+.week1-banner {
+  background: linear-gradient(135deg, var(--indigo) 0%, #1a3060 100%);
+  border-radius: 4px; padding: 20px 24px;
+  margin-bottom: 20px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.week1-banner::before {
+  content: '第一週';
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: 'Noto Serif JP', serif; font-size: 100px; font-weight: 700;
+  color: rgba(255,255,255,0.05); pointer-events: none; white-space: nowrap;
+}
+.w1-title { font-family: 'Shippori Mincho', serif; font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.w1-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
+.w1-days { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; }
+.w1-day {
+  font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 1px;
+  padding: 5px 10px; border-radius: 2px;
+  background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.7);
+  text-transform: uppercase; border: 1px solid rgba(255,255,255,0.15);
+}
+.w1-day.done { background: rgba(42,168,100,0.3); color: #7ae0a8; border-color: rgba(42,168,100,0.4); }
+
+.next-box {
+  display: inline-flex; flex-direction: column; align-items: center; gap: 4px;
+  background: var(--washi2); border: 1px solid var(--border);
+  border-radius: 3px; padding: 14px 24px; margin-bottom: 22px;
+}
+.next-lbl { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink3); }
+.next-val { font-family: 'Shippori Mincho', serif; font-size: 16px; font-weight: 600; color: var(--indigo); }
+
+.btn-restart {
+  display: block; margin: 0 auto;
+  background: transparent; border: 1.5px solid var(--indigo); color: var(--indigo);
+  padding: 12px 36px; font-family: 'Shippori Mincho', serif;
+  font-size: 15px; font-weight: 600; cursor: pointer; border-radius: 2px; transition: all 0.18s;
+}
+.btn-restart:hover { background: var(--indigo); color: #fff; }
+
+/* ── FOOTER ── */
+footer {
+  margin-top: 40px; padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+}
+.ft-l { display: flex; flex-direction: column; gap: 4px; }
+.ft-name { font-family: 'Shippori Mincho', serif; font-style: italic; font-size: 14px; color: var(--amber); font-weight: 400; }
+.ft-gr { display: flex; align-items: center; gap: 6px; }
+.ft-belt { width: 22px; height: 5px; border-radius: 1px; background: linear-gradient(90deg,#2a6840,#45ae70); }
+.ft-kyu { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 1.5px; color: var(--green); text-transform: uppercase; }
+.ft-r { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 1.5px; color: var(--ink3); opacity: 0.45; text-align: right; line-height: 1.7; }
+
+@media(max-width:600px){
+  .banner-inner{grid-template-columns:1fr;}.banner-aside{display:none;}
+  .qc-body{padding:20px 16px 16px 20px;}
+  .res-body,.res-top{padding:28px 20px;}
+  .w1-days{gap:4px;}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-kanji bk1">清</div>
+<div class="bg-kanji bk2">潔</div>
+<div class="v-rule vr1"></div>
+<div class="v-rule vr2"></div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-banner">
+      <div class="banner-left-rule"></div>
+      <div class="banner-inner">
+        <div class="banner-text">
+          <div class="banner-eyebrow">Le Savez-Vous ? · Quiz Judo Quotidien</div>
+          <h1 class="banner-h1">Hygiène<em>&amp; Judogi</em></h1>
+          <p class="banner-sub">L'entretien du corps, du judogi et les règles d'hygiène fondamentales sur le tatami — 10 questions claires pour finir la semaine.</p>
+        </div>
+        <div class="banner-aside">
+          <div class="aside-kanji">清</div>
+          <div class="aside-num">10</div>
+          <div class="aside-lbl">Questions<br>Jour 7</div>
+        </div>
+      </div>
+    </div>
+    <div class="sig-strip">
+      <div class="sig-left">
+        <span class="sig-nm">E.F. NGATCHA TCHAKOTE</span>
+        <div class="sig-gr">
+          <div class="sig-belt"></div>
+          <span class="sig-kyu">3e Kyu · Ceinture Verte</span>
+        </div>
+      </div>
+      <div class="sig-right">
+        <div class="sig-tags">
+          <span class="s-tag st-day">Jour 7</span>
+          <span class="s-tag st-lvl">🟢 S1</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HUD -->
+  <div class="hud">
+    <div class="hc"><span class="hv" id="hv-ok">0</span><span class="hl">Correct</span></div>
+    <div class="hc"><span class="hv" id="hv-ng">0</span><span class="hl">Incorrect</span></div>
+    <div class="hc"><span class="hv" id="hv-q">1/10</span><span class="hl">Question</span></div>
+    <div class="hc"><span class="hv" id="hv-pct">—</span><span class="hl">Score</span></div>
+  </div>
+
+  <!-- Progress -->
+  <div class="prog" id="prog"></div>
+
+  <!-- Quiz -->
+  <div id="quiz-area">
+    <div class="q-card" id="q-card">
+      <div class="qc-left-bar" id="qc-bar"></div>
+      <div class="qc-top">
+        <span class="qc-num" id="q-num">Q.01 / 10</span>
+        <span class="qc-cat" id="q-cat">Hygiène</span>
+      </div>
+      <div class="qc-body">
+        <p class="q-text" id="q-text"></p>
+        <div class="opts" id="opts"></div>
+        <div class="expl" id="expl"></div>
+      </div>
+    </div>
+    <div class="nav">
+      <span class="nav-hint" id="nav-hint">Choisissez une réponse</span>
+      <button class="btn-next" id="btn-next">
+        <span id="btn-lbl">Suivant</span><span>→</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="results" id="results">
+    <div class="res-card">
+      <div class="res-top">
+        <div class="res-lbl">Jour 7 · Hygiène &amp; Judogi · Semaine 1</div>
+        <div class="res-score" id="res-score">—</div>
+        <div class="res-mention" id="res-mention">—</div>
+      </div>
+      <div class="res-body">
+        <p class="res-title" id="res-title">—</p>
+        <p class="res-msg" id="res-msg">—</p>
+
+        <!-- Semaine 1 complète ! -->
+        <div class="week1-banner">
+          <p class="w1-title">🎉 Semaine 1 complète !</p>
+          <p class="w1-sub">Série 365 Jours · Cycle 1 / 52 terminé</p>
+          <div class="w1-days">
+            <span class="w1-day done">J1 · Histoire</span>
+            <span class="w1-day done">J2 · Éthique</span>
+            <span class="w1-day done">J3 · Technique</span>
+            <span class="w1-day done">J4 · Nutrition</span>
+            <span class="w1-day done">J5 · Prévention</span>
+            <span class="w1-day done">J6 · Compétition</span>
+            <span class="w1-day done">J7 · Hygiène</span>
+          </div>
+        </div>
+
+        <div class="next-box">
+          <div class="next-lbl">Prochain quiz — Jour 8 · Semaine 2</div>
+          <div class="next-val">Histoire &amp; Culture du Judo — Niveau 🟢 S2</div>
+        </div>
+        <button class="btn-restart" onclick="restart()">↺ Recommencer ce quiz</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="ft-l">
+      <span class="ft-name">E.F. NGATCHA TCHAKOTE</span>
+      <div class="ft-gr"><div class="ft-belt"></div><span class="ft-kyu">3e Kyu · Ceinture Verte</span></div>
+    </div>
+    <div class="ft-r">Quiz Judo Quotidien · Série 365 Jours<br>Jour 7 / 365 · Hygiène &amp; Judogi · 🟢 S1</div>
+  </footer>
+
+</div>
+
+<script>
+document.addEventListener('contextmenu',e=>{e.preventDefault();return false;});
+document.addEventListener('keydown',e=>{if(e.key==='F12'||(e.ctrlKey&&['u','U','i','I','j','J','s','S'].includes(e.key))||(e.ctrlKey&&e.shiftKey)){e.preventDefault();return false;}});
+setInterval(()=>{if(window.outerHeight-window.innerHeight>160||window.outerWidth-window.innerWidth>160){document.body.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;font-size:16px;color:#2a3860;text-align:center;padding:40px;">⚠️ Accès non autorisé.<br><small>© E.F. NGATCHA TCHAKOTE — Quiz Judo 365</small></div>';}},600);
+
+/*
+  SCHÉMA BONNES RÉPONSES — Jour 7 (imprévisible, validé) :
+  Q1→D  Q2→B  Q3→A  Q4→C  Q5→B
+  Q6→D  Q7→A  Q8→C  Q9→D  Q10→B
+  Index: A=0  B=1  C=2  D=3
+  Distribution: A×2, B×3, C×2, D×3 ✓
+  Pas de répétition consécutive ✓
+*/
+const Q=[
+  { // Q1 → D (index 3)
+    type:'hys', cat:'Hygiène corporelle',
+    text:'À quelle fréquence un judoka doit-il se doucher après l\'entraînement ?',
+    opts:[
+      'Une fois par semaine suffit',
+      'Seulement après les compétitions',
+      'Deux fois par semaine si l\'entraînement est léger',
+      'Après chaque séance, sans exception'
+    ],
+    ok:3,
+    expl:'<strong>Après chaque séance, sans exception.</strong> La sueur favorise la prolifération de bactéries sur la peau. En judo, le contact physique constant avec d\'autres judokas rend la douche post-séance indispensable — pour sa propre santé et pour respecter ses partenaires.'
+  },
+  { // Q2 → B (index 1)
+    type:'jdg', cat:'Entretien du judogi',
+    text:'À quelle température maximale faut-il laver un judogi blanc pour éviter qu\'il rétrécisse ?',
+    opts:[
+      '60°C — pour tuer toutes les bactéries',
+      '30°C maximum',
+      '90°C pour un nettoyage en profondeur',
+      '45°C avec un programme délicat'
+    ],
+    ok:1,
+    expl:'<strong>30°C maximum.</strong> Le judogi est généralement en coton épais. Au-delà de 30°C, le tissu rétrécit de manière significative et peut jaunir. La plupart des étiquettes des judogi indiquent 30°C. Pour les taches tenaces, un prélavage à la main à l\'eau froide est recommandé.'
+  },
+  { // Q3 → A (index 0)
+    type:'jdg', cat:'Entretien du judogi',
+    text:'Comment faut-il sécher un judogi après le lavage pour qu\'il conserve sa forme et sa blancheur ?',
+    opts:[
+      'À l\'air libre à l\'ombre, bien étiré à plat ou suspendu',
+      'Au sèche-linge à haute température pour aller vite',
+      'Sur un radiateur chaud pour sécher rapidement',
+      'Au soleil direct pour le blanchir naturellement'
+    ],
+    ok:0,
+    expl:'<strong>À l\'air libre à l\'ombre, bien étiré.</strong> Le sèche-linge et le radiateur rétrécissent le judogi. Le soleil direct jaunit le coton blanc et raidit les fibres. L\'air libre à l\'ombre permet un séchage lent et naturel qui préserve la forme et la tenue du tissu.'
+  },
+  { // Q4 → C (index 2)
+    type:'hys', cat:'Ongles et pieds',
+    text:'Pourquoi faut-il couper les ongles des mains et des pieds avant d\'entrer sur le tatami ?',
+    opts:[
+      'Pour respecter une tradition japonaise sans lien avec la sécurité',
+      'Pour pouvoir mieux tenir le judogi de l\'adversaire',
+      'Pour éviter de blesser ou griffer ses partenaires lors des saisies et projections',
+      'Les ongles n\'ont aucune importance en judo'
+    ],
+    ok:2,
+    expl:'<strong>Pour éviter de blesser ses partenaires.</strong> Des ongles longs peuvent griffer profondément la peau lors des saisies (kumi-kata) et des projections. Ils accumulent également des bactéries et champignons pouvant provoquer des infections. Couper ses ongles est un acte de respect envers les autres judokas.'
+  },
+  { // Q5 → B (index 1)
+    type:'jdg', cat:'Port du judogi',
+    text:'Qu\'est-ce qui indique qu\'un judogi est trop petit pour un judoka ?',
+    opts:[
+      'La couleur du judogi est devenue grise avec les lavages',
+      'Les manches ne descendent pas jusqu\'au poignet et le pantalon ne couvre pas les chevilles',
+      'La ceinture ne fait pas le tour de la taille',
+      'Le col du judogi est trop rigide'
+    ],
+    ok:1,
+    expl:'<strong>Les manches trop courtes et le pantalon trop court.</strong> Selon les règlements IJF, les manches du judogi doivent descendre jusqu\'au poignet (maximum 5 cm au-dessus) et le pantalon jusqu\'à la cheville (maximum 5 cm au-dessus). Un judogi trop petit ne respecte pas ces normes et peut être refusé en compétition.'
+  },
+  { // Q6 → D (index 3)
+    type:'hys', cat:'Infections et prévention',
+    text:'Quelle maladie cutanée très contagieuse se transmet facilement par contact sur le tatami et nécessite d\'arrêter l\'entraînement ?',
+    opts:[
+      'La varicelle, qui se transmet uniquement par l\'air',
+      'L\'eczéma, qui n\'est pas contagieux',
+      'Le rhume, qui se transmet par les postillons uniquement',
+      'La teigne (dermatophytose), une infection fongique très contagieuse par contact cutané'
+    ],
+    ok:3,
+    expl:'<strong>La teigne (dermatophytose).</strong> La teigne est une infection fongique du cuir chevelu ou de la peau qui se transmet facilement par contact direct sur le tatami. Un judoka atteint doit arrêter l\'entraînement immédiatement et suivre un traitement médical. Prévention : se doucher après chaque séance et ne pas partager sa serviette.'
+  },
+  { // Q7 → A (index 0)
+    type:'jdg', cat:'Ceinture',
+    text:'Comment noue-t-on correctement la ceinture (obi) de judo pour qu\'elle ne se défasse pas pendant le randori ?',
+    opts:[
+      'En faisant un nœud plat avec les deux extrémités de même longueur de chaque côté',
+      'En faisant un simple nœud de chaussure',
+      'En enroulant la ceinture deux fois autour de la taille et en la glissant dans le pantalon',
+      'En faisant un nœud coulant qui se resserre lors des projections'
+    ],
+    ok:0,
+    expl:'<strong>Nœud plat avec extrémités égales.</strong> La ceinture de judo se noue avec un nœud plat (nœud de reef) : on passe les deux extrémités l\'une sur l\'autre deux fois. Les deux bouts doivent être de même longueur. Ce nœud ne glisse pas et ne serre pas trop le ventre, contrairement à un nœud coulant.'
+  },
+  { // Q8 → C (index 2)
+    type:'snt', cat:'Hygiène du tatami',
+    text:'À quelle fréquence le tatami d\'un dojo doit-il être nettoyé pour prévenir les infections ?',
+    opts:[
+      'Une fois par mois suffit avec un produit puissant',
+      'Uniquement quand on voit des taches visibles',
+      'Avant ou après chaque séance d\'entraînement',
+      'Une fois par semaine le week-end'
+    ],
+    ok:2,
+    expl:'<strong>Avant ou après chaque séance.</strong> Le tatami est un environnement chaud et humide où bactéries, champignons et virus se multiplient rapidement. Un nettoyage systématique avant ou après chaque entraînement avec un produit désinfectant dilué est indispensable pour la santé de tous les pratiquants.'
+  },
+  { // Q9 → D (index 3)
+    type:'hys', cat:'Règles du dojo',
+    text:'Que doit faire un judoka avant d\'entrer sur le tatami depuis les vestiaires ?',
+    opts:[
+      'Vérifier que sa ceinture est bien nouée',
+      'Saluer en direction du centre du tatami',
+      'Faire 10 minutes d\'étirement seul',
+      'Retirer ses chaussures et ne marcher sur le tatami qu\'avec des pieds propres'
+    ],
+    ok:3,
+    expl:'<strong>Retirer ses chaussures et avoir les pieds propres.</strong> On ne marche jamais sur le tatami avec des chaussures — c\'est une règle absolue dans tous les dojos du monde. De même, on ne sort pas sur le sol du couloir pieds nus puis on revient sur le tatami. Cette règle protège la propreté du tatami et donc la santé de tous.'
+  },
+  { // Q10 → B (index 1)
+    type:'jdg', cat:'Entretien du judogi',
+    text:'Combien de temps maximum un judogi mouillé après l\'entraînement peut-il rester enfermé dans un sac de sport avant d\'être lavé ?',
+    opts:[
+      '48 heures sans problème dans un sac fermé',
+      'Le moins longtemps possible — idéalement il doit être sorti et aéré immédiatement',
+      '24 heures maximum si la température est fraîche',
+      'Une semaine si le sac est laissé ouvert'
+    ],
+    ok:1,
+    expl:'<strong>Il doit être sorti immédiatement après la séance.</strong> Un judogi humide enfermé dans un sac est un incubateur parfait pour les bactéries et moisissures. En quelques heures, des odeurs tenaces s\'installent et des champignons peuvent se développer. Le judogi doit être sorti, aéré et lavé le plus tôt possible après chaque séance.'
+  }
+];
+
+let cur=0,score=0,wrongs=0,answered=false,log=[];
+
+function init(){cur=0;score=0;wrongs=0;answered=false;log=[];document.getElementById('results').classList.remove('show');document.getElementById('quiz-area').style.display='';buildProg();render();}
+
+function buildProg(){const p=document.getElementById('prog');p.innerHTML='';Q.forEach((_,i)=>{const s=document.createElement('div');s.className='ps'+(i===0?' cur':'');s.id='ps'+i;p.appendChild(s);});}
+
+function updateProg(){Q.forEach((_,i)=>{const s=document.getElementById('ps'+i);if(!s)return;s.className='ps';if(i<log.length)s.classList.add(log[i]?'ok':'ng');else if(i===cur)s.classList.add('cur');});}
+
+function updateHUD(){document.getElementById('hv-ok').textContent=score;document.getElementById('hv-ng').textContent=wrongs;document.getElementById('hv-q').textContent=`${cur+1}/10`;document.getElementById('hv-pct').textContent=log.length>0?Math.round(score/log.length*100)+'%':'—';}
+
+const barMap={hys:'bar-hys',jdg:'bar-jdg',snt:'bar-snt'};
+const catMap={hys:'cat-hys',jdg:'cat-jdg',snt:'cat-snt'};
+
+function render(){
+  answered=false;const q=Q[cur];
+  document.getElementById('q-num').textContent=`Q.${String(cur+1).padStart(2,'0')} / 10`;
+  const cat=document.getElementById('q-cat');cat.textContent=q.cat;cat.className='qc-cat '+catMap[q.type];
+  document.getElementById('qc-bar').className='qc-left-bar '+barMap[q.type];
+  document.getElementById('q-text').textContent=q.text;
+  const el=document.getElementById('opts');el.innerHTML='';
+  ['A','B','C','D'].forEach((l,i)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<span class="opt-k">${l}</span><span>${q.opts[i]}</span>`;b.onclick=()=>pick(i);el.appendChild(b);});
+  document.getElementById('expl').className='expl';document.getElementById('expl').innerHTML='';
+  document.getElementById('btn-next').className='btn-next';
+  document.getElementById('nav-hint').textContent='Choisissez une réponse';
+  document.getElementById('btn-lbl').textContent=cur<Q.length-1?'Suivant':'Voir les résultats';
+  const card=document.getElementById('q-card');card.style.animation='none';void card.offsetWidth;card.style.animation='cardIn 0.4s cubic-bezier(0.34,1.2,0.64,1)';
+  updateHUD();updateProg();
+}
+
+function pick(idx){
+  if(answered)return;answered=true;const q=Q[cur];
+  const btns=document.querySelectorAll('.opt');btns.forEach(b=>b.disabled=true);
+  if(idx===q.ok){btns[idx].classList.add('correct');score++;log.push(true);}
+  else{btns[idx].classList.add('wrong');btns[q.ok].classList.add('reveal');wrongs++;log.push(false);}
+  document.getElementById('expl').innerHTML=q.expl;document.getElementById('expl').classList.add('show');
+  document.getElementById('btn-next').classList.add('show');document.getElementById('nav-hint').textContent='';
+  updateHUD();updateProg();
+}
+
+document.getElementById('btn-next').addEventListener('click',()=>{cur++;if(cur>=Q.length)showResults();else render();});
+
+function showResults(){
+  document.getElementById('quiz-area').style.display='none';document.getElementById('results').classList.add('show');
+  document.getElementById('res-score').innerHTML=`${score}<span>/10</span>`;
+  const p=score/Q.length;let mention,title,msg;
+  if(p===1)    {mention='優秀 — Excellent';title='Maîtrise parfaite de l\'hygiène du judoka';msg='Félicitations ! Vous terminez la Semaine 1 avec une maîtrise parfaite. Un judoka propre et bien entretenu est un judoka respecté dans son dojo.';}
+  else if(p>=.8){mention='良好 — Très bien';title='Très bonne hygiène du judoka';msg='Très belle performance pour finir la semaine. Les quelques points manquants concernent des détails pratiques facilement mémorisables.';}
+  else if(p>=.6){mention='合格 — Bien';title='Bonnes bases à consolider';msg='Vous connaissez les règles essentielles. Retenez les points clés : 30°C pour le lavage, séchage à l\'ombre, douche après chaque séance, ongles courts.';}
+  else          {mention='要努力 — À retravailler';title='L\'hygiène est une priorité';msg='L\'hygiène protège tous les membres du dojo. Mémorisez les 4 règles d\'or : douche après séance, judogi lavé à 30°C, ongles courts, no chaussures sur le tatami.';}
+  document.getElementById('res-mention').textContent=mention;document.getElementById('res-title').textContent=title;document.getElementById('res-msg').textContent=msg;
+}
+
+function restart(){init();}
+init();
+</script>
+</body>
+</html>
