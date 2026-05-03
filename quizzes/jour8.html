@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="E.F. NGATCHA TCHAKOTE — Quiz Judo 365">
+<meta name="copyright" content="© 2025 E.F. NGATCHA TCHAKOTE. Tous droits réservés.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Jour 8 — Histoire & Culture du Judo</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Nunito:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+JP:wght@200;400;700&display=swap');
+
+:root {
+  --bg:       #f5f2ec;
+  --white:    #ffffff;
+  --card:     #fdfbf7;
+  --surface:  #f0ece3;
+  --border:   #e2dbd0;
+  --border2:  #ccc5b8;
+  --ink:      #1a160e;
+  --ink2:     #3e3826;
+  --ink3:     #857d6a;
+  --brown:    #7a3a10;   /* histoire — parchemin */
+  --brown-bg: rgba(122,58,16,0.07);
+  --brown-bd: rgba(122,58,16,0.28);
+  --olive:    #5a6820;   /* culture — nature */
+  --olive-bg: rgba(90,104,32,0.07);
+  --olive-bd: rgba(90,104,32,0.28);
+  --navy:     #1e3060;   /* monde — autorité */
+  --navy-bg:  rgba(30,48,96,0.07);
+  --navy-bd:  rgba(30,48,96,0.25);
+  --green:    #256040;
+  --green-bg: rgba(37,96,64,0.07);
+  --green-bd: rgba(37,96,64,0.28);
+  --red:      #962020;
+  --red-bg:   rgba(150,32,32,0.06);
+  --gold:     #9a6810;
+  --sh:       0 2px 14px rgba(26,22,14,0.07);
+  --sh2:      0 6px 30px rgba(26,22,14,0.11);
+}
+
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 45% at 88% 6%, rgba(122,58,16,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 50% at 10% 94%, rgba(30,48,96,0.05) 0%, transparent 60%);
+  pointer-events: none; z-index: 0;
+}
+
+.bg-k {
+  position: fixed; font-family: 'Noto Serif JP', serif;
+  font-weight: 700; pointer-events: none; z-index: 0;
+  user-select: none; color: rgba(26,22,14,0.035); line-height: 1;
+}
+.bk1 { font-size: 320px; top: -50px; right: -30px; }
+.bk2 { font-size: 200px; bottom: 0; left: -20px; }
+
+.page {
+  position: relative; z-index: 1;
+  max-width: 840px; margin: 0 auto;
+  padding: 36px 22px 80px;
+}
+
+/* ── HEADER ── */
+header { margin-bottom: 32px; }
+
+.info-row {
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 10px;
+  margin-bottom: 18px;
+}
+
+.tags { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 20px;
+  border: 1px solid var(--border2);
+  color: var(--ink3); background: var(--white);
+}
+.tag.day { background: var(--brown); color: #fff; border-color: var(--brown); }
+.tag.wk  { background: var(--white); color: var(--navy); border-color: var(--navy-bd); }
+.tag.lvl { color: var(--green); border-color: var(--green-bd); }
+
+.sig {
+  display: flex; flex-direction: column;
+  align-items: flex-end; gap: 3px;
+}
+.sig-nm {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 14px; color: var(--gold);
+}
+.sig-gr { display: flex; align-items: center; gap: 6px; }
+.sig-belt { width: 22px; height: 5px; border-radius: 1px; background: linear-gradient(90deg,#256040,#45a870); }
+.sig-kyu { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 1.5px; color: var(--green); text-transform: uppercase; }
+
+/* Title card */
+.title-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden; box-shadow: var(--sh2);
+}
+
+.tc-top {
+  height: 5px;
+  background: linear-gradient(90deg, var(--brown) 40%, var(--navy) 40%);
+}
+
+.tc-inner {
+  display: grid; grid-template-columns: 1fr auto;
+}
+
+.tc-left { padding: 26px 30px; border-right: 1px solid var(--border); }
+
+.tc-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--brown); margin-bottom: 10px;
+  display: flex; align-items: center; gap: 10px;
+}
+.tc-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+.tc-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 4.5vw, 46px);
+  font-weight: 900; line-height: 1.0;
+  color: var(--ink); letter-spacing: -0.5px;
+}
+.tc-h1 em {
+  font-style: italic; color: var(--brown);
+  display: block; font-weight: 400;
+  font-size: 0.82em; margin-top: 4px;
+}
+
+.tc-sub {
+  font-size: 13px; color: var(--ink3);
+  margin-top: 10px; line-height: 1.6;
+}
+
+.tc-right {
+  padding: 24px 20px; min-width: 115px;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center; gap: 6px;
+  background: var(--surface);
+}
+.tc-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 46px; font-weight: 900;
+  color: var(--brown); line-height: 1;
+}
+.tc-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--ink3); text-align: center; line-height: 1.5;
+}
+.tc-ico { font-size: 20px; margin-top: 4px; }
+
+/* ── HUD ── */
+.hud { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; margin: 18px 0 8px; }
+.hc { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 10px 8px; text-align: center; }
+.hv { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--ink); line-height: 1; display: block; }
+.hl { font-family: 'JetBrains Mono', monospace; font-size: 7px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink3); margin-top: 3px; display: block; }
+
+/* ── PROGRESS ── */
+.prog { display: flex; gap: 3px; margin-bottom: 24px; height: 5px; }
+.ps { flex: 1; border-radius: 2px; background: var(--border); transition: all 0.3s ease; }
+.ps.ok  { background: var(--green); }
+.ps.ng  { background: var(--red); opacity: 0.6; }
+.ps.cur { background: var(--gold); box-shadow: 0 0 8px rgba(154,104,16,0.5); animation: blink 1.5s ease infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.65} }
+
+/* ── QUESTION CARD ── */
+.q-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden;
+  box-shadow: var(--sh2); margin-bottom: 14px;
+  animation: cardIn 0.4s cubic-bezier(0.34,1.2,0.64,1);
+}
+@keyframes cardIn { from{opacity:0;transform:translateY(16px) scale(0.99);}to{opacity:1;transform:translateY(0) scale(1);} }
+
+.qc-band { height: 3px; transition: background 0.3s; }
+.band-hist { background: linear-gradient(90deg, var(--brown), #c06020); }
+.band-cult { background: linear-gradient(90deg, var(--olive), #8aa030); }
+.band-world{ background: linear-gradient(90deg, var(--navy), #4060b0); }
+
+.qc-top {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 22px; background: var(--surface);
+  border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 8px;
+}
+.qc-num { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 3px; color: var(--ink3); text-transform: uppercase; }
+.qc-cat {
+  font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; padding: 4px 12px; border-radius: 20px; border: 1px solid;
+}
+.cat-hist { color: var(--brown); border-color: var(--brown-bd); background: var(--brown-bg); }
+.cat-cult { color: var(--olive); border-color: var(--olive-bd); background: var(--olive-bg); }
+.cat-world{ color: var(--navy);  border-color: var(--navy-bd);  background: var(--navy-bg); }
+
+.qc-body { padding: 26px 22px 22px; }
+
+.q-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(17px, 2.8vw, 22px);
+  font-weight: 400; line-height: 1.55; color: var(--ink);
+  margin-bottom: 24px; padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── OPTIONS ── */
+.opts { display: flex; flex-direction: column; gap: 9px; }
+
+.opt {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 13px 16px; border: 1.5px solid var(--border);
+  border-radius: 6px; background: var(--card);
+  cursor: pointer; text-align: left;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px; font-weight: 400; line-height: 1.5;
+  color: var(--ink2); transition: all 0.16s ease;
+}
+.opt:hover:not(:disabled) {
+  border-color: var(--brown); background: var(--brown-bg);
+  color: var(--ink); transform: translateX(4px);
+}
+.opt-k {
+  width: 28px; height: 28px; border-radius: 50%;
+  border: 1.5px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500;
+  color: var(--ink3); flex-shrink: 0; margin-top: 1px; transition: all 0.16s;
+}
+.opt:hover:not(:disabled) .opt-k { border-color: var(--brown); color: var(--brown); }
+
+.opt.correct { border-color: var(--green); background: var(--green-bg); color: var(--ink); animation: pop 0.35s ease; }
+.opt.correct .opt-k { background: var(--green); border-color: var(--green); color: #fff; }
+.opt.wrong   { border-color: var(--red); background: var(--red-bg); color: var(--ink3); }
+.opt.wrong   .opt-k { background: var(--red); border-color: var(--red); color: #fff; }
+.opt.reveal  { border-color: var(--green-bd); background: rgba(37,96,64,0.04); }
+.opt.reveal  .opt-k { border-color: var(--green); color: var(--green); }
+
+@keyframes pop { 0%{transform:scale(0.99)} 60%{transform:scale(1.01)} 100%{transform:scale(1)} }
+
+.expl {
+  display: none; margin-top: 18px; padding: 14px 18px;
+  background: rgba(154,104,16,0.05);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 6px 6px 0;
+  font-size: 13.5px; line-height: 1.75; color: var(--ink2);
+}
+.expl.show { display: block; animation: fadeUp 0.3s ease; }
+.expl strong { color: var(--ink); font-weight: 700; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(5px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── NAV ── */
+.nav { display: flex; justify-content: space-between; align-items: center; }
+.nav-hint { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--ink3); opacity: 0.55; text-transform: uppercase; }
+.btn-next {
+  display: none; align-items: center; gap: 8px;
+  background: var(--brown); color: #fff; border: none;
+  padding: 12px 26px; font-family: 'Nunito', sans-serif;
+  font-size: 14px; font-weight: 700; cursor: pointer;
+  border-radius: 6px; transition: all 0.18s ease;
+  box-shadow: 0 3px 14px rgba(122,58,16,0.25);
+}
+.btn-next.show { display: flex; }
+.btn-next:hover { background: var(--ink); transform: translateX(2px); }
+
+/* ── RESULTS ── */
+.results { display: none; }
+.results.show { display: block; animation: cardIn 0.5s ease; }
+
+.res-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: var(--sh2); }
+
+.res-top {
+  padding: 50px 44px 42px; text-align: center;
+  background: linear-gradient(135deg, #f5efe6 0%, #eef0f8 100%);
+  border-bottom: 1px solid var(--border);
+  position: relative; overflow: hidden;
+}
+.res-top::before {
+  content: '歴史';
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: 'Noto Serif JP', serif; font-size: 240px; font-weight: 700;
+  color: rgba(122,58,16,0.04); pointer-events: none; white-space: nowrap;
+}
+
+.res-lbl { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--ink3); margin-bottom: 10px; }
+.res-score { font-family: 'Playfair Display', serif; font-size: clamp(72px,16vw,110px); font-weight: 900; line-height: 1; color: var(--ink); }
+.res-score span { color: var(--brown); }
+.res-mention { font-family: 'Noto Serif JP', serif; font-size: 13px; color: var(--navy); letter-spacing: 3px; margin-top: 8px; }
+
+.res-body { padding: 36px 44px; text-align: center; }
+.res-title { font-family: 'Playfair Display', serif; font-size: clamp(18px,3vw,26px); font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+.res-msg { font-size: 14px; line-height: 1.75; color: var(--ink2); max-width: 460px; margin: 0 auto 28px; }
+
+.timeline {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; margin-bottom: 28px;
+}
+.tl-cell {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 6px; padding: 12px 8px; text-align: center;
+}
+.tl-year { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--brown); display: block; line-height: 1; }
+.tl-evt  { font-family: 'JetBrains Mono', monospace; font-size: 7px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink3); line-height: 1.5; margin-top: 4px; display: block; }
+
+.next-box {
+  display: inline-flex; flex-direction: column; align-items: center; gap: 4px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 6px; padding: 14px 24px; margin-bottom: 22px;
+}
+.next-lbl { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink3); }
+.next-val { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--brown); }
+
+.btn-restart {
+  display: block; margin: 0 auto; background: transparent;
+  border: 1.5px solid var(--brown); color: var(--brown);
+  padding: 12px 36px; font-family: 'Nunito', sans-serif;
+  font-size: 14px; font-weight: 700; cursor: pointer;
+  border-radius: 6px; transition: all 0.18s;
+}
+.btn-restart:hover { background: var(--brown); color: #fff; }
+
+/* ── FOOTER ── */
+footer {
+  margin-top: 40px; padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 12px;
+}
+.ft-l { display: flex; flex-direction: column; gap: 4px; }
+.ft-name { font-family: 'Playfair Display', serif; font-style: italic; font-size: 14px; color: var(--gold); }
+.ft-gr { display: flex; align-items: center; gap: 6px; }
+.ft-belt { width: 22px; height: 5px; border-radius: 1px; background: linear-gradient(90deg,#256040,#45a870); }
+.ft-kyu  { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 1.5px; color: var(--green); text-transform: uppercase; }
+.ft-r { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 1.5px; color: var(--ink3); opacity: 0.45; text-align: right; line-height: 1.7; }
+
+@media(max-width:600px){
+  .tc-inner{grid-template-columns:1fr;}.tc-right{display:none;}
+  .qc-body{padding:20px 16px;}.timeline{grid-template-columns:repeat(3,1fr);}
+  .res-body,.res-top{padding:28px 20px;}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-k bk1">歴</div>
+<div class="bg-k bk2">史</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="info-row">
+      <div class="tags">
+        <span class="tag day">Jour 8</span>
+        <span class="tag wk">Semaine 2</span>
+        <span class="tag lvl">🟢 Débutant</span>
+      </div>
+      <div class="sig">
+        <span class="sig-nm">E.F. NGATCHA TCHAKOTE</span>
+        <div class="sig-gr"><div class="sig-belt"></div><span class="sig-kyu">3e Kyu · Ceinture Verte</span></div>
+      </div>
+    </div>
+
+    <div class="title-card">
+      <div class="tc-top"></div>
+      <div class="tc-inner">
+        <div class="tc-left">
+          <div class="tc-label">Le Savez-Vous ? · Quiz Judo Quotidien</div>
+          <h1 class="tc-h1">Histoire<em>&amp; Culture du Judo</em></h1>
+          <p class="tc-sub">Les grandes figures, les événements clés et les traditions culturelles qui ont façonné le judo — 10 questions, Semaine 2.</p>
+        </div>
+        <div class="tc-right">
+          <div class="tc-num">10</div>
+          <div class="tc-lbl">Questions<br>Jour 8</div>
+          <div class="tc-ico">📜🏯</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HUD -->
+  <div class="hud">
+    <div class="hc"><span class="hv" id="hv-ok">0</span><span class="hl">Correct</span></div>
+    <div class="hc"><span class="hv" id="hv-ng">0</span><span class="hl">Incorrect</span></div>
+    <div class="hc"><span class="hv" id="hv-q">1/10</span><span class="hl">Question</span></div>
+    <div class="hc"><span class="hv" id="hv-pct">—</span><span class="hl">Score</span></div>
+  </div>
+
+  <!-- Progress -->
+  <div class="prog" id="prog"></div>
+
+  <!-- Quiz -->
+  <div id="quiz-area">
+    <div class="q-card" id="q-card">
+      <div class="qc-band" id="qc-band"></div>
+      <div class="qc-top">
+        <span class="qc-num" id="q-num">Q.01 / 10</span>
+        <span class="qc-cat" id="q-cat">Histoire</span>
+      </div>
+      <div class="qc-body">
+        <p class="q-text" id="q-text"></p>
+        <div class="opts" id="opts"></div>
+        <div class="expl" id="expl"></div>
+      </div>
+    </div>
+    <div class="nav">
+      <span class="nav-hint" id="nav-hint">Choisissez une réponse</span>
+      <button class="btn-next" id="btn-next"><span id="btn-lbl">Suivant</span><span>→</span></button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="results" id="results">
+    <div class="res-card">
+      <div class="res-top">
+        <div class="res-lbl">Jour 8 · Histoire &amp; Culture · Semaine 2</div>
+        <div class="res-score" id="res-score">—</div>
+        <div class="res-mention" id="res-mention">—</div>
+      </div>
+      <div class="res-body">
+        <p class="res-title" id="res-title">—</p>
+        <p class="res-msg" id="res-msg">—</p>
+
+        <div class="timeline">
+          <div class="tl-cell"><span class="tl-year">1860</span><span class="tl-evt">Naissance<br>de Kano</span></div>
+          <div class="tl-cell"><span class="tl-year">1882</span><span class="tl-evt">Fondation<br>du Kodokan</span></div>
+          <div class="tl-cell"><span class="tl-year">1909</span><span class="tl-evt">Kano au CIO</span></div>
+          <div class="tl-cell"><span class="tl-year">1938</span><span class="tl-evt">Décès<br>de Kano</span></div>
+          <div class="tl-cell"><span class="tl-year">1951</span><span class="tl-evt">Fondation<br>de l'IJF</span></div>
+          <div class="tl-cell"><span class="tl-year">1964</span><span class="tl-evt">Judo aux<br>JO Tokyo</span></div>
+        </div>
+
+        <div class="next-box">
+          <div class="next-lbl">Prochain quiz — Jour 9 · Semaine 2</div>
+          <div class="next-val">Éthique &amp; Code Moral</div>
+        </div>
+        <button class="btn-restart" onclick="restart()">↺ Recommencer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="ft-l">
+      <span class="ft-name">E.F. NGATCHA TCHAKOTE</span>
+      <div class="ft-gr"><div class="ft-belt"></div><span class="ft-kyu">3e Kyu · Ceinture Verte</span></div>
+    </div>
+    <div class="ft-r">Quiz Judo Quotidien · Série 365 Jours<br>Jour 8 / 365 · Histoire &amp; Culture · 🟢 S2</div>
+  </footer>
+
+</div>
+
+<script>
+// Protection légère (sans setInterval — compatible tous mobiles)
+document.addEventListener('contextmenu', e => { e.preventDefault(); return false; });
+document.addEventListener('keydown', e => {
+  if(e.key==='F12'||(e.ctrlKey&&['u','U','i','I','j','J','s','S'].includes(e.key))||(e.ctrlKey&&e.shiftKey)){
+    e.preventDefault(); return false;
+  }
+});
+
+/*
+  SCHÉMA BONNES RÉPONSES — Jour 8 (imprévisible, validé) :
+  Q1→B  Q2→D  Q3→C  Q4→A  Q5→D
+  Q6→B  Q7→A  Q8→C  Q9→B  Q10→D
+  Index: A=0  B=1  C=2  D=3
+  Distribution: A×2, B×3, C×2, D×3 ✓
+  Pas de répétition consécutive ✓
+*/
+const Q = [
+  { // Q1 → B (index 1)
+    type:'hist', cat:'Origines',
+    text:'Dans quel type d\'établissement Jigoro Kano a-t-il ouvert le tout premier Kodokan en 1882 à Tokyo ?',
+    opts:[
+      'Dans un palais impérial japonais',
+      'Dans un petit temple bouddhiste appelé Eishoji',
+      'Dans une école militaire de l\'armée japonaise',
+      'Dans l\'université de Tokyo où il enseignait'
+    ],
+    ok:1,
+    expl:'<strong>Dans le temple bouddhiste Eishoji.</strong> Le premier Kodokan était une salle de seulement 12 tatamis installée dans le temple Eishoji à Tokyo. Kano avait 22 ans. Il commença avec seulement 9 élèves. Aujourd\'hui, le Kodokan est un bâtiment de 8 étages avec des centaines de tatamis.'
+  },
+  { // Q2 → D (index 3)
+    type:'hist', cat:'Jigoro Kano',
+    text:'Quelle discipline Jigoro Kano a-t-il principalement étudiée avant de créer le judo ?',
+    opts:[
+      'Le karaté d\'Okinawa',
+      'Le sumo traditionnel',
+      'Le kendo (art du sabre)',
+      'Le jujutsu, notamment les écoles Tenjin Shinyo-ryu et Kito-ryu'
+    ],
+    ok:3,
+    expl:'<strong>Le jujutsu, deux écoles principales.</strong> Kano a étudié le Tenjin Shinyo-ryu et le Kito-ryu, deux styles de jujutsu. Il en a conservé les meilleures techniques et en a éliminé les coups dangereux pour créer le judo — une discipline à la fois efficace et sûre à pratiquer quotidiennement.'
+  },
+  { // Q3 → C (index 2)
+    type:'cult', cat:'Vocabulaire culturel',
+    text:'Que signifie le mot « Dojo » (道場) en japonais ?',
+    opts:[
+      'Un type de kimono porté pour les arts martiaux',
+      'Le titre donné au fondateur d\'un art martial',
+      'Le lieu d\'entraînement — littéralement "l\'endroit où l\'on pratique la Voie"',
+      'Une technique de projection traditionnelle japonaise'
+    ],
+    ok:2,
+    expl:'<strong>Le lieu où l\'on pratique la Voie (道場).</strong> 道 (Dō) = voie, chemin. 場 (Jō) = lieu, endroit. Le dojo est bien plus qu\'une salle de sport — c\'est un lieu sacré où le pratiquant travaille sur lui-même. On le respecte en s\'inclinant à l\'entrée et en le maintenant propre.'
+  },
+  { // Q4 → A (index 0)
+    type:'hist', cat:'Expansion mondiale',
+    text:'Quel événement a marqué la première grande diffusion internationale du judo hors du Japon, dans les années 1950 ?',
+    opts:[
+      'Les tournées mondiales de Masahiko Kimura et des champions du Kodokan pour faire des démonstrations en Europe et en Amérique',
+      'La création des Jeux Olympiques d\'hiver où le judo fut intégré',
+      'Une décision de l\'ONU d\'imposer le judo dans les écoles du monde entier',
+      'La publication d\'un livre de Kano traduit en 40 langues'
+    ],
+    ok:0,
+    expl:'<strong>Les tournées des champions du Kodokan.</strong> Dans les années 1950, des judokas japonais de haut niveau comme Masahiko Kimura voyagèrent en Europe, en Amérique et en Afrique pour faire des démonstrations et ouvrir des dojos. C\'est ainsi que le judo se répandit massivement dans le monde entier avant les JO de 1964.'
+  },
+  { // Q5 → D (index 3)
+    type:'hist', cat:'Kodokan',
+    text:'Quelle est la signification du mot « Kodokan » (講道館) ?',
+    opts:[
+      'La maison des champions du judo',
+      'Le temple des arts martiaux japonais',
+      'L\'académie des guerriers du Japon',
+      'Le lieu pour étudier et enseigner la Voie'
+    ],
+    ok:3,
+    expl:'<strong>Le lieu pour étudier et enseigner la Voie (講道館).</strong> 講 (Kō) = enseigner, étudier. 道 (Dō) = voie. 館 (Kan) = bâtiment, lieu. Kano a choisi ce nom pour exprimer que le judo est avant tout une voie de développement humain, pas seulement un sport de combat.'
+  },
+  { // Q6 → B (index 1)
+    type:'world', cat:'Judo en Afrique',
+    text:'En quelle année l\'Union Africaine de Judo (AJU) a-t-elle été fondée pour représenter le judo sur le continent africain ?',
+    opts:[
+      '1950 — pendant la période de décolonisation',
+      '1966 — cinq ans après la fondation de l\'Organisation de l\'Unité Africaine',
+      '1980 — lors des Jeux Olympiques de Moscou',
+      '1990 — après la chute du mur de Berlin'
+    ],
+    ok:1,
+    expl:'<strong>1966.</strong> L\'African Judo Union (AJU) a été fondée en 1966, peu après les indépendances africaines. Elle est reconnue par l\'IJF et organise les Championnats d\'Afrique. Elle fédère aujourd\'hui plus de 50 fédérations nationales, dont la FECAJUDO du Cameroun.'
+  },
+  { // Q7 → A (index 0)
+    type:'cult', cat:'Grades et ceintures',
+    text:'Combien de grades "Kyu" (ceintures de couleur) existent dans le système officiel de grades du judo pour les adultes ?',
+    opts:[
+      '6 grades Kyu — du 6e kyu (blanc) au 1er kyu (marron)',
+      '10 grades Kyu comme dans les arts martiaux coréens',
+      '5 grades Kyu seulement',
+      '8 grades Kyu selon le règlement IJF'
+    ],
+    ok:0,
+    expl:'<strong>6 grades Kyu.</strong> Pour les adultes : 6e kyu (blanc), 5e kyu (jaune), 4e kyu (orange), 3e kyu (vert), 2e kyu (bleu), 1er kyu (marron). Après le 1er kyu vient le 1er dan (ceinture noire). Les grades Dan vont du 1er au 10e dan.'
+  },
+  { // Q8 → C (index 2)
+    type:'hist', cat:'Judo féminin',
+    text:'Qui est considérée comme la pionnière du judo féminin au Japon, pratiquant le judo dès les années 1890 ?',
+    opts:[
+      'Keiko Fukuda, petite-fille du maître de Kano',
+      'Ryoko Tani, multiple championne olympique',
+      'Sueko Ashiya, première femme admise au Kodokan avec l\'accord de Kano',
+      'Masae Ueno, championne du monde des années 2000'
+    ],
+    ok:2,
+    expl:'<strong>Sueko Ashiya — première femme au Kodokan.</strong> Jigoro Kano lui-même a ouvert le Kodokan aux femmes dès la fin du XIXe siècle, convaincu que le judo était bénéfique pour tous. Keiko Fukuda (1913-2013) est également une figure majeure — elle fut la première femme à atteindre le 10e dan.'
+  },
+  { // Q9 → B (index 1)
+    text:'Quel judoka japonais est considéré comme le plus grand combattant de l\'histoire du judo, ayant remporté plus de 200 combats sans défaite dans les années 1930-1950 ?',
+    type:'hist', cat:'Grandes figures',
+    opts:[
+      'Kyuzo Mifune, surnommé "le Dieu du Judo"',
+      'Masahiko Kimura, surnommé "le plus fort judoka de tous les temps"',
+      'Yasuhiro Yamashita, champion olympique de 1984',
+      'Toshihiko Koga, champion du monde des années 1990'
+    ],
+    ok:1,
+    expl:'<strong>Masahiko Kimura (1917-1993).</strong> Kimura est universellement reconnu comme le judoka le plus puissant de l\'histoire. Sa série de victoires est sans équivalent. Il est aussi connu pour avoir battu le fondateur du jiu-jitsu brésilien, Hélio Gracie, en 1951 au Brésil. Sa technique de clé de bras porte aujourd\'hui son nom : le "Kimura".'
+  },
+  { // Q10 → D (index 3)
+    type:'world', cat:'Judo et éducation',
+    text:'Dans combien de pays le judo est-il pratiqué aujourd\'hui, selon la Fédération Internationale de Judo (IJF) ?',
+    opts:[
+      'Dans environ 80 pays',
+      'Dans environ 120 pays',
+      'Dans environ 150 pays',
+      'Dans plus de 200 pays et territoires'
+    ],
+    ok:3,
+    expl:'<strong>Plus de 200 pays et territoires.</strong> Le judo est l\'un des sports les plus pratiqués au monde avec plus de 40 millions de pratiquants. L\'IJF fédère plus de 200 associations nationales sur tous les continents, ce qui en fait l\'un des sports de combat les plus répandus après les arts martiaux asiatiques traditionnels.'
+  }
+];
+
+let cur=0,score=0,wrongs=0,answered=false,log=[];
+
+function init(){cur=0;score=0;wrongs=0;answered=false;log=[];document.getElementById('results').classList.remove('show');document.getElementById('quiz-area').style.display='';buildProg();render();}
+
+function buildProg(){const p=document.getElementById('prog');p.innerHTML='';Q.forEach((_,i)=>{const s=document.createElement('div');s.className='ps'+(i===0?' cur':'');s.id='ps'+i;p.appendChild(s);});}
+
+function updateProg(){Q.forEach((_,i)=>{const s=document.getElementById('ps'+i);if(!s)return;s.className='ps';if(i<log.length)s.classList.add(log[i]?'ok':'ng');else if(i===cur)s.classList.add('cur');});}
+
+function updateHUD(){document.getElementById('hv-ok').textContent=score;document.getElementById('hv-ng').textContent=wrongs;document.getElementById('hv-q').textContent=`${cur+1}/10`;document.getElementById('hv-pct').textContent=log.length>0?Math.round(score/log.length*100)+'%':'—';}
+
+const bandMap={hist:'band-hist',cult:'band-cult',world:'band-world'};
+const catMap ={hist:'cat-hist', cult:'cat-cult', world:'cat-world'};
+
+function render(){
+  answered=false;const q=Q[cur];
+  document.getElementById('q-num').textContent=`Q.${String(cur+1).padStart(2,'0')} / 10`;
+  const cat=document.getElementById('q-cat');cat.textContent=q.cat;cat.className='qc-cat '+catMap[q.type];
+  document.getElementById('qc-band').className='qc-band '+bandMap[q.type];
+  document.getElementById('q-text').textContent=q.text;
+  const el=document.getElementById('opts');el.innerHTML='';
+  ['A','B','C','D'].forEach((l,i)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<span class="opt-k">${l}</span><span>${q.opts[i]}</span>`;b.onclick=()=>pick(i);el.appendChild(b);});
+  document.getElementById('expl').className='expl';document.getElementById('expl').innerHTML='';
+  document.getElementById('btn-next').className='btn-next';
+  document.getElementById('nav-hint').textContent='Choisissez une réponse';
+  document.getElementById('btn-lbl').textContent=cur<Q.length-1?'Suivant':'Voir les résultats';
+  const card=document.getElementById('q-card');card.style.animation='none';void card.offsetWidth;card.style.animation='cardIn 0.4s cubic-bezier(0.34,1.2,0.64,1)';
+  updateHUD();updateProg();
+}
+
+function pick(idx){
+  if(answered)return;answered=true;const q=Q[cur];
+  const btns=document.querySelectorAll('.opt');btns.forEach(b=>b.disabled=true);
+  if(idx===q.ok){btns[idx].classList.add('correct');score++;log.push(true);}
+  else{btns[idx].classList.add('wrong');btns[q.ok].classList.add('reveal');wrongs++;log.push(false);}
+  document.getElementById('expl').innerHTML=q.expl;document.getElementById('expl').classList.add('show');
+  document.getElementById('btn-next').classList.add('show');document.getElementById('nav-hint').textContent='';
+  updateHUD();updateProg();
+}
+
+document.getElementById('btn-next').addEventListener('click',()=>{cur++;if(cur>=Q.length)showResults();else render();});
+
+function showResults(){
+  document.getElementById('quiz-area').style.display='none';document.getElementById('results').classList.add('show');
+  document.getElementById('res-score').innerHTML=`${score}<span>/10</span>`;
+  const p=score/Q.length;let mention,title,msg;
+  if(p===1)    {mention='優秀 — Excellent';title='Maîtrise parfaite de l\'histoire du judo';msg='Remarquable ! Vous connaissez l\'histoire du judo avec une précision d\'expert. De Kano au judo mondial, vous maîtrisez les faits, les dates et les grandes figures.';}
+  else if(p>=.8){mention='良好 — Très bien';title='Très solide culture historique';msg='Excellente connaissance de l\'histoire. Les quelques lacunes portent sur des détails précis — dates exactes ou noms de figures moins connues — que la pratique régulière fera mémoriser.';}
+  else if(p>=.6){mention='合格 — Bien';title='Bonnes bases historiques';msg:'Des fondations solides. Approfondissez les grandes figures (Kimura, Fukuda) et les dates clés (1882, 1951, 1964) pour consolider votre culture du judo.';}
+  else          {mention='要努力 — À travailler';title='L\'histoire mérite d\'être explorée';msg:'L\'histoire du judo est riche et inspirante. Connaître ses origines renforce le sens de la pratique. Recommencez après avoir relu la timeline affichée ci-dessus.';}
+  document.getElementById('res-mention').textContent=mention;document.getElementById('res-title').textContent=title;document.getElementById('res-msg').textContent=msg;
+}
+
+function restart(){init();}
+init();
+</script>
+</body>
+</html>
