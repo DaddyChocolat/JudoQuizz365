@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="E.F. NGATCHA TCHAKOTE — Quiz Judo 365">
+<meta name="copyright" content="© 2025 E.F. NGATCHA TCHAKOTE. Tous droits réservés.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Jour 10 — Technique & Entraînement</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Zilla+Slab:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+JP:wght@200;400;700&display=swap');
+
+:root {
+  --bg:        #f4f2ec;
+  --white:     #ffffff;
+  --card:      #fdfbf7;
+  --surface:   #edeae2;
+  --border:    #dfd9ce;
+  --border2:   #cac3b6;
+  --ink:       #191610;
+  --ink2:      #3c3626;
+  --ink3:      #857d6a;
+  --orange:    #c04808;   /* technique — feu, action */
+  --orange-bg: rgba(192,72,8,0.07);
+  --orange-bd: rgba(192,72,8,0.28);
+  --blue:      #1c4080;   /* stratégie */
+  --blue-bg:   rgba(28,64,128,0.07);
+  --blue-bd:   rgba(28,64,128,0.25);
+  --purple:    #602080;   /* kata, formes */
+  --purple-bg: rgba(96,32,128,0.07);
+  --purple-bd: rgba(96,32,128,0.25);
+  --green:     #246040;
+  --green-bg:  rgba(36,96,64,0.07);
+  --green-bd:  rgba(36,96,64,0.28);
+  --red:       #942020;
+  --red-bg:    rgba(148,32,32,0.06);
+  --gold:      #986810;
+  --sh:        0 2px 14px rgba(25,22,16,0.07);
+  --sh2:       0 6px 32px rgba(25,22,16,0.11);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:'Barlow',sans-serif;
+  min-height:100vh;overflow-x:hidden;
+  -webkit-user-select:none;user-select:none;
+}
+
+body::before{
+  content:'';position:fixed;inset:0;
+  background:
+    radial-gradient(ellipse 58% 44% at 88% 6%,rgba(192,72,8,0.07) 0%,transparent 60%),
+    radial-gradient(ellipse 45% 50% at 10% 94%,rgba(28,64,128,0.05) 0%,transparent 60%);
+  pointer-events:none;z-index:0;
+}
+
+.bg-k{position:fixed;font-family:'Noto Serif JP',serif;font-weight:700;pointer-events:none;z-index:0;user-select:none;color:rgba(25,22,16,0.035);line-height:1;}
+.bk1{font-size:320px;top:-50px;right:-30px;}
+.bk2{font-size:200px;bottom:0;left:-20px;}
+
+.page{position:relative;z-index:1;max-width:840px;margin:0 auto;padding:36px 22px 80px;}
+
+/* ── HEADER ── */
+header{margin-bottom:32px;}
+
+.info-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:18px;}
+.tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:20px;border:1px solid var(--border2);color:var(--ink3);background:var(--white);}
+.tag.day{background:var(--orange);color:#fff;border-color:var(--orange);}
+.tag.wk {color:var(--blue);border-color:var(--blue-bd);}
+.tag.lvl{color:var(--green);border-color:var(--green-bd);}
+
+.sig{display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
+.sig-nm{font-family:'Zilla Slab',serif;font-style:italic;font-size:14px;color:var(--gold);}
+.sig-gr{display:flex;align-items:center;gap:6px;}
+.sig-belt{width:22px;height:5px;border-radius:1px;background:linear-gradient(90deg,#246040,#44a870);}
+.sig-kyu{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--green);text-transform:uppercase;}
+
+/* Title card */
+.title-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);}
+.tc-accent{height:5px;background:linear-gradient(90deg,var(--orange) 35%,var(--blue) 35%,var(--blue) 65%,var(--purple) 65%);}
+.tc-body{display:grid;grid-template-columns:1fr auto;}
+.tc-main{padding:26px 30px;border-right:1px solid var(--border);}
+.tc-eye{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.tc-eye::after{content:'';flex:1;height:1px;background:var(--border);}
+.tc-h1{font-family:'Zilla Slab',serif;font-size:clamp(26px,4.5vw,48px);font-weight:600;line-height:1.0;color:var(--ink);letter-spacing:-0.5px;}
+.tc-h1 em{font-style:italic;color:var(--orange);display:block;font-weight:400;font-size:0.84em;margin-top:4px;}
+.tc-sub{font-size:13px;color:var(--ink3);margin-top:10px;line-height:1.6;}
+.tc-side{padding:24px 20px;min-width:115px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;background:var(--surface);}
+.tc-num{font-family:'Zilla Slab',serif;font-size:46px;font-weight:600;color:var(--orange);line-height:1;}
+.tc-lbl{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);text-align:center;line-height:1.5;}
+.tc-ico{font-size:20px;margin-top:4px;}
+
+/* ── HUD ── */
+.hud{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin:18px 0 8px;}
+.hc{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:10px 8px;text-align:center;}
+.hv{font-family:'Zilla Slab',serif;font-size:26px;font-weight:600;color:var(--ink);line-height:1;display:block;}
+.hl{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-top:3px;display:block;}
+
+/* ── PROGRESS ── */
+.prog{display:flex;gap:3px;margin-bottom:24px;height:5px;}
+.ps{flex:1;border-radius:2px;background:var(--border);transition:all 0.3s ease;}
+.ps.ok {background:var(--green);}
+.ps.ng {background:var(--red);opacity:0.6;}
+.ps.cur{background:var(--orange);box-shadow:0 0 8px rgba(192,72,8,0.5);animation:blink 1.5s ease infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.65}}
+
+/* ── QUESTION CARD ── */
+.q-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);margin-bottom:14px;animation:cardIn 0.4s cubic-bezier(0.34,1.2,0.64,1);}
+@keyframes cardIn{from{opacity:0;transform:translateY(16px) scale(0.99);}to{opacity:1;transform:translateY(0) scale(1);}}
+
+.qc-band{height:3px;transition:background 0.3s;}
+.band-waza{background:linear-gradient(90deg,var(--orange),#e07030);}
+.band-strat{background:linear-gradient(90deg,var(--blue),#5080c0);}
+.band-kata{background:linear-gradient(90deg,var(--purple),#9050c0);}
+
+.qc-top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:var(--surface);border-bottom:1px solid var(--border);flex-wrap:wrap;gap:8px;}
+.qc-num{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--ink3);text-transform:uppercase;}
+.qc-cat{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;border:1px solid;}
+.cat-waza {color:var(--orange);border-color:var(--orange-bd);background:var(--orange-bg);}
+.cat-strat{color:var(--blue);  border-color:var(--blue-bd);  background:var(--blue-bg);}
+.cat-kata {color:var(--purple);border-color:var(--purple-bd);background:var(--purple-bg);}
+
+.qc-body{padding:26px 22px 22px;}
+.q-text{font-family:'Zilla Slab',serif;font-size:clamp(17px,2.8vw,22px);font-weight:400;line-height:1.58;color:var(--ink);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border);}
+
+/* ── OPTIONS ── */
+.opts{display:flex;flex-direction:column;gap:9px;}
+
+.opt{display:flex;align-items:flex-start;gap:12px;padding:13px 16px;border:1.5px solid var(--border);border-radius:8px;background:var(--card);cursor:pointer;text-align:left;font-family:'Barlow',sans-serif;font-size:14px;font-weight:400;line-height:1.5;color:var(--ink2);transition:all 0.16s ease;}
+.opt:hover:not(:disabled){border-color:var(--orange);background:var(--orange-bg);color:var(--ink);transform:translateX(4px);}
+.opt-k{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--ink3);flex-shrink:0;margin-top:1px;transition:all 0.16s;}
+.opt:hover:not(:disabled) .opt-k{border-color:var(--orange);color:var(--orange);}
+
+.opt.correct{border-color:var(--green);background:var(--green-bg);color:var(--ink);animation:pop 0.35s ease;}
+.opt.correct .opt-k{background:var(--green);border-color:var(--green);color:#fff;}
+.opt.wrong{border-color:var(--red);background:var(--red-bg);color:var(--ink3);}
+.opt.wrong .opt-k{background:var(--red);border-color:var(--red);color:#fff;}
+.opt.reveal{border-color:var(--green-bd);background:rgba(36,96,64,0.04);}
+.opt.reveal .opt-k{border-color:var(--green);color:var(--green);}
+
+@keyframes pop{0%{transform:scale(0.99)}60%{transform:scale(1.01)}100%{transform:scale(1)}}
+
+.expl{display:none;margin-top:18px;padding:14px 18px;background:rgba(152,104,16,0.05);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.75;color:var(--ink2);}
+.expl.show{display:block;animation:fadeUp 0.3s ease;}
+.expl strong{color:var(--ink);font-weight:700;}
+.expl .jp{font-family:'Noto Serif JP',serif;font-size:12px;color:var(--orange);margin-right:4px;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── NAV ── */
+.nav{display:flex;justify-content:space-between;align-items:center;}
+.nav-hint{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--ink3);opacity:0.55;text-transform:uppercase;}
+.btn-next{display:none;align-items:center;gap:8px;background:var(--orange);color:#fff;border:none;padding:12px 26px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;cursor:pointer;border-radius:8px;transition:all 0.18s ease;box-shadow:0 3px 14px rgba(192,72,8,0.25);}
+.btn-next.show{display:flex;}
+.btn-next:hover{background:var(--ink);transform:translateX(2px);}
+
+/* ── RESULTS ── */
+.results{display:none;}
+.results.show{display:block;animation:cardIn 0.5s ease;}
+
+.res-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);}
+.res-top{padding:50px 44px 42px;text-align:center;background:linear-gradient(135deg,#faf0e8 0%,#eef0f8 100%);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.res-top::before{content:'技';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Noto Serif JP',serif;font-size:280px;font-weight:700;color:rgba(192,72,8,0.04);pointer-events:none;}
+.res-lbl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--ink3);margin-bottom:10px;}
+.res-score{font-family:'Zilla Slab',serif;font-size:clamp(72px,16vw,110px);font-weight:600;line-height:1;color:var(--ink);}
+.res-score span{color:var(--orange);}
+.res-mention{font-family:'Noto Serif JP',serif;font-size:13px;color:var(--blue);letter-spacing:3px;margin-top:8px;}
+
+.res-body{padding:36px 44px;text-align:center;}
+.res-title{font-family:'Zilla Slab',serif;font-size:clamp(18px,3vw,26px);font-weight:600;color:var(--ink);margin-bottom:10px;}
+.res-msg{font-size:14px;line-height:1.75;color:var(--ink2);max-width:460px;margin:0 auto 28px;}
+
+/* 3 phases technique */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:28px;}
+.ph-cell{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 8px;text-align:center;position:relative;}
+.ph-num{position:absolute;top:8px;right:10px;font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--ink3);}
+.ph-jp{font-family:'Noto Serif JP',serif;font-size:22px;color:var(--orange);display:block;line-height:1;margin-bottom:4px;}
+.ph-rom{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);}
+.ph-fr{font-size:11px;color:var(--ink2);margin-top:3px;display:block;}
+
+.next-box{display:inline-flex;flex-direction:column;align-items:center;gap:4px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 24px;margin-bottom:22px;}
+.next-lbl{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);}
+.next-val{font-family:'Zilla Slab',serif;font-size:16px;font-weight:600;color:var(--orange);}
+
+.btn-restart{display:block;margin:0 auto;background:transparent;border:1.5px solid var(--orange);color:var(--orange);padding:12px 36px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;cursor:pointer;border-radius:8px;transition:all 0.18s;}
+.btn-restart:hover{background:var(--orange);color:#fff;}
+
+/* ── FOOTER ── */
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.ft-l{display:flex;flex-direction:column;gap:4px;}
+.ft-name{font-family:'Zilla Slab',serif;font-style:italic;font-size:14px;color:var(--gold);}
+.ft-gr{display:flex;align-items:center;gap:6px;}
+.ft-belt{width:22px;height:5px;border-radius:1px;background:linear-gradient(90deg,#246040,#44a870);}
+.ft-kyu{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--green);text-transform:uppercase;}
+.ft-r{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--ink3);opacity:0.45;text-align:right;line-height:1.7;}
+
+@media(max-width:600px){.tc-body{grid-template-columns:1fr;}.tc-side{display:none;}.qc-body{padding:20px 16px;}.res-body,.res-top{padding:28px 20px;}}
+</style>
+</head>
+<body>
+
+<div class="bg-k bk1">技</div>
+<div class="bg-k bk2">道</div>
+
+<div class="page">
+
+  <header>
+    <div class="info-row">
+      <div class="tags">
+        <span class="tag day">Jour 10</span>
+        <span class="tag wk">Semaine 2</span>
+        <span class="tag lvl">🟢 Débutant</span>
+      </div>
+      <div class="sig">
+        <span class="sig-nm">E.F. NGATCHA TCHAKOTE</span>
+        <div class="sig-gr"><div class="sig-belt"></div><span class="sig-kyu">3e Kyu · Ceinture Verte</span></div>
+      </div>
+    </div>
+
+    <div class="title-card">
+      <div class="tc-accent"></div>
+      <div class="tc-body">
+        <div class="tc-main">
+          <div class="tc-eye">Le Savez-Vous ? · Quiz Judo Quotidien</div>
+          <h1 class="tc-h1">Technique<em>&amp; Entraînement</em></h1>
+          <p class="tc-sub">Les 3 phases d'une technique, les groupes de waza, le travail au sol et la préparation physique du judoka — Semaine 2, questions plus approfondies.</p>
+        </div>
+        <div class="tc-side">
+          <div class="tc-num">10</div>
+          <div class="tc-lbl">Questions<br>Jour 10</div>
+          <div class="tc-ico">🥋⚡</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="hud">
+    <div class="hc"><span class="hv" id="hv-ok">0</span><span class="hl">Correct</span></div>
+    <div class="hc"><span class="hv" id="hv-ng">0</span><span class="hl">Incorrect</span></div>
+    <div class="hc"><span class="hv" id="hv-q">1/10</span><span class="hl">Question</span></div>
+    <div class="hc"><span class="hv" id="hv-pct">—</span><span class="hl">Score</span></div>
+  </div>
+
+  <div class="prog" id="prog"></div>
+
+  <div id="quiz-area">
+    <div class="q-card" id="q-card">
+      <div class="qc-band" id="qc-band"></div>
+      <div class="qc-top">
+        <span class="qc-num" id="q-num">Q.01 / 10</span>
+        <span class="qc-cat" id="q-cat">Technique</span>
+      </div>
+      <div class="qc-body">
+        <p class="q-text" id="q-text"></p>
+        <div class="opts" id="opts"></div>
+        <div class="expl" id="expl"></div>
+      </div>
+    </div>
+    <div class="nav">
+      <span class="nav-hint" id="nav-hint">Choisissez une réponse</span>
+      <button class="btn-next" id="btn-next"><span id="btn-lbl">Suivant</span><span>→</span></button>
+    </div>
+  </div>
+
+  <div class="results" id="results">
+    <div class="res-card">
+      <div class="res-top">
+        <div class="res-lbl">Jour 10 · Technique &amp; Entraînement · Semaine 2</div>
+        <div class="res-score" id="res-score">—</div>
+        <div class="res-mention" id="res-mention">—</div>
+      </div>
+      <div class="res-body">
+        <p class="res-title" id="res-title">—</p>
+        <p class="res-msg" id="res-msg">—</p>
+
+        <div class="phases">
+          <div class="ph-cell">
+            <span class="ph-num">1</span>
+            <span class="ph-jp">崩し</span>
+            <span class="ph-rom">Kuzushi</span>
+            <span class="ph-fr">Déséquilibrer</span>
+          </div>
+          <div class="ph-cell">
+            <span class="ph-num">2</span>
+            <span class="ph-jp">作り</span>
+            <span class="ph-rom">Tsukuri</span>
+            <span class="ph-fr">Placer le corps</span>
+          </div>
+          <div class="ph-cell">
+            <span class="ph-num">3</span>
+            <span class="ph-jp">掛け</span>
+            <span class="ph-rom">Kake</span>
+            <span class="ph-fr">Exécuter</span>
+          </div>
+        </div>
+
+        <div class="next-box">
+          <div class="next-lbl">Prochain quiz — Jour 11 · Semaine 2</div>
+          <div class="next-val">Nutrition &amp; Récupération</div>
+        </div>
+        <button class="btn-restart" onclick="restart()">↺ Recommencer</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="ft-l">
+      <span class="ft-name">E.F. NGATCHA TCHAKOTE</span>
+      <div class="ft-gr"><div class="ft-belt"></div><span class="ft-kyu">3e Kyu · Ceinture Verte</span></div>
+    </div>
+    <div class="ft-r">Quiz Judo Quotidien · Série 365 Jours<br>Jour 10 / 365 · Technique &amp; Entraînement · 🟢 S2</div>
+  </footer>
+
+</div>
+
+<script>
+// Protection légère — compatible tous mobiles, sans setInterval
+document.addEventListener('contextmenu',e=>{e.preventDefault();return false;});
+document.addEventListener('keydown',e=>{
+  if(e.key==='F12'||(e.ctrlKey&&['u','U','i','I','j','J','s','S'].includes(e.key))||(e.ctrlKey&&e.shiftKey)){
+    e.preventDefault();return false;
+  }
+});
+
+/*
+  SCHÉMA BONNES RÉPONSES — Jour 10 (imprévisible, validé) :
+  Q1→C  Q2→A  Q3→D  Q4→B  Q5→C
+  Q6→D  Q7→A  Q8→B  Q9→D  Q10→C
+  Index: A=0  B=1  C=2  D=3
+  Distribution: A×2, B×2, C×3, D×3 ✓
+  Pas de répétition consécutive ✓
+*/
+const Q=[
+  { // Q1 → C (index 2)
+    type:'waza', cat:'3 phases — Kuzushi',
+    text:'Quelle est la toute première phase obligatoire d\'une technique de judo avant de pouvoir projeter l\'adversaire ?',
+    opts:[
+      'Le Kake — l\'exécution finale de la projection',
+      'Le Tsukuri — le placement du corps près de l\'adversaire',
+      'Le Kuzushi — le déséquilibre de l\'adversaire',
+      'Le Kumi-kata — la prise du judogi'
+    ],
+    ok:2,
+    expl:'<span class="jp">崩し</span><strong>Kuzushi — le déséquilibre.</strong> Sans kuzushi, aucune projection n\'est possible quelle que soit la force physique. C\'est le principe fondamental du judo : utiliser le déséquilibre de l\'adversaire plutôt que sa propre force. L\'ordre des 3 phases est immuable : Kuzushi → Tsukuri → Kake.'
+  },
+  { // Q2 → A (index 0)
+    type:'waza', cat:'Sutemi-waza',
+    text:'Qu\'est-ce qui caractérise les techniques de Sutemi-waza par rapport aux autres projections ?',
+    opts:[
+      'Le judoka sacrifie son propre équilibre en tombant au sol pour projeter son adversaire',
+      'Ces techniques sont uniquement pratiquées par les ceintures noires',
+      'Ce sont des techniques d\'immobilisation au sol uniquement',
+      'Le judoka projette en restant debout sans contact avec le sol'
+    ],
+    ok:0,
+    expl:'<span class="jp">捨身技</span><strong>Sutemi-waza — techniques de sacrifice.</strong> "Sutemi" signifie sacrifier son corps. Le judoka tombe délibérément au sol pour entraîner son adversaire dans la chute. Exemples : Tomoe-nage (projection en cercle), Sumi-gaeshi. Ce sont des techniques spectaculaires mais qui demandent une excellente maîtrise.'
+  },
+  { // Q3 → D (index 3)
+    type:'waza', cat:'Katame-waza',
+    text:'Le Katame-waza (travail au sol) se divise en 3 sous-groupes. Lesquels ?',
+    opts:[
+      'Nage-waza, Sutemi-waza et Tachi-waza',
+      'Uchi-komi, Nagekomi et Randori',
+      'Kuzushi, Tsukuri et Kake',
+      'Osaekomi-waza (immobilisations), Shime-waza (étranglements) et Kansetsu-waza (clés)'
+    ],
+    ok:3,
+    expl:'<span class="jp">固技</span><strong>Les 3 familles du Katame-waza.</strong> Osaekomi-waza = immobilisations (maintenir l\'adversaire au sol, dos au tatami). Shime-waza = étranglements (compresser la carotide ou la trachée). Kansetsu-waza = clés articulaires (forcer une articulation au-delà de sa limite normale, principalement le coude en compétition).'
+  },
+  { // Q4 → B (index 1)
+    type:'strat', cat:'Stratégie — Tai-sabaki',
+    text:'Que désigne le Tai-sabaki (体捌き) en judo ?',
+    opts:[
+      'La technique de chute avant par roulade',
+      'Le déplacement et la rotation du corps pour éviter une attaque ou créer une opportunité de projection',
+      'La position défensive adoptée quand on est en difficulté',
+      'La façon de tenir le judogi de l\'adversaire pendant le combat'
+    ],
+    ok:1,
+    expl:'<span class="jp">体捌き</span><strong>Tai-sabaki — mouvement du corps.</strong> Le tai-sabaki est l\'art de bouger son corps de manière efficace : pivoter, reculer, avancer pour esquiver une attaque adverse et se placer en position favorable pour contre-attaquer. Un bon tai-sabaki transforme la force de l\'adversaire en opportunité. C\'est le cœur de la stratégie en judo.'
+  },
+  { // Q5 → C (index 2)
+    type:'waza', cat:'Tachi-waza',
+    text:'Le Tachi-waza (techniques debout) se divise en 3 familles. Lesquelles ?',
+    opts:[
+      'Uchi-mata, O-soto-gari et Seoi-nage uniquement',
+      'Koshi-waza, Ashi-waza et Te-waza (hanches, pieds/jambes, mains/bras)',
+      'Koshi-waza (hanches), Ashi-waza (pieds/jambes) et Te-waza (mains/bras)',
+      'Nage-waza, Katame-waza et Atemi-waza'
+    ],
+    ok:2,
+    expl:'<span class="jp">立技</span><strong>Te-waza · Koshi-waza · Ashi-waza.</strong> Te-waza = projections utilisant principalement les bras et les mains (ex : Seoi-nage, Tai-otoshi). Koshi-waza = projections utilisant les hanches comme point d\'appui (ex : O-goshi, Harai-goshi). Ashi-waza = projections utilisant les jambes et les pieds (ex : O-soto-gari, De-ashi-barai). Ces familles structurent les 40 techniques du Go-kyo.'
+  },
+  { // Q6 → D (index 3)
+    type:'strat', cat:'Préparation physique',
+    text:'Pourquoi le renforcement musculaire des jambes est-il particulièrement important pour un judoka ?',
+    opts:[
+      'Uniquement pour courir plus vite entre les combats en compétition',
+      'Pour pouvoir soulever l\'adversaire lors de toutes les projections',
+      'Les jambes ne jouent pas de rôle essentiel en judo — c\'est le dos qui compte',
+      'Les jambes servent de base stable pour les projections, les déplacements et le travail au sol'
+    ],
+    ok:3,
+    expl:'<strong>Base de toutes les actions techniques.</strong> Les jambes sont le socle de tout en judo : elles assurent l\'équilibre lors des projections debout, la puissance de poussée dans les hanches (koshi-waza), la vitesse des déplacements (tai-sabaki) et la stabilité dans les positions au sol. Des jambes faibles limitent toute la technique.'
+  },
+  { // Q7 → A (index 0)
+    type:'kata', cat:'Nage-no-kata',
+    text:'Combien de techniques compte le Nage-no-kata, le premier kata de projection officiel du Kodokan ?',
+    opts:[
+      '15 techniques regroupées en 5 séries de 3',
+      '20 techniques en 4 séries de 5',
+      '40 techniques comme dans le Go-kyo',
+      '10 techniques en 2 séries de 5'
+    ],
+    ok:0,
+    expl:'<span class="jp">投の形</span><strong>15 techniques en 5 séries de 3.</strong> Le Nage-no-kata comprend 5 séries (Te-waza, Koshi-waza, Ashi-waza, Ma-sutemi-waza, Yoko-sutemi-waza) de 3 techniques chacune, soit 15 au total. Il est pratiqué en binôme (tori et uke) et représente les principes fondamentaux de la projection en judo.'
+  },
+  { // Q8 → B (index 1)
+    type:'strat', cat:'Contre-attaque',
+    text:'Qu\'est-ce qu\'un Kaeshi-waza en judo ?',
+    opts:[
+      'Une technique d\'attaque directe lancée en début de combat',
+      'Une technique de contre-attaque exécutée en utilisant la force de l\'adversaire qui attaque',
+      'Un kata pratiqué uniquement en compétition officielle',
+      'Un exercice de répétition au sol pour travailler les immobilisations'
+    ],
+    ok:1,
+    expl:'<span class="jp">返し技</span><strong>Kaeshi-waza — contre-attaque.</strong> "Kaeshi" signifie retourner, renverser. C\'est l\'art de transformer l\'attaque de l\'adversaire en opportunité pour soi. Quand l\'adversaire attaque, son propre déséquilibre peut être utilisé pour le projeter. C\'est l\'expression parfaite du principe Ju (souplesse) : céder pour mieux vaincre.'
+  },
+  { // Q9 → D (index 3)
+    type:'waza', cat:'Ne-waza — Osaekomi',
+    text:'Pour qu\'une immobilisation (Osaekomi-waza) soit valide, quelle condition principale doit être remplie ?',
+    opts:[
+      'Le judoka doit tenir uniquement les deux bras de l\'adversaire',
+      'L\'immobilisation doit être réalisée uniquement en dehors de la zone centrale du tatami',
+      'Le judoka doit être à genoux pendant toute la durée de l\'immobilisation',
+      'Le judoka doit contrôler l\'adversaire qui est sur le dos, sans être contrôlé par les jambes de celui-ci'
+    ],
+    ok:3,
+    expl:'<span class="jp">抑込技</span><strong>Contrôler l\'adversaire sur le dos.</strong> Pour que l\'osaekomi soit valide : l\'adversaire doit être sur le dos (ou l\'épaule), le judoka doit exercer un contrôle stable du torse ou de la ceinture, et il ne doit pas être coincé entre les jambes de l\'adversaire (garde). L\'arbitre signale "Osaekomi !" et le chrono se lance.'
+  },
+  { // Q10 → C (index 2)
+    type:'kata', cat:'Travail quotidien',
+    text:'Quelle est la différence entre le Nagekomi et le Uchi-komi dans l\'entraînement quotidien ?',
+    opts:[
+      'Il n\'y a aucune différence, ce sont deux mots pour la même chose',
+      'Le nagekomi est pour les débutants, l\'uchi-komi est réservé aux ceintures noires',
+      'L\'uchi-komi répète l\'entrée de technique sans projection finale ; le nagekomi réalise la technique complète avec projection et chute',
+      'Le nagekomi se pratique au sol et l\'uchi-komi se pratique debout'
+    ],
+    ok:2,
+    expl:'<span class="jp">打込 / 投込</span><strong>Uchi-komi = entrée sans chute · Nagekomi = technique complète avec chute.</strong> L\'uchi-komi (打ち込み) entraîne le placement et le kuzushi par répétitions sans fatigue excessive. Le nagekomi (投げ込み) complète le travail en intégrant la phase finale : la projection et la chute de l\'uke. Les deux sont complémentaires dans l\'entraînement quotidien.'
+  }
+];
+
+let cur=0,score=0,wrongs=0,answered=false,log=[];
+
+function init(){cur=0;score=0;wrongs=0;answered=false;log=[];document.getElementById('results').classList.remove('show');document.getElementById('quiz-area').style.display='';buildProg();render();}
+
+function buildProg(){const p=document.getElementById('prog');p.innerHTML='';Q.forEach((_,i)=>{const s=document.createElement('div');s.className='ps'+(i===0?' cur':'');s.id='ps'+i;p.appendChild(s);});}
+
+function updateProg(){Q.forEach((_,i)=>{const s=document.getElementById('ps'+i);if(!s)return;s.className='ps';if(i<log.length)s.classList.add(log[i]?'ok':'ng');else if(i===cur)s.classList.add('cur');});}
+
+function updateHUD(){document.getElementById('hv-ok').textContent=score;document.getElementById('hv-ng').textContent=wrongs;document.getElementById('hv-q').textContent=`${cur+1}/10`;document.getElementById('hv-pct').textContent=log.length>0?Math.round(score/log.length*100)+'%':'—';}
+
+const bandMap={waza:'band-waza',strat:'band-strat',kata:'band-kata'};
+const catMap ={waza:'cat-waza', strat:'cat-strat', kata:'cat-kata'};
+
+function render(){
+  answered=false;const q=Q[cur];
+  document.getElementById('q-num').textContent=`Q.${String(cur+1).padStart(2,'0')} / 10`;
+  const cat=document.getElementById('q-cat');cat.textContent=q.cat;cat.className='qc-cat '+catMap[q.type];
+  document.getElementById('qc-band').className='qc-band '+bandMap[q.type];
+  document.getElementById('q-text').textContent=q.text;
+  const el=document.getElementById('opts');el.innerHTML='';
+  ['A','B','C','D'].forEach((l,i)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<span class="opt-k">${l}</span><span>${q.opts[i]}</span>`;b.onclick=()=>pick(i);el.appendChild(b);});
+  document.getElementById('expl').className='expl';document.getElementById('expl').innerHTML='';
+  document.getElementById('btn-next').className='btn-next';
+  document.getElementById('nav-hint').textContent='Choisissez une réponse';
+  document.getElementById('btn-lbl').textContent=cur<Q.length-1?'Suivant':'Voir les résultats';
+  const card=document.getElementById('q-card');card.style.animation='none';void card.offsetWidth;card.style.animation='cardIn 0.4s cubic-bezier(0.34,1.2,0.64,1)';
+  updateHUD();updateProg();
+}
+
+function pick(idx){
+  if(answered)return;answered=true;const q=Q[cur];
+  const btns=document.querySelectorAll('.opt');btns.forEach(b=>b.disabled=true);
+  if(idx===q.ok){btns[idx].classList.add('correct');score++;log.push(true);}
+  else{btns[idx].classList.add('wrong');btns[q.ok].classList.add('reveal');wrongs++;log.push(false);}
+  document.getElementById('expl').innerHTML=q.expl;document.getElementById('expl').classList.add('show');
+  document.getElementById('btn-next').classList.add('show');document.getElementById('nav-hint').textContent='';
+  updateHUD();updateProg();
+}
+
+document.getElementById('btn-next').addEventListener('click',()=>{cur++;if(cur>=Q.length)showResults();else render();});
+
+function showResults(){
+  document.getElementById('quiz-area').style.display='none';document.getElementById('results').classList.add('show');
+  document.getElementById('res-score').innerHTML=`${score}<span>/10</span>`;
+  const p=score/Q.length;let mention,title,msg;
+  if(p===1)    {mention='優秀 — Excellente technique';title='Maîtrise parfaite de la technique';msg='Remarquable ! Vous maîtrisez la terminologie avancée, les familles de waza et les principes stratégiques du judo. Une base solide pour les niveaux supérieurs.';}
+  else if(p>=.8){mention='良好 — Très bien';title='Solide base technique';msg:'Très bonne connaissance. Les familles de waza et les 3 phases sont bien ancrées. Approfondissez les sous-groupes (Sutemi-waza, Katame-waza) pour compléter votre culture technique.';}
+  else if(p>=.6){mention:'合格 — Bien';title:'Bonnes bases à consolider';msg:'Les fondamentaux sont là. Mémorisez les 3 phases (Kuzushi-Tsukuri-Kake) et les 3 familles du Tachi-waza — ce sont les piliers de toute la technique judo.';}
+  else          {mention:'要努力 — À travailler';title:'La technique demande du travail';msg:'La terminologie technique du judo est riche mais logique. Commencez par mémoriser le rappel des 3 phases affiché dans les résultats, puis explorez les familles de waza progressivement.';}
+  document.getElementById('res-mention').textContent=mention;document.getElementById('res-title').textContent=title;document.getElementById('res-msg').textContent=msg;
+}
+
+function restart(){init();}
+init();
+</script>
+</body>
+</html>
