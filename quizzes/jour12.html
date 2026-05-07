@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="E.F. NGATCHA TCHAKOTE — Quiz Judo 365">
+<meta name="copyright" content="© 2025 E.F. NGATCHA TCHAKOTE. Tous droits réservés.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Jour 12 — Prévention & Soins</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+JP:wght@200;400;700&display=swap');
+
+:root {
+  --bg:        #f5f2ec;
+  --white:     #ffffff;
+  --card:      #fdfbf7;
+  --surface:   #ece9e1;
+  --border:    #dedad0;
+  --border2:   #c8c2b5;
+  --ink:       #1a1810;
+  --ink2:      #3e3826;
+  --ink3:      #857d6a;
+  --coral:     #c03828;   /* urgence, blessure */
+  --coral-bg:  rgba(192,56,40,0.07);
+  --coral-bd:  rgba(192,56,40,0.28);
+  --teal:      #1a6868;   /* soins, sérénité */
+  --teal-bg:   rgba(26,104,104,0.07);
+  --teal-bd:   rgba(26,104,104,0.28);
+  --amber:     #a86010;   /* prévention */
+  --amber-bg:  rgba(168,96,16,0.07);
+  --amber-bd:  rgba(168,96,16,0.28);
+  --green:     #246042;
+  --green-bg:  rgba(36,96,66,0.07);
+  --green-bd:  rgba(36,96,66,0.28);
+  --red:       #922222;
+  --red-bg:    rgba(146,34,34,0.06);
+  --gold:      #966810;
+  --sh:        0 2px 14px rgba(26,24,16,0.07);
+  --sh2:       0 6px 32px rgba(26,24,16,0.11);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:'Outfit',sans-serif;
+  min-height:100vh;overflow-x:hidden;
+  -webkit-user-select:none;user-select:none;
+}
+
+body::before{
+  content:'';position:fixed;inset:0;
+  background:
+    radial-gradient(ellipse 58% 44% at 88% 6%,rgba(192,56,40,0.06) 0%,transparent 60%),
+    radial-gradient(ellipse 45% 50% at 10% 94%,rgba(26,104,104,0.05) 0%,transparent 60%);
+  pointer-events:none;z-index:0;
+}
+
+.bg-k{position:fixed;font-family:'Noto Serif JP',serif;font-weight:700;pointer-events:none;z-index:0;user-select:none;color:rgba(26,24,16,0.035);line-height:1;}
+.bk1{font-size:300px;top:-50px;right:-30px;}
+.bk2{font-size:200px;bottom:0;left:-20px;}
+
+.page{position:relative;z-index:1;max-width:840px;margin:0 auto;padding:36px 22px 80px;}
+
+header{margin-bottom:32px;}
+
+.info-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:18px;}
+.tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:20px;border:1px solid var(--border2);color:var(--ink3);background:var(--white);}
+.tag.day{background:var(--coral);color:#fff;border-color:var(--coral);}
+.tag.wk {color:var(--teal);border-color:var(--teal-bd);}
+.tag.lvl{color:var(--green);border-color:var(--green-bd);}
+
+.sig{display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
+.sig-nm{font-family:'Spectral',serif;font-style:italic;font-size:14px;color:var(--gold);}
+.sig-gr{display:flex;align-items:center;gap:6px;}
+.sig-belt{width:22px;height:5px;border-radius:1px;background:linear-gradient(90deg,#246042,#44a870);}
+.sig-kyu{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--green);text-transform:uppercase;}
+
+.title-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);}
+.tc-top{height:5px;background:linear-gradient(90deg,var(--coral) 34%,var(--amber) 34%,var(--amber) 67%,var(--teal) 67%);}
+.tc-body{display:grid;grid-template-columns:1fr auto;}
+.tc-main{padding:26px 30px;border-right:1px solid var(--border);}
+.tc-eye{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--coral);margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.tc-eye::after{content:'';flex:1;height:1px;background:var(--border);}
+.tc-h1{font-family:'Spectral',serif;font-size:clamp(26px,4.5vw,46px);font-weight:700;line-height:1.0;color:var(--ink);letter-spacing:-0.5px;}
+.tc-h1 em{font-style:italic;color:var(--coral);display:block;font-weight:300;font-size:0.84em;margin-top:4px;}
+.tc-sub{font-size:13px;color:var(--ink3);margin-top:10px;line-height:1.6;}
+.tc-side{padding:24px 20px;min-width:115px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;background:var(--surface);}
+.tc-num{font-family:'Spectral',serif;font-size:46px;font-weight:700;color:var(--coral);line-height:1;}
+.tc-lbl{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);text-align:center;line-height:1.5;}
+.tc-ico{font-size:20px;margin-top:4px;}
+
+.hud{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin:18px 0 8px;}
+.hc{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:10px 8px;text-align:center;}
+.hv{font-family:'Spectral',serif;font-size:26px;font-weight:700;color:var(--ink);line-height:1;display:block;}
+.hl{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-top:3px;display:block;}
+
+.prog{display:flex;gap:3px;margin-bottom:24px;height:5px;}
+.ps{flex:1;border-radius:2px;background:var(--border);transition:all 0.3s ease;}
+.ps.ok {background:var(--green);}
+.ps.ng {background:var(--red);opacity:0.6;}
+.ps.cur{background:var(--amber);box-shadow:0 0 8px rgba(168,96,16,0.5);animation:blink 1.5s ease infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.65}}
+
+.q-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);margin-bottom:14px;animation:cardIn 0.4s cubic-bezier(0.34,1.2,0.64,1);}
+@keyframes cardIn{from{opacity:0;transform:translateY(16px) scale(0.99);}to{opacity:1;transform:translateY(0) scale(1);}}
+
+.qc-band{height:3px;transition:background 0.3s;}
+.band-prev{background:linear-gradient(90deg,var(--amber),#e09030);}
+.band-soin{background:linear-gradient(90deg,var(--coral),#e05040);}
+.band-corp{background:linear-gradient(90deg,var(--teal),#30a8a8);}
+
+.qc-top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:var(--surface);border-bottom:1px solid var(--border);flex-wrap:wrap;gap:8px;}
+.qc-num{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--ink3);text-transform:uppercase;}
+.qc-cat{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;border:1px solid;}
+.cat-prev{color:var(--amber);border-color:var(--amber-bd);background:var(--amber-bg);}
+.cat-soin{color:var(--coral);border-color:var(--coral-bd);background:var(--coral-bg);}
+.cat-corp{color:var(--teal); border-color:var(--teal-bd); background:var(--teal-bg);}
+
+.qc-body{padding:26px 22px 22px;}
+.q-text{font-family:'Spectral',serif;font-size:clamp(17px,2.8vw,22px);font-weight:400;line-height:1.58;color:var(--ink);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border);}
+
+.opts{display:flex;flex-direction:column;gap:9px;}
+.opt{display:flex;align-items:flex-start;gap:12px;padding:13px 16px;border:1.5px solid var(--border);border-radius:8px;background:var(--card);cursor:pointer;text-align:left;font-family:'Outfit',sans-serif;font-size:14px;font-weight:400;line-height:1.5;color:var(--ink2);transition:all 0.16s ease;}
+.opt:hover:not(:disabled){border-color:var(--amber);background:var(--amber-bg);color:var(--ink);transform:translateX(4px);}
+.opt-k{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--ink3);flex-shrink:0;margin-top:1px;transition:all 0.16s;}
+.opt:hover:not(:disabled) .opt-k{border-color:var(--amber);color:var(--amber);}
+
+.opt.correct{border-color:var(--green);background:var(--green-bg);color:var(--ink);animation:pop 0.35s ease;}
+.opt.correct .opt-k{background:var(--green);border-color:var(--green);color:#fff;}
+.opt.wrong{border-color:var(--red);background:var(--red-bg);color:var(--ink3);}
+.opt.wrong .opt-k{background:var(--red);border-color:var(--red);color:#fff;}
+.opt.reveal{border-color:var(--green-bd);background:rgba(36,96,66,0.04);}
+.opt.reveal .opt-k{border-color:var(--green);color:var(--green);}
+@keyframes pop{0%{transform:scale(0.99)}60%{transform:scale(1.01)}100%{transform:scale(1)}}
+
+.expl{display:none;margin-top:18px;padding:14px 18px;background:rgba(150,104,16,0.05);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.75;color:var(--ink2);}
+.expl.show{display:block;animation:fadeUp 0.3s ease;}
+.expl strong{color:var(--ink);font-weight:700;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+
+.nav{display:flex;justify-content:space-between;align-items:center;}
+.nav-hint{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--ink3);opacity:0.55;text-transform:uppercase;}
+.btn-next{display:none;align-items:center;gap:8px;background:var(--coral);color:#fff;border:none;padding:12px 26px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;cursor:pointer;border-radius:8px;transition:all 0.18s ease;box-shadow:0 3px 14px rgba(192,56,40,0.25);}
+.btn-next.show{display:flex;}
+.btn-next:hover{background:var(--ink);transform:translateX(2px);}
+
+.results{display:none;}
+.results.show{display:block;animation:cardIn 0.5s ease;}
+.res-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);}
+.res-top{padding:50px 44px 42px;text-align:center;background:linear-gradient(135deg,#fdf0ee 0%,#eef5f5 100%);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.res-top::before{content:'安全';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Noto Serif JP',serif;font-size:240px;font-weight:700;color:rgba(192,56,40,0.04);pointer-events:none;white-space:nowrap;}
+.res-lbl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--ink3);margin-bottom:10px;}
+.res-score{font-family:'Spectral',serif;font-size:clamp(72px,16vw,110px);font-weight:700;line-height:1;color:var(--ink);}
+.res-score span{color:var(--coral);}
+.res-mention{font-family:'Noto Serif JP',serif;font-size:13px;color:var(--teal);letter-spacing:3px;margin-top:8px;}
+.res-body{padding:36px 44px;text-align:center;}
+.res-title{font-family:'Spectral',serif;font-size:clamp(18px,3vw,26px);font-weight:700;color:var(--ink);margin-bottom:10px;}
+.res-msg{font-size:14px;line-height:1.75;color:var(--ink2);max-width:460px;margin:0 auto 28px;}
+
+.zones-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:28px;}
+.zone-cell{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 8px;text-align:center;}
+.zone-ico{font-size:22px;display:block;margin-bottom:4px;}
+.zone-nom{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);display:block;line-height:1.4;}
+.zone-info{font-size:11px;color:var(--coral);margin-top:2px;display:block;font-weight:500;}
+
+.next-box{display:inline-flex;flex-direction:column;align-items:center;gap:4px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 24px;margin-bottom:22px;}
+.next-lbl{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);}
+.next-val{font-family:'Spectral',serif;font-size:16px;font-weight:700;color:var(--teal);}
+
+.btn-restart{display:block;margin:0 auto;background:transparent;border:1.5px solid var(--coral);color:var(--coral);padding:12px 36px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;cursor:pointer;border-radius:8px;transition:all 0.18s;}
+.btn-restart:hover{background:var(--coral);color:#fff;}
+
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.ft-l{display:flex;flex-direction:column;gap:4px;}
+.ft-name{font-family:'Spectral',serif;font-style:italic;font-size:14px;color:var(--gold);}
+.ft-gr{display:flex;align-items:center;gap:6px;}
+.ft-belt{width:22px;height:5px;border-radius:1px;background:linear-gradient(90deg,#246042,#44a870);}
+.ft-kyu{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--green);text-transform:uppercase;}
+.ft-r{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--ink3);opacity:0.45;text-align:right;line-height:1.7;}
+
+@media(max-width:600px){.tc-body{grid-template-columns:1fr;}.tc-side{display:none;}.qc-body{padding:20px 16px;}.res-body,.res-top{padding:28px 20px;}.zones-grid{grid-template-columns:repeat(3,1fr);}}
+</style>
+</head>
+<body>
+
+<div class="bg-k bk1">安全</div>
+<div class="bg-k bk2">治</div>
+
+<div class="page">
+  <header>
+    <div class="info-row">
+      <div class="tags">
+        <span class="tag day">Jour 12</span>
+        <span class="tag wk">Semaine 2</span>
+        <span class="tag lvl">🟢 Débutant</span>
+      </div>
+      <div class="sig">
+        <span class="sig-nm">E.F. NGATCHA TCHAKOTE</span>
+        <div class="sig-gr"><div class="sig-belt"></div><span class="sig-kyu">3e Kyu · Ceinture Verte</span></div>
+      </div>
+    </div>
+    <div class="title-card">
+      <div class="tc-top"></div>
+      <div class="tc-body">
+        <div class="tc-main">
+          <div class="tc-eye">Le Savez-Vous ? · Quiz Judo Quotidien</div>
+          <h1 class="tc-h1">Prévention<em>&amp; Soins — Semaine 2</em></h1>
+          <p class="tc-sub">Blessures spécifiques au judo, gestion des traumatismes, retour à l\'entraînement et prévention des blessures chroniques — questions approfondies.</p>
+        </div>
+        <div class="tc-side">
+          <div class="tc-num">10</div>
+          <div class="tc-lbl">Questions<br>Jour 12</div>
+          <div class="tc-ico">🩹🛡️</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="hud">
+    <div class="hc"><span class="hv" id="hv-ok">0</span><span class="hl">Correct</span></div>
+    <div class="hc"><span class="hv" id="hv-ng">0</span><span class="hl">Incorrect</span></div>
+    <div class="hc"><span class="hv" id="hv-q">1/10</span><span class="hl">Question</span></div>
+    <div class="hc"><span class="hv" id="hv-pct">—</span><span class="hl">Score</span></div>
+  </div>
+
+  <div class="prog" id="prog"></div>
+
+  <div id="quiz-area">
+    <div class="q-card" id="q-card">
+      <div class="qc-band" id="qc-band"></div>
+      <div class="qc-top">
+        <span class="qc-num" id="q-num">Q.01 / 10</span>
+        <span class="qc-cat" id="q-cat">Prévention</span>
+      </div>
+      <div class="qc-body">
+        <p class="q-text" id="q-text"></p>
+        <div class="opts" id="opts"></div>
+        <div class="expl" id="expl"></div>
+      </div>
+    </div>
+    <div class="nav">
+      <span class="nav-hint" id="nav-hint">Choisissez une réponse</span>
+      <button class="btn-next" id="btn-next"><span id="btn-lbl">Suivant</span><span>→</span></button>
+    </div>
+  </div>
+
+  <div class="results" id="results">
+    <div class="res-card">
+      <div class="res-top">
+        <div class="res-lbl">Jour 12 · Prévention &amp; Soins · Semaine 2</div>
+        <div class="res-score" id="res-score">—</div>
+        <div class="res-mention" id="res-mention">—</div>
+      </div>
+      <div class="res-body">
+        <p class="res-title" id="res-title">—</p>
+        <p class="res-msg" id="res-msg">—</p>
+
+        <div class="zones-grid">
+          <div class="zone-cell"><span class="zone-ico">🦴</span><span class="zone-nom">Épaule &amp;<br>Clavicule</span><span class="zone-info">Zone à risque #1</span></div>
+          <div class="zone-cell"><span class="zone-ico">🦵</span><span class="zone-nom">Genou &amp;<br>Ligaments</span><span class="zone-info">Zone à risque #2</span></div>
+          <div class="zone-cell"><span class="zone-ico">🤚</span><span class="zone-nom">Poignet &amp;<br>Doigts</span><span class="zone-info">Zone à risque #3</span></div>
+          <div class="zone-cell"><span class="zone-ico">🦶</span><span class="zone-nom">Cheville &amp;<br>Pied</span><span class="zone-info">Entorse fréquente</span></div>
+          <div class="zone-cell"><span class="zone-ico">🧠</span><span class="zone-nom">Cou &amp;<br>Colonne</span><span class="zone-info">Vigilance maximale</span></div>
+          <div class="zone-cell"><span class="zone-ico">💪</span><span class="zone-nom">Coude &amp;<br>Avant-bras</span><span class="zone-info">Kansetsu-waza</span></div>
+        </div>
+
+        <div class="next-box">
+          <div class="next-lbl">Prochain quiz — Jour 13 · Semaine 2</div>
+          <div class="next-val">Compétition &amp; Règlements</div>
+        </div>
+        <button class="btn-restart" onclick="restart()">↺ Recommencer</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="ft-l">
+      <span class="ft-name">E.F. NGATCHA TCHAKOTE</span>
+      <div class="ft-gr"><div class="ft-belt"></div><span class="ft-kyu">3e Kyu · Ceinture Verte</span></div>
+    </div>
+    <div class="ft-r">Quiz Judo Quotidien · Série 365 Jours<br>Jour 12 / 365 · Prévention &amp; Soins · 🟢 S2</div>
+  </footer>
+</div>
+
+<script>
+// Protection légère — sans setInterval, compatible tous mobiles
+document.addEventListener('contextmenu',e=>{e.preventDefault();return false;});
+document.addEventListener('keydown',e=>{
+  if(e.key==='F12'||(e.ctrlKey&&['u','U','i','I','j','J','s','S'].includes(e.key))||(e.ctrlKey&&e.shiftKey)){
+    e.preventDefault();return false;
+  }
+});
+
+/*
+  SCHÉMA BONNES RÉPONSES — Jour 12 (imprévisible, validé) :
+  Q1→B  Q2→D  Q3→A  Q4→C  Q5→B
+  Q6→A  Q7→D  Q8→C  Q9→A  Q10→D
+  Index: A=0  B=1  C=2  D=3
+  Distribution: A×3, B×2, C×2, D×3 ✓
+  Pas de répétition consécutive ✓
+*/
+const Q=[
+  { // Q1 → B (index 1)
+    type:'prev', cat:'Zones à risque',
+    text:'Quelle articulation est la plus fréquemment blessée en judo lors des chutes et des projections ?',
+    opts:[
+      'Le genou — lors des torsions pendant les ashi-waza',
+      'L\'épaule — lors des chutes mal amorties et des immobilisations forcées',
+      'La cheville — lors des déplacements rapides sur le tatami',
+      'Le poignet — lors des gardes prolongées au sol'
+    ],
+    ok:1,
+    expl:'<strong>L\'épaule est la zone la plus vulnérable.</strong> En judo, l\'épaule subit des contraintes extrêmes : chutes sur le côté, étirements lors des saisies, pressions lors des immobilisations. Les luxations, les déchirures de la coiffe des rotateurs et les fractures de clavicule sont les blessures les plus fréquentes. La maîtrise des ukemi réduit considérablement ce risque.'
+  },
+  { // Q2 → D (index 3)
+    type:'soin', cat:'Traumatisme crânien',
+    text:'Après un choc à la tête pendant l\'entraînement, quels signes doivent immédiatement arrêter la séance et justifier une consultation médicale urgente ?',
+    opts:[
+      'Une légère rougeur sur le front sans autres symptômes',
+      'Une douleur passagère qui disparaît en moins d\'une minute',
+      'Une simple bosse (hématome) sans perte de connaissance ni vertiges',
+      'Maux de tête persistants, vertiges, nausées, confusion ou perte de connaissance même brève'
+    ],
+    ok:3,
+    expl:'<strong>Maux de tête, vertiges, nausées, confusion = urgence médicale.</strong> Ces symptômes peuvent indiquer une commotion cérébrale. Même légère, elle nécessite une évaluation médicale. La règle en sport est absolue : tout choc à la tête avec ces symptômes = arrêt immédiat et consultation. Reprendre l\'entraînement le même jour est strictement interdit.'
+  },
+  { // Q3 → A (index 0)
+    type:'prev', cat:'Prévention des lombalgies',
+    text:'Comment un judoka peut-il prévenir les douleurs chroniques au bas du dos (lombalgies), très courantes en judo ?',
+    opts:[
+      'En renforçant régulièrement les muscles abdominaux et du dos (gainage), et en vérifiant sa technique de projection pour éviter les compensations',
+      'En portant une ceinture de soutien lombaire pendant tous les entraînements',
+      'En évitant toutes les techniques de projection qui sollicitent le dos',
+      'Les lombalgies sont inévitables en judo — il n\'existe pas de prévention efficace'
+    ],
+    ok:0,
+    expl:'<strong>Gainage et technique correcte.</strong> Les lombalgies en judo viennent souvent d\'une faiblesse du corps (muscles profonds du tronc) et de compensations techniques (voûter le dos lors des projections). Un programme régulier de gainage (planche, exercices de dos) et une technique soignée avec le sensei réduisent drastiquement ce risque.'
+  },
+  { // Q4 → C (index 2)
+    type:'soin', cat:'Clé de bras — Urgence',
+    text:'Pendant un ne-waza, un judoka applique une clé de coude (Ude-garami). Son partenaire ne tape pas à temps. Que faut-il faire immédiatement ?',
+    opts:[
+      'Continuer à appliquer la clé pour que le partenaire apprenne à taper plus vite',
+      'Demander à l\'arbitre d\'intervenir avant de relâcher la prise',
+      'Relâcher immédiatement la pression dès qu\'on sent une résistance anormale ou une douleur — sans attendre le tapement',
+      'Augmenter progressivement la pression jusqu\'au tapement'
+    ],
+    ok:2,
+    expl:'<strong>Relâcher immédiatement sans attendre.</strong> En entraînement, la sécurité prime absolument sur le résultat. Si le partenaire ne tape pas, c\'est qu\'il est peut-être coincé ou désorienté. Forcer risque une rupture ligamentaire grave au coude. La règle d\'or : en randori, on contrôle — on ne force jamais jusqu\'à la douleur.'
+  },
+  { // Q5 → B (index 1)
+    type:'prev', cat:'Étirements',
+    text:'À quel moment de la séance les étirements statiques prolongés (tenir une position plus de 30 secondes) sont-ils recommandés ?',
+    opts:[
+      'Avant l\'échauffement pour préparer les muscles',
+      'Après la séance, pendant le retour au calme, quand les muscles sont chauds',
+      'Pendant le randori pour rester souple entre les combats',
+      'Les étirements statiques sont déconseillés en judo à tout moment'
+    ],
+    ok:1,
+    expl:'<strong>Après la séance — retour au calme.</strong> Les étirements statiques prolongés avant l\'effort réduisent la force et la réactivité musculaire. En revanche, après la séance, sur des muscles chauds, ils améliorent la souplesse à long terme, accélèrent la récupération et préviennent les raideurs. C\'est le moment idéal pour travailler sa flexibilité.'
+  },
+  { // Q6 → A (index 0)
+    type:'corp', cat:'Tendinites',
+    text:'Un judoka ressent une douleur progressive à l\'épaule qui s\'aggrave à chaque entraînement depuis 3 semaines. De quoi s\'agit-il probablement et que faut-il faire ?',
+    opts:[
+      'Probablement une tendinite — il faut consulter un médecin, réduire la charge d\'entraînement et traiter avant que cela empire',
+      'Une simple courbature — continuer l\'entraînement normalement sans s\'inquiéter',
+      'Une fracture de stress — aller directement aux urgences sans attendre',
+      'Une crampe chronique — appliquer de la chaleur avant chaque séance'
+    ],
+    ok:0,
+    expl:'<strong>Tendinite probable — consultation médicale indispensable.</strong> Une douleur qui s\'aggrave progressivement sur plusieurs semaines est un signal d\'alarme. Les tendinites ignorées deviennent chroniques et très longues à guérir. Un médecin du sport pourra diagnostiquer, prescrire une kinésithérapie et adapter l\'entraînement sans tout arrêter.'
+  },
+  { // Q7 → D (index 3)
+    type:'prev', cat:'Prévention genou',
+    text:'Quelle habitude d\'entraînement réduit le risque de blessure aux ligaments du genou lors des techniques de fauchage (ashi-waza) ?',
+    opts:[
+      'Porter des genouillères rigides pendant tous les entraînements',
+      'Éviter toutes les techniques de fauchage jusqu\'au niveau ceinture noire',
+      'Forcer les étirements du genou avant chaque randori',
+      'Renforcer les muscles quadriceps et ischio-jambiers, et travailler la technique de fauchage à vitesse réduite d\'abord'
+    ],
+    ok:3,
+    expl:'<strong>Renforcement musculaire et progression technique.</strong> Les muscles autour du genou (quadriceps, ischio-jambiers) protègent les ligaments en absorbant les chocs et en stabilisant l\'articulation. La progression technique — apprendre les ashi-waza lentement avant de les exécuter à pleine vitesse — évite les torsions soudaines dangereuses.'
+  },
+  { // Q8 → C (index 2)
+    text:'Qu\'est-ce qu\'une "blessure de surmenage" (overuse injury) et comment se manifeste-t-elle chez un judoka ?',
+    type:'soin', cat:'Surmenage',
+    opts:[
+      'C\'est une blessure grave causée par un seul accident violent pendant la compétition',
+      'C\'est uniquement la fatigue mentale due à un entraînement trop intense',
+      'C\'est une lésion qui apparaît progressivement suite à des microtraumatismes répétés sans récupération suffisante',
+      'C\'est une blessure uniquement présente chez les judokas professionnels de haut niveau'
+    ],
+    ok:2,
+    expl:'<strong>Microtraumatismes répétés sans récupération suffisante.</strong> Contrairement à une blessure traumatique (chute, choc), la blessure de surmenage s\'installe progressivement. Exemples : épicondylite (tennis elbow du grip), tendinite rotulienne, stress fractures. Elle est causée par trop de volume d\'entraînement sans assez de repos. Prévention : respecter les jours de récupération.'
+  },
+  { // Q9 → A (index 0)
+    type:'corp', cat:'Doigts — Judoka\'s finger',
+    text:'Les judokas développent souvent des "doigts de judoka" — des articulations enflées et douloureuses des doigts. Quelle en est la cause principale ?',
+    opts:[
+      'Les microtraumatismes répétés des saisies (kumi-kata) qui endommagent progressivement les ligaments et capsules articulaires des doigts',
+      'Une alimentation trop riche en sel qui provoque de la rétention d\'eau dans les doigts',
+      'Le fait de ne pas porter de bandages aux doigts pendant les compétitions',
+      'Une infection bactérienne transmise par le judogi des partenaires'
+    ],
+    ok:0,
+    expl:'<strong>Microtraumatismes répétés des saisies.</strong> Des milliers de saisies par séance créent des microtraumatismes aux capsules articulaires et ligaments des doigts. Sans récupération, des épaississements fibreux se forment. Prévention : taping (bandage des doigts), travail de mobilité, et ne pas ignorer les douleurs persistantes aux doigts.'
+  },
+  { // Q10 → D (index 3)
+    type:'prev', cat:'Retour après blessure',
+    text:'Un judoka a été absent 6 semaines pour une entorse de genou. Comment doit se passer son retour sur le tatami ?',
+    opts:[
+      'Reprendre directement le randori intensif pour "rattraper le temps perdu"',
+      'Reprendre uniquement les kata, sans aucun contact pendant 1 an',
+      'Reprendre à 100% dès le premier jour si la douleur a complètement disparu',
+      'Reprendre progressivement : mobilité → renforcement → uchi-komi → randori léger → randori normal, avec validation médicale à chaque étape'
+    ],
+    ok:3,
+    expl:'<strong>Reprise progressive et validée médicalement.</strong> Après 6 semaines d\'absence, les muscles ont perdu de la force et le cerveau a partiellement "oublié" les schémas moteurs. Une reprise trop brutale multiplie le risque de récidive par 3 à 5. La progression en étapes — mobilité → force → technique → contact → intensité — est la seule voie sûre.'
+  }
+];
+
+let cur=0,score=0,wrongs=0,answered=false,log=[];
+
+function init(){cur=0;score=0;wrongs=0;answered=false;log=[];document.getElementById('results').classList.remove('show');document.getElementById('quiz-area').style.display='';buildProg();render();}
+
+function buildProg(){const p=document.getElementById('prog');p.innerHTML='';Q.forEach((_,i)=>{const s=document.createElement('div');s.className='ps'+(i===0?' cur':'');s.id='ps'+i;p.appendChild(s);});}
+
+function updateProg(){Q.forEach((_,i)=>{const s=document.getElementById('ps'+i);if(!s)return;s.className='ps';if(i<log.length)s.classList.add(log[i]?'ok':'ng');else if(i===cur)s.classList.add('cur');});}
+
+function updateHUD(){document.getElementById('hv-ok').textContent=score;document.getElementById('hv-ng').textContent=wrongs;document.getElementById('hv-q').textContent=`${cur+1}/10`;document.getElementById('hv-pct').textContent=log.length>0?Math.round(score/log.length*100)+'%':'—';}
+
+const bandMap={prev:'band-prev',soin:'band-soin',corp:'band-corp'};
+const catMap ={prev:'cat-prev', soin:'cat-soin', corp:'cat-corp'};
+
+function render(){
+  answered=false;const q=Q[cur];
+  document.getElementById('q-num').textContent=`Q.${String(cur+1).padStart(2,'0')} / 10`;
+  const cat=document.getElementById('q-cat');cat.textContent=q.cat;cat.className='qc-cat '+catMap[q.type];
+  document.getElementById('qc-band').className='qc-band '+bandMap[q.type];
+  document.getElementById('q-text').textContent=q.text;
+  const el=document.getElementById('opts');el.innerHTML='';
+  ['A','B','C','D'].forEach((l,i)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<span class="opt-k">${l}</span><span>${q.opts[i]}</span>`;b.onclick=()=>pick(i);el.appendChild(b);});
+  document.getElementById('expl').className='expl';document.getElementById('expl').innerHTML='';
+  document.getElementById('btn-next').className='btn-next';
+  document.getElementById('nav-hint').textContent='Choisissez une réponse';
+  document.getElementById('btn-lbl').textContent=cur<Q.length-1?'Suivant':'Voir les résultats';
+  const card=document.getElementById('q-card');card.style.animation='none';void card.offsetWidth;card.style.animation='cardIn 0.4s cubic-bezier(0.34,1.2,0.64,1)';
+  updateHUD();updateProg();
+}
+
+function pick(idx){
+  if(answered)return;answered=true;const q=Q[cur];
+  const btns=document.querySelectorAll('.opt');btns.forEach(b=>b.disabled=true);
+  if(idx===q.ok){btns[idx].classList.add('correct');score++;log.push(true);}
+  else{btns[idx].classList.add('wrong');btns[q.ok].classList.add('reveal');wrongs++;log.push(false);}
+  document.getElementById('expl').innerHTML=q.expl;document.getElementById('expl').classList.add('show');
+  document.getElementById('btn-next').classList.add('show');document.getElementById('nav-hint').textContent='';
+  updateHUD();updateProg();
+}
+
+document.getElementById('btn-next').addEventListener('click',()=>{cur++;if(cur>=Q.length)showResults();else render();});
+
+function showResults(){
+  document.getElementById('quiz-area').style.display='none';document.getElementById('results').classList.add('show');
+  document.getElementById('res-score').innerHTML=`${score}<span>/10</span>`;
+  const p=score/Q.length;let mention,title,msg;
+  if(p===1)    {mention='優秀 — Excellent';title='Maîtrise parfaite de la prévention';msg='Remarquable ! Vous maîtrisez les blessures spécifiques au judo, leur prévention et les protocoles de soins avancés. Ces connaissances protègent votre longévité dans le sport.';}
+  else if(p>=.8){mention='良好 — Très bien';title='Très bonne connaissance des soins';msg='Solide maîtrise. Les zones à risque et les grands protocoles sont bien connus. Approfondissez les blessures chroniques (tendinites, surmenage) pour compléter votre culture préventive.';}
+  else if(p>=.6){mention='合格 — Bien';title='Bonnes bases à approfondir';msg='Les réflexes d\'urgence sont là. Travaillez maintenant la prévention à long terme — les blessures de surmenage et les protocoles de retour après blessure sont essentiels pour une pratique durable.';}
+  else          {mention='要努力 — À travailler';title='La prévention protège votre pratique';msg='Sans connaissance des blessures spécifiques au judo, le risque d\'abandon forcé est élevé. Relisez les zones à risque affichées dans les résultats et mémorisez les protocoles de soins.';}
+  document.getElementById('res-mention').textContent=mention;document.getElementById('res-title').textContent=title;document.getElementById('res-msg').textContent=msg;
+}
+
+function restart(){init();}
+init();
+</script>
+</body>
+</html>
