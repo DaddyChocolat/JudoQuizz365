@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="E.F. NGATCHA TCHAKOTE — Quiz Judo 365">
+<meta name="copyright" content="© 2025 E.F. NGATCHA TCHAKOTE. Tous droits réservés.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Jour 17 — Technique & Entraînement · S3</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+JP:wght@200;400;700&display=swap');
+
+:root {
+  --bg:        #f2f0e9;
+  --white:     #ffffff;
+  --card:      #fdfaf5;
+  --surface:   #e8e5dc;
+  --border:    #dad5c8;
+  --border2:   #c4bfb0;
+  --ink:       #171510;
+  --ink2:      #393220;
+  --ink3:      #7e7660;
+  --fire:      #b84010;   /* technique — action, énergie */
+  --fire-bg:   rgba(184,64,16,0.07);
+  --fire-bd:   rgba(184,64,16,0.28);
+  --fire-dk:   #902e08;
+  --slate:     #284070;
+  --slate-bg:  rgba(40,64,112,0.07);
+  --slate-bd:  rgba(40,64,112,0.26);
+  --pine:      #1a5c38;
+  --pine-bg:   rgba(26,92,56,0.07);
+  --pine-bd:   rgba(26,92,56,0.28);
+  --green:     #1e6040;
+  --green-bg:  rgba(30,96,64,0.07);
+  --green-bd:  rgba(30,96,64,0.28);
+  --red:       #8c2020;
+  --red-bg:    rgba(140,32,32,0.06);
+  --gold:      #8e6410;
+  --amber:     #a06010;
+  --amber-bg:  rgba(160,96,16,0.07);
+  --amber-bd:  rgba(160,96,16,0.28);
+  --sh:        0 2px 14px rgba(23,21,16,0.07);
+  --sh2:       0 6px 32px rgba(23,21,16,0.12);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--ink);font-family:'Raleway',sans-serif;min-height:100vh;overflow-x:hidden;-webkit-user-select:none;user-select:none;}
+
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 58% 45% at 88% 6%,rgba(184,64,16,0.07) 0%,transparent 60%),radial-gradient(ellipse 45% 52% at 10% 94%,rgba(40,64,112,0.05) 0%,transparent 60%);pointer-events:none;z-index:0;}
+
+.bg-k{position:fixed;font-family:'Noto Serif JP',serif;font-weight:700;pointer-events:none;z-index:0;user-select:none;color:rgba(23,21,16,0.035);line-height:1;}
+.bk1{font-size:300px;top:-50px;right:-30px;}
+.bk2{font-size:200px;bottom:0;left:-20px;}
+
+.page{position:relative;z-index:1;max-width:840px;margin:0 auto;padding:36px 22px 80px;}
+
+header{margin-bottom:32px;}
+.info-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px;}
+.tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:20px;border:1px solid var(--border2);color:var(--ink3);background:var(--white);}
+.tag.day{background:var(--fire);color:#fff;border-color:var(--fire);}
+.tag.wk {color:var(--slate);border-color:var(--slate-bd);}
+.tag.lvl{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-bd);font-weight:500;}
+.tag.grn{color:var(--green);border-color:var(--green-bd);}
+
+.sig{display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
+.sig-nm{font-family:'Crimson Pro',serif;font-style:italic;font-size:15px;color:var(--gold);}
+.sig-gr{display:flex;align-items:center;gap:6px;}
+.sig-belt{width:22px;height:5px;border-radius:1px;background:linear-gradient(90deg,#1e6040,#42a870);}
+.sig-kyu{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--green);text-transform:uppercase;}
+
+.level-banner{background:linear-gradient(90deg,var(--fire-bg),rgba(184,64,16,0.02));border:1px solid var(--fire-bd);border-radius:8px;padding:10px 16px;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.lb-icon{font-size:18px;}
+.lb-text{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--fire-dk);}
+.lb-desc{font-size:12px;color:var(--ink3);margin-top:1px;}
+
+.title-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);}
+.tc-top{height:5px;background:linear-gradient(90deg,var(--fire) 35%,var(--slate) 35%,var(--slate) 68%,var(--pine) 68%);}
+.tc-body{display:grid;grid-template-columns:1fr auto;}
+.tc-main{padding:26px 30px;border-right:1px solid var(--border);}
+.tc-eye{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--fire);margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.tc-eye::after{content:'';flex:1;height:1px;background:var(--border);}
+.tc-h1{font-family:'Crimson Pro',serif;font-size:clamp(26px,4.5vw,48px);font-weight:700;line-height:1.0;color:var(--ink);letter-spacing:-0.5px;}
+.tc-h1 em{font-style:italic;color:var(--fire);display:block;font-weight:400;font-size:0.84em;margin-top:4px;}
+.tc-sub{font-size:13px;color:var(--ink3);margin-top:10px;line-height:1.6;}
+.tc-side{padding:24px 20px;min-width:115px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;background:var(--surface);}
+.tc-num{font-family:'Crimson Pro',serif;font-size:46px;font-weight:700;color:var(--fire);line-height:1;}
+.tc-lbl{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);text-align:center;line-height:1.5;}
+.tc-ico{font-size:20px;margin-top:4px;}
+
+.hud{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin:18px 0 8px;}
+.hc{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:10px 8px;text-align:center;}
+.hv{font-family:'Crimson Pro',serif;font-size:26px;font-weight:700;color:var(--ink);line-height:1;display:block;}
+.hl{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-top:3px;display:block;}
+
+.prog{display:flex;gap:3px;margin-bottom:24px;height:5px;}
+.ps{flex:1;border-radius:2px;background:var(--border);transition:all 0.3s ease;}
+.ps.ok{background:var(--green);}
+.ps.ng{background:var(--red);opacity:0.6;}
+.ps.cur{background:var(--fire);box-shadow:0 0 8px rgba(184,64,16,0.5);animation:blink 1.5s ease infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.65}}
+
+.q-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);margin-bottom:14px;animation:cardIn 0.4s cubic-bezier(0.34,1.2,0.64,1);}
+@keyframes cardIn{from{opacity:0;transform:translateY(16px) scale(0.99);}to{opacity:1;transform:translateY(0) scale(1);}}
+
+.qc-band{height:3px;transition:background 0.3s;}
+.band-bio{background:linear-gradient(90deg,var(--fire),#e07040);}
+.band-str{background:linear-gradient(90deg,var(--slate),#5080c0);}
+.band-ent{background:linear-gradient(90deg,var(--pine),#40a870);}
+
+.qc-top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:var(--surface);border-bottom:1px solid var(--border);flex-wrap:wrap;gap:8px;}
+.qc-num{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--ink3);text-transform:uppercase;}
+.diff-badge{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1px;padding:3px 8px;border-radius:4px;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-bd);}
+.qc-cat{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;border:1px solid;}
+.cat-bio{color:var(--fire);border-color:var(--fire-bd);background:var(--fire-bg);}
+.cat-str{color:var(--slate);border-color:var(--slate-bd);background:var(--slate-bg);}
+.cat-ent{color:var(--pine);border-color:var(--pine-bd);background:var(--pine-bg);}
+
+.qc-body{padding:26px 22px 22px;}
+.q-text{font-family:'Crimson Pro',serif;font-size:clamp(17px,2.8vw,22px);font-weight:400;line-height:1.6;color:var(--ink);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border);}
+
+.opts{display:flex;flex-direction:column;gap:9px;}
+.opt{display:flex;align-items:flex-start;gap:12px;padding:13px 16px;border:1.5px solid var(--border);border-radius:8px;background:var(--card);cursor:pointer;text-align:left;font-family:'Raleway',sans-serif;font-size:13.5px;font-weight:400;line-height:1.55;color:var(--ink2);transition:all 0.16s ease;}
+.opt:hover:not(:disabled){border-color:var(--fire);background:var(--fire-bg);color:var(--ink);transform:translateX(4px);}
+.opt-k{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--ink3);flex-shrink:0;margin-top:1px;transition:all 0.16s;}
+.opt:hover:not(:disabled) .opt-k{border-color:var(--fire);color:var(--fire);}
+.opt.correct{border-color:var(--green);background:var(--green-bg);color:var(--ink);animation:pop 0.35s ease;}
+.opt.correct .opt-k{background:var(--green);border-color:var(--green);color:#fff;}
+.opt.wrong{border-color:var(--red);background:var(--red-bg);color:var(--ink3);}
+.opt.wrong .opt-k{background:var(--red);border-color:var(--red);color:#fff;}
+.opt.reveal{border-color:var(--green-bd);background:rgba(30,96,64,0.04);}
+.opt.reveal .opt-k{border-color:var(--green);color:var(--green);}
+@keyframes pop{0%{transform:scale(0.99)}60%{transform:scale(1.01)}100%{transform:scale(1)}}
+
+.expl{display:none;margin-top:18px;padding:14px 18px;background:rgba(142,100,16,0.05);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.75;color:var(--ink2);}
+.expl.show{display:block;animation:fadeUp 0.3s ease;}
+.expl strong{color:var(--ink);font-weight:700;}
+.expl .jp{font-family:'Noto Serif JP',serif;font-size:13px;color:var(--fire);margin-right:4px;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+
+.nav{display:flex;justify-content:space-between;align-items:center;}
+.nav-hint{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--ink3);opacity:0.55;text-transform:uppercase;}
+.btn-next{display:none;align-items:center;gap:8px;background:var(--fire);color:#fff;border:none;padding:12px 26px;font-family:'Raleway',sans-serif;font-size:14px;font-weight:600;cursor:pointer;border-radius:8px;transition:all 0.18s ease;box-shadow:0 3px 14px rgba(184,64,16,0.28);}
+.btn-next.show{display:flex;}
+.btn-next:hover{background:var(--ink);transform:translateX(2px);}
+
+.results{display:none;}
+.results.show{display:block;animation:cardIn 0.5s ease;}
+.res-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);}
+.res-top{padding:50px 44px 42px;text-align:center;background:linear-gradient(135deg,#faf0e8 0%,#eef0f8 100%);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.res-top::before{content:'技';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Noto Serif JP',serif;font-size:280px;font-weight:700;color:rgba(184,64,16,0.04);pointer-events:none;}
+.res-lbl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--ink3);margin-bottom:10px;}
+.res-score{font-family:'Crimson Pro',serif;font-size:clamp(72px,16vw,110px);font-weight:700;line-height:1;color:var(--ink);}
+.res-score span{color:var(--fire);}
+.res-mention{font-family:'Noto Serif JP',serif;font-size:13px;color:var(--slate);letter-spacing:3px;margin-top:8px;}
+.res-body{padding:36px 44px;text-align:center;}
+.res-title{font-family:'Crimson Pro',serif;font-size:clamp(18px,3vw,26px);font-weight:700;color:var(--ink);margin-bottom:10px;}
+.res-msg{font-size:14px;line-height:1.75;color:var(--ink2);max-width:460px;margin:0 auto 28px;}
+
+.phases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:14px;}
+.ph-cell{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 8px;text-align:center;}
+.ph-num{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--fire);text-transform:uppercase;display:block;margin-bottom:4px;}
+.ph-jp{font-family:'Noto Serif JP',serif;font-size:20px;color:var(--ink);display:block;line-height:1;margin-bottom:3px;}
+.ph-rom{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);display:block;}
+.ph-fr{font-size:11px;color:var(--ink2);margin-top:2px;display:block;}
+
+.waza-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:28px;}
+.wz-cell{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 6px;text-align:center;}
+.wz-jp{font-family:'Noto Serif JP',serif;font-size:16px;color:var(--fire);display:block;margin-bottom:2px;}
+.wz-rom{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);display:block;}
+.wz-fr{font-size:10px;color:var(--ink2);margin-top:1px;display:block;}
+
+.next-box{display:inline-flex;flex-direction:column;align-items:center;gap:4px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 24px;margin-bottom:22px;}
+.next-lbl{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);}
+.next-val{font-family:'Crimson Pro',serif;font-size:16px;font-weight:700;color:var(--fire);}
+
+.btn-restart{display:block;margin:0 auto;background:transparent;border:1.5px solid var(--fire);color:var(--fire);padding:12px 36px;font-family:'Raleway',sans-serif;font-size:14px;font-weight:600;cursor:pointer;border-radius:8px;transition:all 0.18s;}
+.btn-restart:hover{background:var(--fire);color:#fff;}
+
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.ft-l{display:flex;flex-direction:column;gap:4px;}
+.ft-name{font-family:'Crimson Pro',serif;font-style:italic;font-size:14px;color:var(--gold);}
+.ft-gr{display:flex;align-items:center;gap:6px;}
+.ft-belt{width:22px;height:5px;border-radius:1px;background:linear-gradient(90deg,#1e6040,#42a870);}
+.ft-kyu{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--green);text-transform:uppercase;}
+.ft-r{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--ink3);opacity:0.45;text-align:right;line-height:1.7;}
+
+@media(max-width:600px){.tc-body{grid-template-columns:1fr;}.tc-side{display:none;}.qc-body{padding:20px 16px;}.res-body,.res-top{padding:28px 20px;}}
+</style>
+</head>
+<body>
+
+<div class="bg-k bk1">技</div>
+<div class="bg-k bk2">道</div>
+
+<div class="page">
+  <header>
+    <div class="info-row">
+      <div class="tags">
+        <span class="tag day">Jour 17</span>
+        <span class="tag wk">Semaine 3</span>
+        <span class="tag lvl">🟡 Intermédiaire</span>
+        <span class="tag grn">3e Kyu</span>
+      </div>
+      <div class="sig">
+        <span class="sig-nm">E.F. NGATCHA TCHAKOTE</span>
+        <div class="sig-gr"><div class="sig-belt"></div><span class="sig-kyu">3e Kyu · Ceinture Verte</span></div>
+      </div>
+    </div>
+
+    <div class="level-banner">
+      <span class="lb-icon">🟡</span>
+      <div>
+        <div class="lb-text">Niveau Intermédiaire — Semaine 3</div>
+        <div class="lb-desc">Biomécanique · Stratégie de combat · Chaînes techniques · Analyse du randori</div>
+      </div>
+    </div>
+
+    <div class="title-card">
+      <div class="tc-top"></div>
+      <div class="tc-body">
+        <div class="tc-main">
+          <div class="tc-eye">Le Savez-Vous ? · Quiz Judo Quotidien</div>
+          <h1 class="tc-h1">Technique<em>&amp; Entraînement — S3</em></h1>
+          <p class="tc-sub">Principes biomécaniques des projections, enchaînements, contre-attaques et planification de l'entraînement — niveau intermédiaire.</p>
+        </div>
+        <div class="tc-side">
+          <div class="tc-num">10</div>
+          <div class="tc-lbl">Questions<br>Jour 17 · S3</div>
+          <div class="tc-ico">🥋🟡</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="hud">
+    <div class="hc"><span class="hv" id="hv-ok">0</span><span class="hl">Correct</span></div>
+    <div class="hc"><span class="hv" id="hv-ng">0</span><span class="hl">Incorrect</span></div>
+    <div class="hc"><span class="hv" id="hv-q">1/10</span><span class="hl">Question</span></div>
+    <div class="hc"><span class="hv" id="hv-pct">—</span><span class="hl">Score</span></div>
+  </div>
+
+  <div class="prog" id="prog"></div>
+
+  <div id="quiz-area">
+    <div class="q-card" id="q-card">
+      <div class="qc-band" id="qc-band"></div>
+      <div class="qc-top">
+        <span class="qc-num" id="q-num">Q.01 / 10</span>
+        <span class="qc-cat" id="q-cat">Biomécanique</span>
+        <span class="diff-badge">🟡 Intermédiaire</span>
+      </div>
+      <div class="qc-body">
+        <p class="q-text" id="q-text"></p>
+        <div class="opts" id="opts"></div>
+        <div class="expl" id="expl"></div>
+      </div>
+    </div>
+    <div class="nav">
+      <span class="nav-hint" id="nav-hint">Choisissez une réponse</span>
+      <button class="btn-next" id="btn-next"><span id="btn-lbl">Suivant</span><span>→</span></button>
+    </div>
+  </div>
+
+  <div class="results" id="results">
+    <div class="res-card">
+      <div class="res-top">
+        <div class="res-lbl">Jour 17 · Technique &amp; Entraînement · Semaine 3 🟡</div>
+        <div class="res-score" id="res-score">—</div>
+        <div class="res-mention" id="res-mention">—</div>
+      </div>
+      <div class="res-body">
+        <p class="res-title" id="res-title">—</p>
+        <p class="res-msg" id="res-msg">—</p>
+
+        <div class="phases-grid">
+          <div class="ph-cell"><span class="ph-num">Phase 1</span><span class="ph-jp">崩し</span><span class="ph-rom">Kuzushi</span><span class="ph-fr">Déséquilibrer</span></div>
+          <div class="ph-cell"><span class="ph-num">Phase 2</span><span class="ph-jp">作り</span><span class="ph-rom">Tsukuri</span><span class="ph-fr">Placer le corps</span></div>
+          <div class="ph-cell"><span class="ph-num">Phase 3</span><span class="ph-jp">掛け</span><span class="ph-rom">Kake</span><span class="ph-fr">Exécuter</span></div>
+        </div>
+
+        <div class="waza-grid">
+          <div class="wz-cell"><span class="wz-jp">手技</span><span class="wz-rom">Te-waza</span><span class="wz-fr">Techniques de bras</span></div>
+          <div class="wz-cell"><span class="wz-jp">腰技</span><span class="wz-rom">Koshi-waza</span><span class="wz-fr">Techniques de hanche</span></div>
+          <div class="wz-cell"><span class="wz-jp">足技</span><span class="wz-rom">Ashi-waza</span><span class="wz-fr">Techniques de jambe</span></div>
+          <div class="wz-cell"><span class="wz-jp">捨身技</span><span class="wz-rom">Sutemi-waza</span><span class="wz-fr">Techniques de sacrifice</span></div>
+          <div class="wz-cell"><span class="wz-jp">返し技</span><span class="wz-rom">Kaeshi-waza</span><span class="wz-fr">Contre-attaques</span></div>
+          <div class="wz-cell"><span class="wz-jp">連絡技</span><span class="wz-rom">Renraku-waza</span><span class="wz-fr">Enchaînements</span></div>
+        </div>
+
+        <div class="next-box">
+          <div class="next-lbl">Prochain quiz — Jour 18 · Semaine 3</div>
+          <div class="next-val">Nutrition &amp; Récupération 🟡</div>
+        </div>
+        <button class="btn-restart" onclick="restart()">↺ Recommencer</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="ft-l">
+      <span class="ft-name">E.F. NGATCHA TCHAKOTE</span>
+      <div class="ft-gr"><div class="ft-belt"></div><span class="ft-kyu">3e Kyu · Ceinture Verte</span></div>
+    </div>
+    <div class="ft-r">Quiz Judo Quotidien · Série 365 Jours<br>Jour 17 / 365 · Technique &amp; Entraînement · 🟡 S3</div>
+  </footer>
+</div>
+
+<script>
+document.addEventListener('contextmenu',e=>{e.preventDefault();return false;});
+document.addEventListener('keydown',e=>{
+  if(e.key==='F12'||(e.ctrlKey&&['u','U','i','I','j','J','s','S'].includes(e.key))||(e.ctrlKey&&e.shiftKey)){
+    e.preventDefault();return false;
+  }
+});
+
+/*
+  SCHÉMA BONNES RÉPONSES — Jour 17 (imprévisible, validé) :
+  Q1→C  Q2→A  Q3→D  Q4→B  Q5→A
+  Q6→C  Q7→D  Q8→B  Q9→C  Q10→A
+  Index: A=0  B=1  C=2  D=3
+  Distribution: A×3, B×2, C×3, D×2 ✓
+  Pas de répétition consécutive ✓
+*/
+const Q=[
+  { // Q1 → C (index 2)
+    type:'bio', cat:'Centre de gravité',
+    text:'Pourquoi un judoka adopte-t-il instinctivement une posture basse et les genoux fléchis lorsqu\'il résiste à une attaque adverse ?',
+    opts:[
+      'Pour augmenter sa force musculaire globale en contractant les quadriceps en position de flexion',
+      'Pour imiter la posture traditionnelle des samouraïs transmise dans les arts martiaux japonais',
+      'Pour abaisser son centre de gravité, ce qui augmente sa stabilité et rend le kuzushi adverse plus difficile à réaliser',
+      'Pour préparer une contre-attaque de type Sutemi-waza en se rapprochant du sol'
+    ],
+    ok:2,
+    expl:'<span class="jp">重心</span><strong>Abaisser le centre de gravité augmente la stabilité.</strong> Plus le centre de gravité est bas et la base de sustentation large, plus il faut de force pour déséquilibrer quelqu\'un. C\'est un principe physique fondamental. En abaissant sa posture, le judoka oblige l\'adversaire à exercer une force beaucoup plus importante pour créer le kuzushi nécessaire à sa technique.'
+  },
+  { // Q2 → A (index 0)
+    type:'bio', cat:'Principe de levier',
+    text:'Dans un O-goshi (grande projection de hanche), quel rôle joue précisément la hanche du judoka qui projette ?',
+    opts:[
+      'Elle sert de point d\'appui (fulcrum) : placée sous le centre de gravité de l\'adversaire, elle transforme la force de rotation du tronc en projection par effet de levier',
+      'Elle bloque les hanches de l\'adversaire pour l\'empêcher de contre-attaquer pendant la phase de tsukuri',
+      'Elle génère la puissance principale de la projection par une poussée vers l\'avant uniquement',
+      'Elle sert uniquement à maintenir le contact entre les deux corps pendant la rotation finale'
+    ],
+    ok:0,
+    expl:'<span class="jp">大腰</span><strong>La hanche comme point d\'appui — effet de levier.</strong> Dans le O-goshi, la hanche placée sous le centre de gravité de l\'uke constitue le pivot du levier. Tori tire vers le bas (mains) et pousse vers le haut (hanche) simultanément, créant une rotation qui amplifie une force modérée en projection puissante. C\'est l\'expression parfaite de Seiryoku Zenyo : minimum de force, maximum d\'effet.'
+  },
+  { // Q3 → D (index 3)
+    type:'str', cat:'Renraku-waza',
+    text:'Qu\'est-ce qu\'un Renraku-waza (連絡技) et en quoi diffère-t-il d\'un simple enchaînement de deux techniques distinctes ?',
+    opts:[
+      'C\'est une technique combinée exécutée simultanément avec les deux mains dans des directions opposées',
+      'C\'est uniquement la transition debout-sol, de la projection vers le travail au sol (ne-waza)',
+      'C\'est la répétition de la même technique deux fois de suite avec des angles d\'attaque différents',
+      'C\'est un système où la première attaque, même échouée, crée délibérément un déséquilibre qui rend la deuxième attaque plus efficace — les deux techniques sont liées stratégiquement'
+    ],
+    ok:3,
+    expl:'<span class="jp">連絡技</span><strong>Lien stratégique entre deux attaques.</strong> Le Renraku-waza n\'est pas simplement "attaque puis deuxième attaque". La première attaque est délibérément conçue pour provoquer une réaction défensive prévisible chez l\'adversaire, qui crée alors le déséquilibre idéal pour la deuxième technique. Exemple classique : O-soto-gari (vers l\'arrière droit) → O-uchi-gari (vers l\'arrière gauche) : la résistance de l\'adversaire à la première crée l\'ouverture pour la seconde.'
+  },
+  { // Q4 → B (index 1)
+    type:'str', cat:'Griffe et kumi-kata',
+    text:'Un adversaire adopte une garde défensive en reculant constamment ses bras pour empêcher votre saisie. Quelle stratégie de kumi-kata est la plus efficace pour contourner cette défense ?',
+    opts:[
+      'Augmenter la vitesse et la force des tentatives de saisie jusqu\'à percer sa défense par la répétition',
+      'Utiliser des fausses attaques de jambes (ashi-waza) pour forcer l\'adversaire à réagir et abaisser ses bras, créant l\'ouverture pour la saisie souhaitée',
+      'Attendre passivement que l\'adversaire se fatigue et laisse tomber sa garde naturellement',
+      'Changer de catégorie de poids pour éviter les adversaires aux longs bras défensifs'
+    ],
+    ok:1,
+    expl:'<span class="jp">組み方</span><strong>Utiliser les ashi-waza pour créer l\'ouverture.</strong> Face à une garde fermée, forcer directement est inefficace et coûteux en énergie. Une feinte vers les jambes (De-ashi-barai, Ko-soto-gari) oblige l\'adversaire à baisser son regard et ses mains pour protéger ses appuis, ouvrant instantanément la voie vers le col ou la manche. C\'est le principe du judo indirect : attaquer un point pour ouvrir un autre.'
+  },
+  { // Q5 → A (index 0)
+    type:'bio', cat:'Kuzushi — 8 directions',
+    text:'Le kuzushi peut théoriquement être appliqué dans 8 directions. Pourquoi le kuzushi vers l\'avant (mae) et vers l\'arrière (ushiro) sont-ils généralement plus faciles à créer que les kuzushi en diagonale ?',
+    opts:[
+      'Parce que la bipédie humaine crée naturellement une instabilité plus grande dans l\'axe antéro-postérieur — un pas en avant ou en arrière déplace plus facilement le centre de gravité hors de la base de sustentation',
+      'Parce que les techniques de projection vers l\'avant et l\'arrière sont plus nombreuses dans le Go-kyo, rendant ces directions plus entraînées',
+      'Parce que la musculature des jambes est plus développée dans l\'axe avant-arrière que latéralement',
+      'Parce que le règlement IJF accorde plus de points pour les projections frontales et dorsales que latérales'
+    ],
+    ok:0,
+    expl:'<span class="jp">崩しの方向</span><strong>Instabilité naturelle de l\'axe antéro-postérieur.</strong> La marche bipède humaine génère un déséquilibre constant vers l\'avant — chaque pas est une chute contrôlée. La base de sustentation humaine (les deux pieds) est plus étroite dans l\'axe avant-arrière que dans l\'axe latéral. Il suffit donc d\'une impulsion plus modeste pour faire sortir le centre de gravité de cette base dans ces directions.'
+  },
+  { // Q6 → C (index 2)
+    type:'ent', cat:'Périodisation',
+    text:'Qu\'est-ce que la "périodisation" de l\'entraînement et pourquoi est-elle importante pour un judoka qui prépare une compétition majeure ?',
+    opts:[
+      'C\'est le fait d\'alterner les séances du matin et du soir pour habituer le corps à combattre à toute heure',
+      'C\'est la pratique consistant à changer de club pendant l\'année pour s\'entraîner face à des adversaires variés',
+      'C\'est la planification structurée de l\'entraînement en phases (préparation générale, préparation spécifique, compétition, récupération) pour atteindre le pic de forme au bon moment',
+      'C\'est l\'entraînement par périodes de 3 minutes reproduisant exactement la durée d\'un combat officiel'
+    ],
+    ok:2,
+    expl:'<span class="jp">期分け</span><strong>Planification pour atteindre le pic de forme au bon moment.</strong> Sans périodisation, un judoka risque d\'être en surentraînement le jour J ou d\'avoir raté son pic de forme. La périodisation divise l\'année en : phase de préparation générale (volume élevé, intensité modérée), préparation spécifique (volume réduit, intensité augmentée), phase compétitive (qualité maximale) et récupération active. Chaque phase a ses objectifs précis.'
+  },
+  { // Q7 → D (index 3)
+    type:'str', cat:'Ne-waza — transition',
+    text:'Après avoir échoué une projection debout, un judoka expérimenté enchaîne immédiatement vers le ne-waza plutôt que de se relever. Quel principe justifie cette stratégie ?',
+    opts:[
+      'Le règlement IJF oblige à poursuivre au sol après toute tentative de projection qui touche le tatami',
+      'Le travail au sol est toujours plus facile que le travail debout pour les judokas de petite taille',
+      'Se relever expose momentanément le judoka à une contre-attaque adverse pendant la phase de relevé',
+      'La chute partielle crée souvent un déséquilibre de l\'adversaire qui peut être immédiatement exploité en ne-waza — la transition est une prolongation naturelle de l\'attaque débutée debout'
+    ],
+    ok:3,
+    expl:'<span class="jp">寝技への移行</span><strong>La chute partielle comme déséquilibre exploitable.</strong> Quand une projection échoue partiellement, les deux judokas sont souvent en déséquilibre. Ce moment de transition est une fenêtre stratégique : si uke est penché, une immobilisation ou un étranglement peut être saisi avant qu\'il ne retrouve l\'équilibre. Les judokas de haut niveau transforment leurs échecs debout en opportunités au sol — c\'est la fluidité de la "nage-katame" (projection-sol).'
+  },
+  { // Q8 → B (index 1)
+    type:'bio', cat:'Harai-goshi — mécanique',
+    text:'Dans le Harai-goshi (fauchage de hanche), quelle est la fonction précise du mouvement de la jambe qui fauche ?',
+    opts:[
+      'Elle bloque la jambe d\'appui adverse pour empêcher tout mouvement de fuite pendant la rotation',
+      'Elle amplifie la rotation initiée par la hanche en balayant les jambes adverses vers le haut, augmentant l\'amplitude de la projection',
+      'Elle est le point d\'appui principal de la technique — la hanche joue uniquement un rôle de guidage',
+      'Elle crée le kuzushi initial en heurtant le mollet adverse avant la rotation du corps'
+    ],
+    ok:1,
+    expl:'<span class="jp">払腰</span><strong>Amplification de la rotation par le balayage.</strong> Dans le Harai-goshi, la hanche initie la rotation et place le centre de gravité d\'uke en déséquilibre vers l\'avant. La jambe qui fauche (en extension) balaie ensuite les jambes d\'uke vers le haut, transformant le déséquilibre en rotation complète vers le sol. Sans ce mouvement de jambe, la projection resterait incomplète — c\'est lui qui donne l\'amplitude caractéristique du Harai-goshi.'
+  },
+  { // Q9 → C (index 2)
+    type:'str', cat:'Analyse du randori',
+    text:'Un judoka remarque qu\'il réussit ses projections en entraînement mais les rate systématiquement en compétition. Quelle est la cause technique la plus probable de cette différence ?',
+    opts:[
+      'Le judogi de compétition est plus rigide que celui d\'entraînement, rendant les saisies différentes et moins fluides',
+      'Les arbitres de compétition sifflent les combats plus rapidement, ne laissant pas le temps de placer les techniques',
+      'En compétition, le stress augmente la tension musculaire, ce qui ralentit les mouvements et détruit le timing — les techniques ne sont pas encore suffisamment automatisées pour résister à la pression',
+      'Les adversaires de compétition connaissent ses techniques favorites car les clubs s\'espionnent lors des tournois préparatoires'
+    ],
+    ok:2,
+    expl:'<strong>Automatisation insuffisante face au stress compétitif.</strong> En entraînement, l\'environnement connu réduit le stress et permet l\'expression technique optimale. En compétition, le cortisol et l\'adrénaline augmentent la tension musculaire et réduisent la précision des mouvements fins. Seules les techniques parfaitement automatisées (des milliers de répétitions) résistent à cette pression. C\'est pourquoi l\'uchi-komi massif est irremplaçable.'
+  },
+  { // Q10 → A (index 0)
+    type:'ent', cat:'Volume vs Intensité',
+    text:'En préparation d\'une compétition importante dans deux semaines, un judoka hésite entre augmenter le volume (plus de séances) ou augmenter l\'intensité (séances plus dures). Que conseille la science du sport ?',
+    opts:[
+      'Réduire le volume et maintenir l\'intensité — le corps a besoin de se régénérer pour exprimer toute sa puissance le jour J, et augmenter le volume trop près de la compétition mène au surentraînement',
+      'Augmenter simultanément volume et intensité pour atteindre un pic de forme maximal avant la compétition',
+      'Maintenir exactement le même volume et la même intensité pour ne pas perturber les habitudes du corps',
+      'Arrêter tout entraînement intense deux semaines avant la compétition et ne faire que des étirements légers'
+    ],
+    ok:0,
+    expl:'<strong>Réduction du volume — affûtage (tapering).</strong> Dans les deux semaines précédant une compétition, la science du sport recommande la phase d\'"affûtage" (tapering) : réduire le volume de 40 à 60% tout en maintenant l\'intensité. Cela permet aux fibres musculaires de se régénérer complètement, aux réserves de glycogène de se reconstituer et au système nerveux de récupérer. Augmenter le volume à cette étape est une erreur classique qui mène à la fatigue le jour de la compétition.'
+  }
+];
+
+let cur=0,score=0,wrongs=0,answered=false,log=[];
+
+function init(){cur=0;score=0;wrongs=0;answered=false;log=[];document.getElementById('results').classList.remove('show');document.getElementById('quiz-area').style.display='';buildProg();render();}
+function buildProg(){const p=document.getElementById('prog');p.innerHTML='';Q.forEach((_,i)=>{const s=document.createElement('div');s.className='ps'+(i===0?' cur':'');s.id='ps'+i;p.appendChild(s);});}
+function updateProg(){Q.forEach((_,i)=>{const s=document.getElementById('ps'+i);if(!s)return;s.className='ps';if(i<log.length)s.classList.add(log[i]?'ok':'ng');else if(i===cur)s.classList.add('cur');});}
+function updateHUD(){document.getElementById('hv-ok').textContent=score;document.getElementById('hv-ng').textContent=wrongs;document.getElementById('hv-q').textContent=`${cur+1}/10`;document.getElementById('hv-pct').textContent=log.length>0?Math.round(score/log.length*100)+'%':'—';}
+
+const bandMap={bio:'band-bio',str:'band-str',ent:'band-ent'};
+const catMap ={bio:'cat-bio', str:'cat-str', ent:'cat-ent'};
+
+function render(){
+  answered=false;const q=Q[cur];
+  document.getElementById('q-num').textContent=`Q.${String(cur+1).padStart(2,'0')} / 10`;
+  const cat=document.getElementById('q-cat');cat.textContent=q.cat;cat.className='qc-cat '+catMap[q.type];
+  document.getElementById('qc-band').className='qc-band '+bandMap[q.type];
+  document.getElementById('q-text').textContent=q.text;
+  const el=document.getElementById('opts');el.innerHTML='';
+  ['A','B','C','D'].forEach((l,i)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<span class="opt-k">${l}</span><span>${q.opts[i]}</span>`;b.onclick=()=>pick(i);el.appendChild(b);});
+  document.getElementById('expl').className='expl';document.getElementById('expl').innerHTML='';
+  document.getElementById('btn-next').className='btn-next';
+  document.getElementById('nav-hint').textContent='Choisissez une réponse';
+  document.getElementById('btn-lbl').textContent=cur<Q.length-1?'Suivant':'Voir les résultats';
+  const card=document.getElementById('q-card');card.style.animation='none';void card.offsetWidth;card.style.animation='cardIn 0.4s cubic-bezier(0.34,1.2,0.64,1)';
+  updateHUD();updateProg();
+}
+
+function pick(idx){
+  if(answered)return;answered=true;const q=Q[cur];
+  const btns=document.querySelectorAll('.opt');btns.forEach(b=>b.disabled=true);
+  if(idx===q.ok){btns[idx].classList.add('correct');score++;log.push(true);}
+  else{btns[idx].classList.add('wrong');btns[q.ok].classList.add('reveal');wrongs++;log.push(false);}
+  document.getElementById('expl').innerHTML=q.expl;document.getElementById('expl').classList.add('show');
+  document.getElementById('btn-next').classList.add('show');document.getElementById('nav-hint').textContent='';
+  updateHUD();updateProg();
+}
+
+document.getElementById('btn-next').addEventListener('click',()=>{cur++;if(cur>=Q.length)showResults();else render();});
+
+function showResults(){
+  document.getElementById('quiz-area').style.display='none';document.getElementById('results').classList.add('show');
+  document.getElementById('res-score').innerHTML=`${score}<span>/10</span>`;
+  const p=score/Q.length;let mention,title,msg;
+  if(p===1)    {mention='優秀 — Maîtrise technique';title='Parfaite compréhension de la biomécanique';msg='Exceptionnel ! Centre de gravité, effet de levier, Renraku-waza, affûtage — vous maîtrisez la technique avec une profondeur qui dépasse largement le niveau intermédiaire.';}
+  else if(p>=.8){mention='良好 — Très bien';title='Solide culture technique intermédiaire';msg='Excellent niveau. Les principes biomécaniques et stratégiques sont bien intégrés. Approfondissez les enchaînements (Renraku-waza) et la périodisation pour compléter votre maîtrise.';}
+  else if(p>=.6){mention='合格 — Bien';title='Bonne progression technique';msg='Les bases biomécaniques progressent. Concentrez-vous sur les principes de levier, le kuzushi dans les 8 directions et la différence entre Renraku et Kaeshi pour passer au niveau supérieur.';}
+  else          {mention:'要努力 — À approfondir';title:'La biomécanique demande de la réflexion';msg='Ce niveau requiert de comprendre le "pourquoi" des techniques, pas seulement le "comment". Revoyez les 3 phases (Kuzushi-Tsukuri-Kake) et réfléchissez aux principes physiques derrière chaque mouvement.';}
+  document.getElementById('res-mention').textContent=mention;document.getElementById('res-title').textContent=title;document.getElementById('res-msg').textContent=msg;
+}
+
+function restart(){init();}
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="E.F. NGATCHA TCHAKOTE — Quiz Judo 365">
+<meta name="copyright" content="© 2025 E.F. NGATCHA TCHAKOTE. Tous droits réservés.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Jour 16 — Éthique & Code Moral · S3</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+JP:wght@200;400;700&display=swap');
+
+:root {
+  --bg:        #f2f0ea;
+  --white:     #ffffff;
+  --card:      #fdfaf5;
+  --surface:   #e9e6de;
+  --border:    #dbd6ca;
+  --border2:   #c5bfb0;
+  --ink:       #171510;
+  --ink2:      #3a3422;
+  --ink3:      #807860;
+  --violet:    #5a2880;
+  --violet-bg: rgba(90,40,128,0.07);
+  --violet-bd: rgba(90,40,128,0.28);
+  --violet-dk: #42186a;
+  --amber:     #a86010;
+  --amber-bg:  rgba(168,96,16,0.07);
+  --amber-bd:  rgba(168,96,16,0.28);
+  --teal:      #186858;
+  --teal-bg:   rgba(24,104,88,0.07);
+  --teal-bd:   rgba(24,104,88,0.28);
+  --green:     #206040;
+  --green-bg:  rgba(32,96,64,0.07);
+  --green-bd:  rgba(32,96,64,0.28);
+  --red:       #8e2020;
+  --red-bg:    rgba(142,32,32,0.06);
+  --gold:      #906610;
+  --sh:        0 2px 14px rgba(23,21,16,0.07);
+  --sh2:       0 6px 32px rgba(23,21,16,0.12);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--ink);font-family:'Poppins',sans-serif;min-height:100vh;overflow-x:hidden;-webkit-user-select:none;user-select:none;}
+
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 58% 45% at 88% 6%,rgba(90,40,128,0.07) 0%,transparent 60%),radial-gradient(ellipse 45% 52% at 10% 94%,rgba(168,96,16,0.05) 0%,transparent 60%);pointer-events:none;z-index:0;}
+
+.bg-k{position:fixed;font-family:'Noto Serif JP',serif;font-weight:700;pointer-events:none;z-index:0;user-select:none;color:rgba(23,21,16,0.035);line-height:1;}
+.bk1{font-size:300px;top:-50px;right:-30px;}
+.bk2{font-size:200px;bottom:0;left:-20px;}
+
+.page{position:relative;z-index:1;max-width:840px;margin:0 auto;padding:36px 22px 80px;}
+
+header{margin-bottom:32px;}
+.info-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px;}
+.tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:20px;border:1px solid var(--border2);color:var(--ink3);background:var(--white);}
+.tag.day{background:var(--violet);color:#fff;border-color:var(--violet);}
+.tag.wk {color:var(--teal);border-color:var(--teal-bd);}
+.tag.lvl{background:rgba(168,96,16,0.12);color:var(--amber);border-color:var(--amber-bd);font-weight:500;}
+.tag.grn{color:var(--green);border-color:var(--green-bd);}
+
+.sig{display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
+.sig-nm{font-family:'Lora',serif;font-style:italic;font-size:14px;color:var(--gold);}
+.sig-gr{display:flex;align-items:center;gap:6px;}
+.sig-belt{width:22px;height:5px;border-radius:1px;background:linear-gradient(90deg,#206040,#42a870);}
+.sig-kyu{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--green);text-transform:uppercase;}
+
+.level-banner{background:linear-gradient(90deg,var(--violet-bg),rgba(90,40,128,0.02));border:1px solid var(--violet-bd);border-radius:8px;padding:10px 16px;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.lb-icon{font-size:18px;}
+.lb-text{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--violet-dk);}
+.lb-desc{font-size:12px;color:var(--ink3);margin-top:1px;}
+
+.title-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);}
+.tc-top{height:5px;background:linear-gradient(90deg,var(--violet) 40%,var(--teal) 40%);}
+.tc-body{display:grid;grid-template-columns:1fr auto;}
+.tc-main{padding:26px 30px;border-right:1px solid var(--border);}
+.tc-eye{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--violet);margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.tc-eye::after{content:'';flex:1;height:1px;background:var(--border);}
+.tc-h1{font-family:'Lora',serif;font-size:clamp(26px,4.5vw,46px);font-weight:700;line-height:1.0;color:var(--ink);letter-spacing:-0.5px;}
+.tc-h1 em{font-style:italic;color:var(--violet);display:block;font-weight:400;font-size:0.84em;margin-top:4px;}
+.tc-sub{font-size:13px;color:var(--ink3);margin-top:10px;line-height:1.6;}
+.tc-side{padding:24px 20px;min-width:115px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;background:var(--surface);}
+.tc-num{font-family:'Lora',serif;font-size:46px;font-weight:700;color:var(--violet);line-height:1;}
+.tc-lbl{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);text-align:center;line-height:1.5;}
+.tc-ico{font-size:20px;margin-top:4px;}
+
+.hud{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin:18px 0 8px;}
+.hc{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:10px 8px;text-align:center;}
+.hv{font-family:'Lora',serif;font-size:26px;font-weight:700;color:var(--ink);line-height:1;display:block;}
+.hl{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-top:3px;display:block;}
+
+.prog{display:flex;gap:3px;margin-bottom:24px;height:5px;}
+.ps{flex:1;border-radius:2px;background:var(--border);transition:all 0.3s ease;}
+.ps.ok{background:var(--green);}
+.ps.ng{background:var(--red);opacity:0.6;}
+.ps.cur{background:var(--violet);box-shadow:0 0 8px rgba(90,40,128,0.5);animation:blink 1.5s ease infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.65}}
+
+.q-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);margin-bottom:14px;animation:cardIn 0.4s cubic-bezier(0.34,1.2,0.64,1);}
+@keyframes cardIn{from{opacity:0;transform:translateY(16px) scale(0.99);}to{opacity:1;transform:translateY(0) scale(1);}}
+
+.qc-band{height:3px;transition:background 0.3s;}
+.band-eth{background:linear-gradient(90deg,var(--violet),#9050c8);}
+.band-phi{background:linear-gradient(90deg,var(--teal),#30a898);}
+.band-vie{background:linear-gradient(90deg,var(--amber),#d08030);}
+
+.qc-top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:var(--surface);border-bottom:1px solid var(--border);flex-wrap:wrap;gap:8px;}
+.qc-num{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--ink3);text-transform:uppercase;}
+.diff-badge{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1px;padding:3px 8px;border-radius:4px;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-bd);}
+.qc-cat{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;border:1px solid;}
+.cat-eth{color:var(--violet);border-color:var(--violet-bd);background:var(--violet-bg);}
+.cat-phi{color:var(--teal);border-color:var(--teal-bd);background:var(--teal-bg);}
+.cat-vie{color:var(--amber);border-color:var(--amber-bd);background:var(--amber-bg);}
+
+.qc-body{padding:26px 22px 22px;}
+.q-text{font-family:'Lora',serif;font-size:clamp(16px,2.7vw,21px);font-weight:400;line-height:1.6;color:var(--ink);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border);}
+
+.opts{display:flex;flex-direction:column;gap:9px;}
+.opt{display:flex;align-items:flex-start;gap:12px;padding:13px 16px;border:1.5px solid var(--border);border-radius:8px;background:var(--card);cursor:pointer;text-align:left;font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:400;line-height:1.55;color:var(--ink2);transition:all 0.16s ease;}
+.opt:hover:not(:disabled){border-color:var(--violet);background:var(--violet-bg);color:var(--ink);transform:translateX(4px);}
+.opt-k{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--ink3);flex-shrink:0;margin-top:1px;transition:all 0.16s;}
+.opt:hover:not(:disabled) .opt-k{border-color:var(--violet);color:var(--violet);}
+.opt.correct{border-color:var(--green);background:var(--green-bg);color:var(--ink);animation:pop 0.35s ease;}
+.opt.correct .opt-k{background:var(--green);border-color:var(--green);color:#fff;}
+.opt.wrong{border-color:var(--red);background:var(--red-bg);color:var(--ink3);}
+.opt.wrong .opt-k{background:var(--red);border-color:var(--red);color:#fff;}
+.opt.reveal{border-color:var(--green-bd);background:rgba(32,96,64,0.04);}
+.opt.reveal .opt-k{border-color:var(--green);color:var(--green);}
+@keyframes pop{0%{transform:scale(0.99)}60%{transform:scale(1.01)}100%{transform:scale(1)}}
+
+.expl{display:none;margin-top:18px;padding:14px 18px;background:rgba(144,102,16,0.05);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.75;color:var(--ink2);}
+.expl.show{display:block;animation:fadeUp 0.3s ease;}
+.expl strong{color:var(--ink);font-weight:700;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+
+.nav{display:flex;justify-content:space-between;align-items:center;}
+.nav-hint{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--ink3);opacity:0.55;text-transform:uppercase;}
+.btn-next{display:none;align-items:center;gap:8px;background:var(--violet);color:#fff;border:none;padding:12px 26px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;cursor:pointer;border-radius:8px;transition:all 0.18s ease;box-shadow:0 3px 14px rgba(90,40,128,0.28);}
+.btn-next.show{display:flex;}
+.btn-next:hover{background:var(--ink);transform:translateX(2px);}
+
+.results{display:none;}
+.results.show{display:block;animation:cardIn 0.5s ease;}
+.res-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);}
+.res-top{padding:50px 44px 42px;text-align:center;background:linear-gradient(135deg,#f2eef8 0%,#eef5f2 100%);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.res-top::before{content:'道徳';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Noto Serif JP',serif;font-size:240px;font-weight:700;color:rgba(90,40,128,0.04);pointer-events:none;white-space:nowrap;}
+.res-lbl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--ink3);margin-bottom:10px;}
+.res-score{font-family:'Lora',serif;font-size:clamp(72px,16vw,110px);font-weight:700;line-height:1;color:var(--ink);}
+.res-score span{color:var(--violet);}
+.res-mention{font-family:'Noto Serif JP',serif;font-size:13px;color:var(--teal);letter-spacing:3px;margin-top:8px;}
+.res-body{padding:36px 44px;text-align:center;}
+.res-title{font-family:'Lora',serif;font-size:clamp(18px,3vw,26px);font-weight:700;color:var(--ink);margin-bottom:10px;}
+.res-msg{font-size:14px;line-height:1.75;color:var(--ink2);max-width:460px;margin:0 auto 28px;}
+
+.valeurs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:28px;}
+.val-cell{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 6px;text-align:center;}
+.val-jp{font-family:'Noto Serif JP',serif;font-size:18px;color:var(--violet);display:block;line-height:1;margin-bottom:3px;}
+.val-rom{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);display:block;}
+.val-fr{font-size:10px;color:var(--ink2);margin-top:2px;display:block;}
+
+.next-box{display:inline-flex;flex-direction:column;align-items:center;gap:4px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 24px;margin-bottom:22px;}
+.next-lbl{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);}
+.next-val{font-family:'Lora',serif;font-size:16px;font-weight:700;color:var(--violet);}
+
+.btn-restart{display:block;margin:0 auto;background:transparent;border:1.5px solid var(--violet);color:var(--violet);padding:12px 36px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;cursor:pointer;border-radius:8px;transition:all 0.18s;}
+.btn-restart:hover{background:var(--violet);color:#fff;}
+
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.ft-l{display:flex;flex-direction:column;gap:4px;}
+.ft-name{font-family:'Lora',serif;font-style:italic;font-size:14px;color:var(--gold);}
+.ft-gr{display:flex;align-items:center;gap:6px;}
+.ft-belt{width:22px;height:5px;border-radius:1px;background:linear-gradient(90deg,#206040,#42a870);}
+.ft-kyu{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--green);text-transform:uppercase;}
+.ft-r{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--ink3);opacity:0.45;text-align:right;line-height:1.7;}
+
+@media(max-width:600px){.tc-body{grid-template-columns:1fr;}.tc-side{display:none;}.qc-body{padding:20px 16px;}.res-body,.res-top{padding:28px 20px;}.valeurs-grid{grid-template-columns:repeat(4,1fr);}}
+</style>
+</head>
+<body>
+
+<div class="bg-k bk1">礼</div>
+<div class="bg-k bk2">義</div>
+
+<div class="page">
+  <header>
+    <div class="info-row">
+      <div class="tags">
+        <span class="tag day">Jour 16</span>
+        <span class="tag wk">Semaine 3</span>
+        <span class="tag lvl">🟡 Intermédiaire</span>
+        <span class="tag grn">3e Kyu</span>
+      </div>
+      <div class="sig">
+        <span class="sig-nm">E.F. NGATCHA TCHAKOTE</span>
+        <div class="sig-gr"><div class="sig-belt"></div><span class="sig-kyu">3e Kyu · Ceinture Verte</span></div>
+      </div>
+    </div>
+
+    <div class="level-banner">
+      <span class="lb-icon">🟡</span>
+      <div>
+        <div class="lb-text">Niveau Intermédiaire — Semaine 3</div>
+        <div class="lb-desc">Conflits de valeurs · Nuances philosophiques · Applications complexes du Code Moral</div>
+      </div>
+    </div>
+
+    <div class="title-card">
+      <div class="tc-top"></div>
+      <div class="tc-body">
+        <div class="tc-main">
+          <div class="tc-eye">Le Savez-Vous ? · Quiz Judo Quotidien</div>
+          <h1 class="tc-h1">Éthique<em>&amp; Code Moral — S3</em></h1>
+          <p class="tc-sub">Tensions entre valeurs, hiérarchies morales dans le judo, différences entre les 8 valeurs du Code Moral et leurs applications nuancées.</p>
+        </div>
+        <div class="tc-side">
+          <div class="tc-num">10</div>
+          <div class="tc-lbl">Questions<br>Jour 16 · S3</div>
+          <div class="tc-ico">🙏🟡</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="hud">
+    <div class="hc"><span class="hv" id="hv-ok">0</span><span class="hl">Correct</span></div>
+    <div class="hc"><span class="hv" id="hv-ng">0</span><span class="hl">Incorrect</span></div>
+    <div class="hc"><span class="hv" id="hv-q">1/10</span><span class="hl">Question</span></div>
+    <div class="hc"><span class="hv" id="hv-pct">—</span><span class="hl">Score</span></div>
+  </div>
+
+  <div class="prog" id="prog"></div>
+
+  <div id="quiz-area">
+    <div class="q-card" id="q-card">
+      <div class="qc-band" id="qc-band"></div>
+      <div class="qc-top">
+        <span class="qc-num" id="q-num">Q.01 / 10</span>
+        <span class="qc-cat" id="q-cat">Éthique</span>
+        <span class="diff-badge">🟡 Intermédiaire</span>
+      </div>
+      <div class="qc-body">
+        <p class="q-text" id="q-text"></p>
+        <div class="opts" id="opts"></div>
+        <div class="expl" id="expl"></div>
+      </div>
+    </div>
+    <div class="nav">
+      <span class="nav-hint" id="nav-hint">Choisissez une réponse</span>
+      <button class="btn-next" id="btn-next"><span id="btn-lbl">Suivant</span><span>→</span></button>
+    </div>
+  </div>
+
+  <div class="results" id="results">
+    <div class="res-card">
+      <div class="res-top">
+        <div class="res-lbl">Jour 16 · Éthique &amp; Code Moral · Semaine 3 🟡</div>
+        <div class="res-score" id="res-score">—</div>
+        <div class="res-mention" id="res-mention">—</div>
+      </div>
+      <div class="res-body">
+        <p class="res-title" id="res-title">—</p>
+        <p class="res-msg" id="res-msg">—</p>
+
+        <div class="valeurs-grid">
+          <div class="val-cell"><span class="val-jp">礼</span><span class="val-rom">Rei</span><span class="val-fr">Courtoisie</span></div>
+          <div class="val-cell"><span class="val-jp">勇</span><span class="val-rom">Yuki</span><span class="val-fr">Courage</span></div>
+          <div class="val-cell"><span class="val-jp">誠</span><span class="val-rom">Makoto</span><span class="val-fr">Sincérité</span></div>
+          <div class="val-cell"><span class="val-jp">名誉</span><span class="val-rom">Meiyo</span><span class="val-fr">Honneur</span></div>
+          <div class="val-cell"><span class="val-jp">謙遜</span><span class="val-rom">Kenson</span><span class="val-fr">Modestie</span></div>
+          <div class="val-cell"><span class="val-jp">尊敬</span><span class="val-rom">Sonkei</span><span class="val-fr">Respect</span></div>
+          <div class="val-cell"><span class="val-jp">自制</span><span class="val-rom">Jiko seigyo</span><span class="val-fr">Maîtrise</span></div>
+          <div class="val-cell"><span class="val-jp">友情</span><span class="val-rom">Yūjō</span><span class="val-fr">Amitié</span></div>
+        </div>
+
+        <div class="next-box">
+          <div class="next-lbl">Prochain quiz — Jour 17 · Semaine 3</div>
+          <div class="next-val">Technique &amp; Entraînement 🟡</div>
+        </div>
+        <button class="btn-restart" onclick="restart()">↺ Recommencer</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="ft-l">
+      <span class="ft-name">E.F. NGATCHA TCHAKOTE</span>
+      <div class="ft-gr"><div class="ft-belt"></div><span class="ft-kyu">3e Kyu · Ceinture Verte</span></div>
+    </div>
+    <div class="ft-r">Quiz Judo Quotidien · Série 365 Jours<br>Jour 16 / 365 · Éthique &amp; Code Moral · 🟡 S3</div>
+  </footer>
+</div>
+
+<script>
+document.addEventListener('contextmenu',e=>{e.preventDefault();return false;});
+document.addEventListener('keydown',e=>{
+  if(e.key==='F12'||(e.ctrlKey&&['u','U','i','I','j','J','s','S'].includes(e.key))||(e.ctrlKey&&e.shiftKey)){
+    e.preventDefault();return false;
+  }
+});
+
+/*
+  SCHÉMA BONNES RÉPONSES — Jour 16 (imprévisible, validé) :
+  Q1→B  Q2→D  Q3→A  Q4→C  Q5→B
+  Q6→A  Q7→D  Q8→C  Q9→B  Q10→D
+  Index: A=0  B=1  C=2  D=3
+  Distribution: A×2, B×3, C×2, D×3 ✓
+  Pas de répétition consécutive ✓
+
+  NIVEAU INTERMÉDIAIRE S3 :
+  - Questions portant sur des CONFLITS entre valeurs
+  - Situations où deux valeurs s'opposent apparemment
+  - Nuances entre des concepts proches (respect vs courtoisie, honneur vs sincérité)
+  - Toutes les options sont défendables à première lecture
+*/
+const Q=[
+  { // Q1 → B (index 1)
+    type:'eth', cat:'Tension Respect / Sincérité',
+    text:'Un judoka remarque que son sensei enseigne une technique avec une erreur technique subtile. La sincérité (誠) demande de la corriger, mais le respect (尊敬) invite à ne pas le contredire publiquement. Comment résoudre ce conflit de valeurs ?',
+    opts:[
+      'Le respect doit toujours primer sur la sincérité : on ne contredit jamais son sensei, même en privé',
+      'Les deux valeurs peuvent coexister : signaler l\'erreur en privé, avec respect, après la séance — la sincérité ne requiert pas la confrontation publique',
+      'La sincérité prime sur le respect car la vérité technique est plus importante que les hiérarchies',
+      'Ce dilemme n\'existe pas en judo car le sensei ne peut pas se tromper sur le plan technique'
+    ],
+    ok:1,
+    expl:'<strong>Sincérité et respect coexistent par le choix du moment et du cadre.</strong> La sagesse éthique du judo n\'oppose pas ces valeurs : elle enseigne que la manière de dire vrai est aussi importante que la vérité elle-même. Attendre un moment privé, choisir des mots respectueux, formuler en question plutôt qu\'en affirmation — voilà comment honorer simultanément les deux valeurs.'
+  },
+  { // Q2 → D (index 3)
+    type:'phi', cat:'Seiryoku Zenyo — profondeur',
+    text:'Le principe de Seiryoku Zenyo (精力善用) est souvent traduit par "efficacité maximale". Quelle nuance importante cette traduction laisse-t-elle de côté ?',
+    opts:[
+      'Elle omet que ce principe ne s\'applique qu\'aux techniques de projection, pas au travail au sol',
+      'Elle ne précise pas que l\'efficacité doit être atteinte en moins de trois tentatives par combat',
+      'Elle ignore que ce principe est réservé aux judokas de grade dan et n\'est pas enseigné aux kyu',
+      'Elle oublie le mot "善用" (zen-yo) qui signifie "bon usage" — l\'efficacité doit être mise au service du bien, pas de la domination ou de la nuisance'
+    ],
+    ok:3,
+    expl:'<strong>"善用" — bon usage, au service du bien.</strong> La traduction "efficacité maximale" est tronquée. "Seiryoku" = énergie, force vitale. "Zen-yo" = bon usage, utilisation vertueuse. Le principe complet signifie : utiliser son énergie de façon optimale ET au service du bien commun. L\'efficacité sans éthique trahit le principe. Un judoka qui domine pour humilier viole Seiryoku Zenyo même s\'il est techniquement efficace.'
+  },
+  { // Q3 → A (index 0)
+    type:'eth', cat:'Modestie vs Confiance en soi',
+    text:'Un judoka de 2e dan hésite à prendre la parole lors d\'une discussion technique de groupe par peur de paraître prétentieux. Il applique la modestie (謙遜) mais tait une analyse utile. Que révèle cette situation ?',
+    opts:[
+      'C\'est une confusion entre la modestie et la timidité : la vraie modestie n\'empêche pas de partager une expertise utile aux autres — elle exclut seulement la vantardise',
+      'C\'est un exemple parfait de modestie appliquée : se taire au profit des aînés est la forme la plus haute de cette valeur',
+      'Il manque de courage, ce qui est un problème différent de la modestie — les deux valeurs sont totalement indépendantes',
+      'La modestie interdit de prendre la parole dans un groupe mixte de grades différents selon le protocole du Kodokan'
+    ],
+    ok:0,
+    expl:'<strong>Confusion entre modestie et timidité.</strong> La modestie consiste à ne pas s\'attribuer plus de mérite qu\'on n\'en a, et à placer l\'intérêt du groupe au-dessus de son ego. Elle n\'interdit pas de partager une analyse utile — au contraire, retenir une connaissance précieuse par peur du jugement est une forme d\'égocentrisme déguisé. Partager avec humilité ("voici ce que j\'observe, peut-être me trompé-je") est l\'expression juste de la modestie.'
+  },
+  { // Q4 → C (index 2)
+    type:'phi', cat:'Jita Kyoei — limites',
+    text:'Le principe de Jita Kyoei (自他共栄) affirme que soi et les autres prospèrent ensemble. Cependant, en compétition, un judoka cherche la victoire face à son adversaire. Comment ce paradoxe apparent se résout-il ?',
+    opts:[
+      'En compétition, Jita Kyoei est temporairement suspendu car la victoire individuelle prime sur la prospérité mutuelle',
+      'Il n\'y a pas de paradoxe car en judo, toute compétition est interdite selon les principes originaux de Kano',
+      'En compétition, Jita Kyoei s\'applique au niveau collectif : les deux judokas s\'élèvent mutuellement par la qualité de leurs combats, même si l\'un gagne et l\'autre perd',
+      'Jita Kyoei ne concerne que les relations entre le sensei et ses élèves, pas les relations entre compétiteurs'
+    ],
+    ok:2,
+    expl:'<strong>Élévation mutuelle par la qualité du combat.</strong> En compétition, Jita Kyoei se manifeste différemment : les deux judokas donnent le meilleur d\'eux-mêmes, s\'offrant ainsi mutuellement l\'opportunité de progresser. Le vainqueur grandit par la résistance de l\'adversaire. Le perdant grandit par la leçon de la défaite. Kano voyait la compétition non comme une destruction mais comme un outil de croissance partagée.'
+  },
+  { // Q5 → B (index 1)
+    type:'vie', cat:'Honneur et humilité',
+    text:'Un jeune judoka est félicité publiquement pour une belle victoire. Pour ne pas paraître arrogant, il répond : "Ce n\'était rien, j\'ai juste eu de la chance." Quelle valeur du Code Moral cette réponse trahit-elle paradoxalement ?',
+    opts:[
+      'Le courage — minimiser sa victoire montre un manque d\'audace pour assumer son succès',
+      'La sincérité — nier délibérément la réalité de son effort et de sa technique est un mensonge, même par fausse modestie',
+      'Le respect envers son adversaire — minimiser la victoire revient à minimiser la valeur de l\'adversaire vaincu',
+      'L\'honneur — accepter des compliments sans les retourner vers le sensei est contraire au protocole du dojo'
+    ],
+    ok:1,
+    expl:'<strong>La sincérité (誠) est trahie par la fausse modestie.</strong> Dire "c\'était rien" quand on sait qu\'on a travaillé dur est un mensonge poli. La vraie modestie consiste à reconnaître son effort tout en remerciant ses partenaires et son sensei : "J\'ai travaillé dur et mon sensei m\'a bien préparé." Cette réponse est à la fois modeste et sincère. La fausse humilité est une forme de manipulation sociale contraire à Makoto.'
+  },
+  { // Q6 → A (index 0)
+    type:'eth', cat:'Maîtrise de soi — colère',
+    text:'Un judoka est disqualifié par une décision arbitrale qu\'il juge clairement injuste. Sa colère est légitime. Comment la maîtrise de soi (自制) guide-t-elle sa réaction à cet instant précis ?',
+    opts:[
+      'Elle lui permet de ressentir la colère intérieurement sans l\'exprimer de façon destructrice, de saluer l\'adversaire et l\'arbitre, puis de traiter la réclamation par les voies officielles après le combat',
+      'Elle lui impose de supprimer totalement sa colère et de prétendre que la décision lui convient parfaitement',
+      'Elle l\'autorise à exprimer sa colère verbalement à l\'arbitre car la sincérité prime sur la maîtrise de soi dans les situations d\'injustice',
+      'Elle lui demande de quitter immédiatement le tatami pour ne pas risquer de perdre le contrôle en restant sur place'
+    ],
+    ok:0,
+    expl:'<strong>Ressentir sans détruire, agir par les voies officielles.</strong> La maîtrise de soi ne demande pas de supprimer les émotions — c\'est impossible et même malsain. Elle enseigne à ne pas laisser l\'émotion dicter le comportement. La colère est ressentie, acceptée intérieurement, mais l\'expression extérieure reste digne. Les voies de réclamation officielles existent précisément pour traiter les litiges sans dégénérer en confrontation émotionnelle.'
+  },
+  { // Q7 → D (index 3)
+    type:'phi', cat:'Bushido et Code Moral — différences',
+    text:'Quelle est la différence fondamentale entre le Code Moral du judo établi par Kano et le Bushido traditionnel des samouraïs ?',
+    opts:[
+      'Le Bushido comporte 10 valeurs tandis que le Code Moral du judo n\'en comporte que 8',
+      'Le Code Moral du judo inclut la valeur d\'amitié (友情) absente du Bushido, qui privilégie la loyauté hiérarchique',
+      'Le Bushido s\'applique uniquement à la guerre alors que le Code Moral du judo est exclusivement sportif',
+      'Le Bushido est un code de guerrier lié à la loyauté envers un seigneur féodal, tandis que le Code Moral du judo est universel, éducatif et applicable à toute personne dans toute société'
+    ],
+    ok:3,
+    expl:'<strong>Loyauté féodale vs universalité éducative.</strong> Le Bushido (voie du guerrier) était intrinsèquement lié au système féodal japonais : loyauté absolue envers le seigneur (daimyo), disponibilité à donner sa vie pour lui. Kano extrait les valeurs positives (courage, honneur, respect) et les reformule en principes universels applicables à toute personne, indépendamment de sa nationalité, religion ou statut social. Cette universalité est l\'innovation éthique majeure de Kano.'
+  },
+  { // Q8 → C (index 2)
+    type:'vie', cat:'Amitié au dojo',
+    text:'Deux judokas du même club sont amis en dehors du tatami. En compétition officielle, ils se retrouvent dans le même tableau. Comment la valeur d\'amitié (友情) guide-t-elle leur comportement pendant le combat ?',
+    opts:[
+      'L\'amitié les oblige à se mettre d\'accord en amont pour partager équitablement les victoires dans le tournoi',
+      'L\'amitié doit être mise de côté pendant la compétition car les valeurs sportives priment sur les relations personnelles',
+      'L\'amitié se manifeste par le combat le plus loyal et le plus intense possible — se retenir serait manquer de respect à l\'ami en le privant d\'un vrai test',
+      'L\'amitié interdit de combattre son ami en compétition officielle selon le protocole traditionnel du judo'
+    ],
+    ok:2,
+    expl:'<strong>L\'amitié se manifeste par un combat loyal et intense.</strong> Se retenir contre un ami par crainte de le blesser ou de détériorer la relation est une trahison du judo et de l\'amitié elle-même. La vraie amitié offre le meilleur de soi à l\'autre comme adversaire. Après le combat, l\'amitié reprend ses droits immédiatement, quelle que soit l\'issue. Kano disait que l\'adversaire sur le tatami est "le meilleur ami que l\'on puisse avoir".'
+  },
+  { // Q9 → B (index 1)
+    type:'eth', cat:'Respect vs Obéissance',
+    text:'Quelle nuance importante distingue le respect (尊敬) de la simple obéissance dans le contexte du judo ?',
+    opts:[
+      'L\'obéissance est une forme supérieure de respect réservée aux ceintures noires dans la hiérarchie du dojo',
+      'Le respect reconnaît la valeur intrinsèque d\'une personne et maintient son esprit critique, tandis que l\'obéissance est une conformité comportementale qui peut exister sans respect réel',
+      'Le respect et l\'obéissance sont des synonymes en japonais — la distinction est uniquement culturelle et occidentale',
+      'Le respect s\'adresse aux supérieurs hiérarchiques alors que l\'obéissance concerne les règles institutionnelles du judo'
+    ],
+    ok:1,
+    expl:'<strong>Le respect maintient l\'esprit critique — l\'obéissance peut l\'abolir.</strong> On peut obéir par peur sans éprouver de respect. On peut respecter profondément quelqu\'un tout en le contredisant sur un point précis. Le respect (尊敬) en judo reconnaît la valeur de l\'autre — son expérience, son humanité, sa dignité — indépendamment de toute hiérarchie formelle. Un judoka respectueux pose des questions, challenge les idées, sans jamais attaquer la personne.'
+  },
+  { // Q10 → D (index 3)
+    type:'phi', cat:'Application hors tatami',
+    text:'Kano affirmait que "la vraie victoire du judo se remporte hors du tatami". Quelle interprétation correspond le mieux à cette pensée ?',
+    opts:[
+      'Les championnats du monde et les Jeux Olympiques sont les véritables objectifs — le tatami d\'entraînement n\'est qu\'un moyen',
+      'Le judo doit être pratiqué en compétition officielle pour avoir une vraie valeur — l\'entraînement sans compétition est sans intérêt',
+      'La vraie victoire consiste à ne jamais perdre un combat, ce qui nécessite un entraînement hors tatami très intensif',
+      'La vraie victoire du judo, c\'est devenir une personne meilleure dans la vie quotidienne grâce aux valeurs du Code Moral — les résultats sportifs ne sont qu\'un moyen, pas une fin'
+    ],
+    ok:3,
+    expl:'<strong>Devenir une meilleure personne — la fin ultime selon Kano.</strong> Cette citation résume la vision de Kano : le judo n\'est pas un sport dont l\'objectif est de gagner des médailles. C\'est un outil d\'éducation dont l\'objectif est de former des êtres humains accomplis. Un judoka qui gagne tous ses combats mais reste égoïste, violent ou malhonnête dans sa vie n\'a rien compris. Un judoka qui perd mais devient courageux, sincère et utile à sa communauté a tout gagné.'
+  }
+];
+
+let cur=0,score=0,wrongs=0,answered=false,log=[];
+
+function init(){cur=0;score=0;wrongs=0;answered=false;log=[];document.getElementById('results').classList.remove('show');document.getElementById('quiz-area').style.display='';buildProg();render();}
+
+function buildProg(){const p=document.getElementById('prog');p.innerHTML='';Q.forEach((_,i)=>{const s=document.createElement('div');s.className='ps'+(i===0?' cur':'');s.id='ps'+i;p.appendChild(s);});}
+
+function updateProg(){Q.forEach((_,i)=>{const s=document.getElementById('ps'+i);if(!s)return;s.className='ps';if(i<log.length)s.classList.add(log[i]?'ok':'ng');else if(i===cur)s.classList.add('cur');});}
+
+function updateHUD(){document.getElementById('hv-ok').textContent=score;document.getElementById('hv-ng').textContent=wrongs;document.getElementById('hv-q').textContent=`${cur+1}/10`;document.getElementById('hv-pct').textContent=log.length>0?Math.round(score/log.length*100)+'%':'—';}
+
+const bandMap={eth:'band-eth',phi:'band-phi',vie:'band-vie'};
+const catMap ={eth:'cat-eth', phi:'cat-phi', vie:'cat-vie'};
+
+function render(){
+  answered=false;const q=Q[cur];
+  document.getElementById('q-num').textContent=`Q.${String(cur+1).padStart(2,'0')} / 10`;
+  const cat=document.getElementById('q-cat');cat.textContent=q.cat;cat.className='qc-cat '+catMap[q.type];
+  document.getElementById('qc-band').className='qc-band '+bandMap[q.type];
+  document.getElementById('q-text').textContent=q.text;
+  const el=document.getElementById('opts');el.innerHTML='';
+  ['A','B','C','D'].forEach((l,i)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<span class="opt-k">${l}</span><span>${q.opts[i]}</span>`;b.onclick=()=>pick(i);el.appendChild(b);});
+  document.getElementById('expl').className='expl';document.getElementById('expl').innerHTML='';
+  document.getElementById('btn-next').className='btn-next';
+  document.getElementById('nav-hint').textContent='Choisissez une réponse';
+  document.getElementById('btn-lbl').textContent=cur<Q.length-1?'Suivant':'Voir les résultats';
+  const card=document.getElementById('q-card');card.style.animation='none';void card.offsetWidth;card.style.animation='cardIn 0.4s cubic-bezier(0.34,1.2,0.64,1)';
+  updateHUD();updateProg();
+}
+
+function pick(idx){
+  if(answered)return;answered=true;const q=Q[cur];
+  const btns=document.querySelectorAll('.opt');btns.forEach(b=>b.disabled=true);
+  if(idx===q.ok){btns[idx].classList.add('correct');score++;log.push(true);}
+  else{btns[idx].classList.add('wrong');btns[q.ok].classList.add('reveal');wrongs++;log.push(false);}
+  document.getElementById('expl').innerHTML=q.expl;document.getElementById('expl').classList.add('show');
+  document.getElementById('btn-next').classList.add('show');document.getElementById('nav-hint').textContent='';
+  updateHUD();updateProg();
+}
+
+document.getElementById('btn-next').addEventListener('click',()=>{cur++;if(cur>=Q.length)showResults();else render();});
+
+function showResults(){
+  document.getElementById('quiz-area').style.display='none';document.getElementById('results').classList.add('show');
+  document.getElementById('res-score').innerHTML=`${score}<span>/10</span>`;
+  const p=score/Q.length;let mention,title,msg;
+  if(p===1)    {mention='優秀 — Sagesse profonde';title='Maîtrise parfaite de l\'éthique intermédiaire';msg='Remarquable ! Vous naviguez avec finesse dans les tensions entre valeurs, les nuances philosophiques et les contradictions apparentes du Code Moral. Un vrai judoka philosophe.';}
+  else if(p>=.8){mention='良好 — Très bien';title='Solide compréhension éthique';msg='Excellent niveau. Les conflits de valeurs et les nuances entre respect et obéissance, modestie et timidité sont bien saisis. Quelques subtilités philosophiques méritent encore réflexion.';}
+  else if(p>=.6){mention='合格 — Bien';title='Progression confirmée';msg='Les concepts intermédiaires sont en cours d\'intégration. Concentrez-vous sur les nuances : fausse modestie vs vraie modestie, obéissance vs respect, amitié en compétition.';}
+  else          {mention='要努力 — À approfondir';title='Le niveau intermédiaire exige plus de réflexion';msg='Ce niveau dépasse la mémorisation — il demande de réfléchir aux tensions entre valeurs. Relisez les explications détaillées de chaque question et méditez les situations proposées.';}
+  document.getElementById('res-mention').textContent=mention;document.getElementById('res-title').textContent=title;document.getElementById('res-msg').textContent=msg;
+}
+
+function restart(){init();}
+init();
+</script>
+</body>
+</html>
