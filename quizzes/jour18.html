@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="E.F. NGATCHA TCHAKOTE — Quiz Judo 365">
+<meta name="copyright" content="© 2025 E.F. NGATCHA TCHAKOTE. Tous droits réservés.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Jour 18 — Nutrition & Récupération · S3</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+JP:wght@200;400;700&display=swap');
+
+:root {
+  --bg:        #f3f1ea;
+  --white:     #ffffff;
+  --card:      #fdfaf6;
+  --surface:   #e9e6de;
+  --border:    #dbd6ca;
+  --border2:   #c5bfb0;
+  --ink:       #181610;
+  --ink2:      #3a3422;
+  --ink3:      #807860;
+  --forest:    #1a6040;
+  --forest-bg: rgba(26,96,64,0.07);
+  --forest-bd: rgba(26,96,64,0.28);
+  --ocean:     #1060a0;
+  --ocean-bg:  rgba(16,96,160,0.07);
+  --ocean-bd:  rgba(16,96,160,0.26);
+  --plum:      #682070;
+  --plum-bg:   rgba(104,32,112,0.07);
+  --plum-bd:   rgba(104,32,112,0.26);
+  --green:     #1e6040;
+  --green-bg:  rgba(30,96,64,0.07);
+  --green-bd:  rgba(30,96,64,0.28);
+  --red:       #8e2020;
+  --red-bg:    rgba(142,32,32,0.06);
+  --amber:     #a06010;
+  --amber-bg:  rgba(160,96,16,0.07);
+  --amber-bd:  rgba(160,96,16,0.28);
+  --gold:      #8c6010;
+  --sh:        0 2px 14px rgba(24,22,16,0.07);
+  --sh2:       0 6px 32px rgba(24,22,16,0.12);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--ink);font-family:'Nunito Sans',sans-serif;min-height:100vh;overflow-x:hidden;-webkit-user-select:none;user-select:none;}
+
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 58% 45% at 88% 6%,rgba(26,96,64,0.07) 0%,transparent 60%),radial-gradient(ellipse 45% 52% at 10% 94%,rgba(104,32,112,0.05) 0%,transparent 60%);pointer-events:none;z-index:0;}
+
+.bg-k{position:fixed;font-family:'Noto Serif JP',serif;font-weight:700;pointer-events:none;z-index:0;user-select:none;color:rgba(24,22,16,0.035);line-height:1;}
+.bk1{font-size:300px;top:-50px;right:-30px;}
+.bk2{font-size:200px;bottom:0;left:-20px;}
+
+.page{position:relative;z-index:1;max-width:840px;margin:0 auto;padding:36px 22px 80px;}
+
+header{margin-bottom:32px;}
+.info-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px;}
+.tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:20px;border:1px solid var(--border2);color:var(--ink3);background:var(--white);}
+.tag.day{background:var(--forest);color:#fff;border-color:var(--forest);}
+.tag.wk {color:var(--ocean);border-color:var(--ocean-bd);}
+.tag.lvl{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-bd);font-weight:500;}
+.tag.grn{color:var(--green);border-color:var(--green-bd);}
+
+.sig{display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
+.sig-nm{font-family:'Merriweather',serif;font-style:italic;font-size:13px;color:var(--gold);}
+.sig-gr{display:flex;align-items:center;gap:6px;}
+.sig-belt{width:22px;height:5px;border-radius:1px;background:linear-gradient(90deg,#1e6040,#42a870);}
+.sig-kyu{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--green);text-transform:uppercase;}
+
+.level-banner{background:linear-gradient(90deg,var(--forest-bg),rgba(26,96,64,0.02));border:1px solid var(--forest-bd);border-radius:8px;padding:10px 16px;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.lb-icon{font-size:18px;}
+.lb-text{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--forest);}
+.lb-desc{font-size:12px;color:var(--ink3);margin-top:1px;}
+
+.title-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);}
+.tc-top{height:5px;background:linear-gradient(90deg,var(--forest) 34%,var(--ocean) 34%,var(--ocean) 67%,var(--plum) 67%);}
+.tc-body{display:grid;grid-template-columns:1fr auto;}
+.tc-main{padding:26px 30px;border-right:1px solid var(--border);}
+.tc-eye{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--forest);margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.tc-eye::after{content:'';flex:1;height:1px;background:var(--border);}
+.tc-h1{font-family:'Merriweather',serif;font-size:clamp(24px,4.2vw,44px);font-weight:700;line-height:1.05;color:var(--ink);letter-spacing:-0.5px;}
+.tc-h1 em{font-style:italic;color:var(--forest);display:block;font-weight:300;font-size:0.84em;margin-top:4px;}
+.tc-sub{font-size:13px;color:var(--ink3);margin-top:10px;line-height:1.6;}
+.tc-side{padding:24px 20px;min-width:115px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;background:var(--surface);}
+.tc-num{font-family:'Merriweather',serif;font-size:44px;font-weight:700;color:var(--forest);line-height:1;}
+.tc-lbl{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);text-align:center;line-height:1.5;}
+.tc-ico{font-size:20px;margin-top:4px;}
+
+.hud{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin:18px 0 8px;}
+.hc{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:10px 8px;text-align:center;}
+.hv{font-family:'Merriweather',serif;font-size:24px;font-weight:700;color:var(--ink);line-height:1;display:block;}
+.hl{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-top:3px;display:block;}
+
+.prog{display:flex;gap:3px;margin-bottom:24px;height:5px;}
+.ps{flex:1;border-radius:2px;background:var(--border);transition:all 0.3s ease;}
+.ps.ok{background:var(--green);}
+.ps.ng{background:var(--red);opacity:0.6;}
+.ps.cur{background:var(--forest);box-shadow:0 0 8px rgba(26,96,64,0.5);animation:blink 1.5s ease infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.65}}
+
+.q-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);margin-bottom:14px;animation:cardIn 0.4s cubic-bezier(0.34,1.2,0.64,1);}
+@keyframes cardIn{from{opacity:0;transform:translateY(16px) scale(0.99);}to{opacity:1;transform:translateY(0) scale(1);}}
+
+.qc-band{height:3px;transition:background 0.3s;}
+.band-met{background:linear-gradient(90deg,var(--forest),#40a870);}
+.band-hyd{background:linear-gradient(90deg,var(--ocean),#4098d0);}
+.band-rec{background:linear-gradient(90deg,var(--plum),#a050b0);}
+
+.qc-top{display:flex;justify-content:space-between;align-items:center;padding:13px 22px;background:var(--surface);border-bottom:1px solid var(--border);flex-wrap:wrap;gap:8px;}
+.qc-num{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--ink3);text-transform:uppercase;}
+.diff-badge{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1px;padding:3px 8px;border-radius:4px;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-bd);}
+.qc-cat{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;border:1px solid;}
+.cat-met{color:var(--forest);border-color:var(--forest-bd);background:var(--forest-bg);}
+.cat-hyd{color:var(--ocean);border-color:var(--ocean-bd);background:var(--ocean-bg);}
+.cat-rec{color:var(--plum); border-color:var(--plum-bd); background:var(--plum-bg);}
+
+.qc-body{padding:26px 22px 22px;}
+.q-text{font-family:'Merriweather',serif;font-size:clamp(15px,2.6vw,20px);font-weight:300;line-height:1.7;color:var(--ink);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border);}
+
+.opts{display:flex;flex-direction:column;gap:9px;}
+.opt{display:flex;align-items:flex-start;gap:12px;padding:13px 16px;border:1.5px solid var(--border);border-radius:8px;background:var(--card);cursor:pointer;text-align:left;font-family:'Nunito Sans',sans-serif;font-size:13.5px;font-weight:400;line-height:1.55;color:var(--ink2);transition:all 0.16s ease;}
+.opt:hover:not(:disabled){border-color:var(--forest);background:var(--forest-bg);color:var(--ink);transform:translateX(4px);}
+.opt-k{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--ink3);flex-shrink:0;margin-top:1px;transition:all 0.16s;}
+.opt:hover:not(:disabled) .opt-k{border-color:var(--forest);color:var(--forest);}
+.opt.correct{border-color:var(--green);background:var(--green-bg);color:var(--ink);animation:pop 0.35s ease;}
+.opt.correct .opt-k{background:var(--green);border-color:var(--green);color:#fff;}
+.opt.wrong{border-color:var(--red);background:var(--red-bg);color:var(--ink3);}
+.opt.wrong .opt-k{background:var(--red);border-color:var(--red);color:#fff;}
+.opt.reveal{border-color:var(--green-bd);background:rgba(30,96,64,0.04);}
+.opt.reveal .opt-k{border-color:var(--green);color:var(--green);}
+@keyframes pop{0%{transform:scale(0.99)}60%{transform:scale(1.01)}100%{transform:scale(1)}}
+
+.expl{display:none;margin-top:18px;padding:14px 18px;background:rgba(140,96,16,0.05);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;font-size:13.5px;line-height:1.75;color:var(--ink2);}
+.expl.show{display:block;animation:fadeUp 0.3s ease;}
+.expl strong{color:var(--ink);font-weight:700;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+
+.nav{display:flex;justify-content:space-between;align-items:center;}
+.nav-hint{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--ink3);opacity:0.55;text-transform:uppercase;}
+.btn-next{display:none;align-items:center;gap:8px;background:var(--forest);color:#fff;border:none;padding:12px 26px;font-family:'Nunito Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;border-radius:8px;transition:all 0.18s ease;box-shadow:0 3px 14px rgba(26,96,64,0.28);}
+.btn-next.show{display:flex;}
+.btn-next:hover{background:var(--ink);transform:translateX(2px);}
+
+.results{display:none;}
+.results.show{display:block;animation:cardIn 0.5s ease;}
+.res-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);}
+.res-top{padding:50px 44px 42px;text-align:center;background:linear-gradient(135deg,#eef8f2 0%,#eef0f8 100%);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.res-top::before{content:'食';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Noto Serif JP',serif;font-size:280px;font-weight:700;color:rgba(26,96,64,0.04);pointer-events:none;}
+.res-lbl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--ink3);margin-bottom:10px;}
+.res-score{font-family:'Merriweather',serif;font-size:clamp(72px,16vw,110px);font-weight:700;line-height:1;color:var(--ink);}
+.res-score span{color:var(--forest);}
+.res-mention{font-family:'Noto Serif JP',serif;font-size:13px;color:var(--plum);letter-spacing:3px;margin-top:8px;}
+.res-body{padding:36px 44px;text-align:center;}
+.res-title{font-family:'Merriweather',serif;font-size:clamp(17px,3vw,25px);font-weight:700;color:var(--ink);margin-bottom:10px;}
+.res-msg{font-size:14px;line-height:1.75;color:var(--ink2);max-width:460px;margin:0 auto 28px;}
+
+.nutri-table{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:28px;text-align:left;}
+.nt-head{display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--surface);border-bottom:1px solid var(--border);}
+.nt-row {display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid var(--border);}
+.nt-row:last-child{border-bottom:none;}
+.nt-cell{padding:10px 14px;font-size:12px;color:var(--ink2);border-right:1px solid var(--border);}
+.nt-cell:last-child{border-right:none;}
+.nt-head .nt-cell{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);font-weight:400;}
+.nt-cell.hi{color:var(--forest);font-weight:600;}
+
+.next-box{display:inline-flex;flex-direction:column;align-items:center;gap:4px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 24px;margin-bottom:22px;}
+.next-lbl{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);}
+.next-val{font-family:'Merriweather',serif;font-size:15px;font-weight:700;color:var(--forest);}
+
+.btn-restart{display:block;margin:0 auto;background:transparent;border:1.5px solid var(--forest);color:var(--forest);padding:12px 36px;font-family:'Nunito Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;border-radius:8px;transition:all 0.18s;}
+.btn-restart:hover{background:var(--forest);color:#fff;}
+
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.ft-l{display:flex;flex-direction:column;gap:4px;}
+.ft-name{font-family:'Merriweather',serif;font-style:italic;font-size:13px;color:var(--gold);}
+.ft-gr{display:flex;align-items:center;gap:6px;}
+.ft-belt{width:22px;height:5px;border-radius:1px;background:linear-gradient(90deg,#1e6040,#42a870);}
+.ft-kyu{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--green);text-transform:uppercase;}
+.ft-r{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1.5px;color:var(--ink3);opacity:0.45;text-align:right;line-height:1.7;}
+
+@media(max-width:600px){.tc-body{grid-template-columns:1fr;}.tc-side{display:none;}.qc-body{padding:20px 16px;}.res-body,.res-top{padding:28px 20px;}.nt-head,.nt-row{grid-template-columns:1fr 1fr;}.nt-cell:last-child{display:none;}}
+</style>
+</head>
+<body>
+
+<div class="bg-k bk1">食</div>
+<div class="bg-k bk2">眠</div>
+
+<div class="page">
+  <header>
+    <div class="info-row">
+      <div class="tags">
+        <span class="tag day">Jour 18</span>
+        <span class="tag wk">Semaine 3</span>
+        <span class="tag lvl">🟡 Intermédiaire</span>
+        <span class="tag grn">3e Kyu</span>
+      </div>
+      <div class="sig">
+        <span class="sig-nm">E.F. NGATCHA TCHAKOTE</span>
+        <div class="sig-gr"><div class="sig-belt"></div><span class="sig-kyu">3e Kyu · Ceinture Verte</span></div>
+      </div>
+    </div>
+
+    <div class="level-banner">
+      <span class="lb-icon">🟡</span>
+      <div>
+        <div class="lb-text">Niveau Intermédiaire — Semaine 3</div>
+        <div class="lb-desc">Métabolisme sportif · Gestion du poids · Récupération neurologique · Nutrition de compétition</div>
+      </div>
+    </div>
+
+    <div class="title-card">
+      <div class="tc-top"></div>
+      <div class="tc-body">
+        <div class="tc-main">
+          <div class="tc-eye">Le Savez-Vous ? · Quiz Judo Quotidien</div>
+          <h1 class="tc-h1">Nutrition<em>&amp; Récupération — S3</em></h1>
+          <p class="tc-sub">Métabolisme énergétique du judoka, gestion du poids avant compétition, récupération neurologique et nutrition de performance — niveau intermédiaire.</p>
+        </div>
+        <div class="tc-side">
+          <div class="tc-num">10</div>
+          <div class="tc-lbl">Questions<br>Jour 18 · S3</div>
+          <div class="tc-ico">🥗🟡</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="hud">
+    <div class="hc"><span class="hv" id="hv-ok">0</span><span class="hl">Correct</span></div>
+    <div class="hc"><span class="hv" id="hv-ng">0</span><span class="hl">Incorrect</span></div>
+    <div class="hc"><span class="hv" id="hv-q">1/10</span><span class="hl">Question</span></div>
+    <div class="hc"><span class="hv" id="hv-pct">—</span><span class="hl">Score</span></div>
+  </div>
+  <div class="prog" id="prog"></div>
+
+  <div id="quiz-area">
+    <div class="q-card" id="q-card">
+      <div class="qc-band" id="qc-band"></div>
+      <div class="qc-top">
+        <span class="qc-num" id="q-num">Q.01 / 10</span>
+        <span class="qc-cat" id="q-cat">Métabolisme</span>
+        <span class="diff-badge">🟡 Intermédiaire</span>
+      </div>
+      <div class="qc-body">
+        <p class="q-text" id="q-text"></p>
+        <div class="opts" id="opts"></div>
+        <div class="expl" id="expl"></div>
+      </div>
+    </div>
+    <div class="nav">
+      <span class="nav-hint" id="nav-hint">Choisissez une réponse</span>
+      <button class="btn-next" id="btn-next"><span id="btn-lbl">Suivant</span><span>→</span></button>
+    </div>
+  </div>
+
+  <div class="results" id="results">
+    <div class="res-card">
+      <div class="res-top">
+        <div class="res-lbl">Jour 18 · Nutrition &amp; Récupération · Semaine 3 🟡</div>
+        <div class="res-score" id="res-score">—</div>
+        <div class="res-mention" id="res-mention">—</div>
+      </div>
+      <div class="res-body">
+        <p class="res-title" id="res-title">—</p>
+        <p class="res-msg" id="res-msg">—</p>
+
+        <div class="nutri-table">
+          <div class="nt-head">
+            <div class="nt-cell">Nutriment</div>
+            <div class="nt-cell">Rôle principal</div>
+            <div class="nt-cell">Sources clés</div>
+          </div>
+          <div class="nt-row">
+            <div class="nt-cell hi">Glucides complexes</div>
+            <div class="nt-cell">Carburant de l'effort intense</div>
+            <div class="nt-cell">Riz, pâtes, patate douce</div>
+          </div>
+          <div class="nt-row">
+            <div class="nt-cell hi">Protéines</div>
+            <div class="nt-cell">Réparation musculaire</div>
+            <div class="nt-cell">Viande, œufs, légumineuses</div>
+          </div>
+          <div class="nt-row">
+            <div class="nt-cell hi">Oméga-3</div>
+            <div class="nt-cell">Anti-inflammation</div>
+            <div class="nt-cell">Poisson gras, noix, lin</div>
+          </div>
+          <div class="nt-row">
+            <div class="nt-cell hi">Magnésium</div>
+            <div class="nt-cell">Contraction musculaire</div>
+            <div class="nt-cell">Amandes, épinards, banane</div>
+          </div>
+        </div>
+
+        <div class="next-box">
+          <div class="next-lbl">Prochain quiz — Jour 19 · Semaine 3</div>
+          <div class="next-val">Prévention &amp; Soins 🟡</div>
+        </div>
+        <button class="btn-restart" onclick="restart()">↺ Recommencer</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="ft-l">
+      <span class="ft-name">E.F. NGATCHA TCHAKOTE</span>
+      <div class="ft-gr"><div class="ft-belt"></div><span class="ft-kyu">3e Kyu · Ceinture Verte</span></div>
+    </div>
+    <div class="ft-r">Quiz Judo Quotidien · Série 365 Jours<br>Jour 18 / 365 · Nutrition &amp; Récupération · 🟡 S3</div>
+  </footer>
+</div>
+
+<script>
+document.addEventListener('contextmenu',e=>{e.preventDefault();return false;});
+document.addEventListener('keydown',e=>{
+  if(e.key==='F12'||(e.ctrlKey&&['u','U','i','I','j','J','s','S'].includes(e.key))||(e.ctrlKey&&e.shiftKey)){
+    e.preventDefault();return false;
+  }
+});
+
+/*
+  SCHÉMA BONNES RÉPONSES — Jour 18 (imprévisible, validé) :
+  Q1→B  Q2→D  Q3→C  Q4→A  Q5→B
+  Q6→D  Q7→A  Q8→C  Q9→D  Q10→B
+  Index: A=0  B=1  C=2  D=3
+  Distribution: A×2, B×3, C×2, D×3 ✓
+  Pas de répétition consécutive ✓
+*/
+const Q=[
+  { // Q1 → B (index 1)
+    type:'met', cat:'Filières énergétiques',
+    text:'Le judo sollicite principalement quelle filière énergétique pendant un combat de 4 minutes entrecoupé d\'efforts intenses de 10 à 30 secondes ?',
+    opts:[
+      'La filière aérobie uniquement — le combat de 4 minutes est suffisamment long pour utiliser principalement l\'oxygène',
+      'Un mélange filière anaérobie lactique pour les phases d\'attaque intenses et filière aérobie pour la récupération entre les échanges',
+      'La filière anaérobie alactique uniquement — les projections sont des efforts très courts inférieurs à 10 secondes',
+      'La filière lipolytique — le corps brûle principalement les graisses pendant les combats de judo'
+    ],
+    ok:1,
+    expl:'<strong>Mélange anaérobie lactique et aérobie.</strong> Un combat de judo est intermittent : phases d\'effort intense (attaques, projections) de 10 à 30 secondes utilisant la filière anaérobie lactique (ATP-CP et glycolyse), alternées avec des phases de moindre intensité où la filière aérobie assure la récupération partielle. Cette spécificité exige un entraînement mixte (cardio longue durée ET intervalles très intenses).'
+  },
+  { // Q2 → D (index 3)
+    type:'met', cat:'Descente de poids',
+    text:'Un judoka veut perdre 3 kg en une semaine avant une compétition pour passer dans la catégorie inférieure. Quelle méthode est à la fois efficace et la moins dangereuse pour sa performance ?',
+    opts:[
+      'Une restriction hydrique totale les 48 heures précédant la pesée, avec réhydratation rapide après',
+      'Un jeûne alimentaire complet de 72 heures suivi d\'un repas copieux la veille de la compétition',
+      'Une période de sauna prolongée pour éliminer l\'eau par transpiration massive dans les 12 heures avant la pesée',
+      'Une réduction progressive des glucides et du sel sur 5 à 7 jours pour éliminer l\'eau retenue, sans toucher aux protéines ni à l\'hydratation minimale'
+    ],
+    ok:3,
+    expl:'<strong>Réduction glucides et sel — méthode la moins risquée.</strong> Chaque gramme de glycogène retient environ 3 g d\'eau. Réduire les glucides sur 5 à 7 jours fait perdre 2 à 3 kg d\'eau liée au glycogène sans déshydrater dangereusement. Le sel favorise aussi la rétention d\'eau. Les méthodes brutales (sauna, jeûne, restriction hydrique totale) détruisent les performances et peuvent être mortelles — plusieurs judokas sont décédés de ces pratiques.'
+  },
+  { // Q3 → C (index 2)
+    type:'met', cat:'Index glycémique',
+    text:'La notion d\'index glycémique (IG) est-elle importante pour un judoka, et si oui, dans quel contexte précis ?',
+    opts:[
+      'L\'IG est important uniquement pour les judokas diabétiques — les sportifs sains peuvent ignorer cette notion',
+      'L\'IG n\'a aucune importance car tous les glucides se transforment en glucose après digestion, quel que soit leur source',
+      'L\'IG est utile pour choisir les aliments selon le timing : IG bas avant l\'effort (libération lente), IG élevé immédiatement après l\'effort (reconstitution rapide du glycogène)',
+      'L\'IG est toujours préférable au plus bas possible — les aliments à IG élevé sont systématiquement mauvais pour un sportif'
+    ],
+    ok:2,
+    expl:'<strong>IG bas avant l\'effort, IG élevé juste après.</strong> Avant l\'entraînement : des aliments à IG bas (riz complet, flocons d\'avoine) libèrent l\'énergie lentement et régulièrement. Immédiatement après l\'effort (fenêtre anabolique) : des aliments à IG élevé (banane, dattes, riz blanc) reconstituent rapidement le glycogène musculaire. Cette modulation selon le timing optimise la performance et la récupération.'
+  },
+  { // Q4 → A (index 0)
+    type:'rec', cat:'Récupération neurologique',
+    text:'Pourquoi la récupération neurologique est-elle souvent plus longue que la récupération musculaire après un tournoi intense, et comment l\'accélérer ?',
+    opts:[
+      'Le système nerveux est épuisé par les milliers de décisions tactiques rapides du combat — il récupère par le sommeil profond, la réduction des stimulations numériques et des activités de pleine conscience',
+      'La récupération neurologique est toujours plus rapide que la musculaire car les neurones ne se fatiguent pas comme les fibres musculaires',
+      'La fatigue neurologique après un tournoi est un mythe — seule la fatigue musculaire physique existe réellement',
+      'La récupération neurologique se fait uniquement par l\'alimentation en protéines, comme pour les muscles'
+    ],
+    ok:0,
+    expl:'<strong>Le système nerveux s\'épuise par les décisions rapides et récupère par le calme.</strong> Pendant un tournoi, le judoka prend des centaines de décisions tactiques par seconde. Cette charge cognitive épuise le système nerveux central. Les neurones transmettent moins vite les signaux, la coordination se dégrade. La récupération neurologique nécessite du sommeil profond (8 à 10 h), l\'absence de stress décisionnel, et des pratiques comme la méditation ou les promenades sans écran.'
+  },
+  { // Q5 → B (index 1)
+    type:'hyd', cat:'Osmolalité et boissons',
+    text:'Pendant un entraînement de judo de 2 heures, quelle boisson est scientifiquement plus efficace que l\'eau pure pour maintenir les performances et retarder la fatigue ?',
+    opts:[
+      'L\'eau gazeuse froide qui stimule la vigilance par ses bulles et sa température',
+      'Une boisson isotonique légèrement sucrée et salée (6 g de glucides et 0,5 g de sodium par 100 ml) qui maintient l\'équilibre électrolytique et apporte de l\'énergie',
+      'Un jus de fruit dilué à 50% qui fournit des vitamines et des sucres naturels pendant l\'effort',
+      'Une boisson fortement sucrée type cola qui apporte de l\'énergie rapide pour les phases d\'effort intense'
+    ],
+    ok:1,
+    expl:'<strong>Boisson isotonique — glucides + sodium.</strong> L\'eau pure réhydrate mais ne remplace pas les électrolytes perdus dans la sueur (sodium, potassium) ni n\'apporte d\'énergie glucidique. Une boisson isotonique (6% de glucides + sel) est absorbée plus vite que l\'eau pure, maintient la glycémie, prévient les crampes et retarde la fatigue. Elle est particulièrement utile au-delà de 90 minutes d\'effort continu.'
+  },
+  { // Q6 → D (index 3)
+    type:'rec', cat:'Sommeil et performance',
+    text:'Des études sportives montrent qu\'allonger le sommeil de 8 à 10 heures pendant plusieurs semaines améliore quels aspects spécifiques de la performance en judo ?',
+    opts:[
+      'Principalement la force musculaire maximale et la vitesse de sprint sur 10 mètres',
+      'Uniquement la concentration mentale et la mémoire des techniques — sans effet sur les aspects physiques',
+      'La flexibilité articulaire et la capacité à encaisser les chutes sans douleur',
+      'La vitesse de réaction, la précision des techniques, l\'humeur compétitive et la réduction des blessures'
+    ],
+    ok:3,
+    expl:'<strong>Réaction, précision, humeur et moins de blessures.</strong> Des études sur des athlètes en extension de sommeil (passant de 8 à 10 h) montrent : +9% de vitesse de réaction, meilleure précision des gestes techniques (moins d\'erreurs), humeur plus stable et agressive positivement en compétition, et réduction de 30 à 40% des blessures. Le sommeil étendu est l\'un des "dopants légaux" les plus efficaces disponibles.'
+  },
+  { // Q7 → A (index 0)
+    type:'met', cat:'Protéines et timing',
+    text:'Un judoka s\'entraîne le soir à 20h. Quelle stratégie nutritionnelle autour de la séance optimise le mieux la synthèse protéique nocturne pendant le sommeil ?',
+    opts:[
+      'Consommer 20 à 30 g de protéines à digestion rapide (whey ou blanc d\'œuf) dans les 30 minutes après la séance, puis 30 à 40 g de protéines à digestion lente (caséine ou fromage blanc) avant de dormir',
+      'Sauter le repas post-entraînement pour obliger le corps à puiser dans ses réserves graisseuses pendant la nuit',
+      'Manger un repas copieux riche en glucides immédiatement après la séance et reporter les protéines au petit-déjeuner',
+      'Consommer uniquement des protéines végétales le soir car elles sont moins inflammatoires que les protéines animales'
+    ],
+    ok:0,
+    expl:'<strong>Protéines rapides après séance + protéines lentes avant de dormir.</strong> Les protéines rapides (whey, blanc d\'œuf) déclenchent immédiatement la synthèse protéique après l\'effort. Les protéines à digestion lente (caséine du fromage blanc, lait) libèrent des acides aminés progressivement pendant les 7 à 8 heures de sommeil, alimentant la réparation musculaire toute la nuit. Cette stratégie double maximise la fenêtre anabolique.'
+  },
+  { // Q8 → C (index 2)
+    type:'rec', cat:'Récupération entre combats',
+    text:'Lors d\'un tournoi avec plusieurs combats dans la journée, quel est le délai minimal recommandé entre deux combats pour une récupération partielle efficace ?',
+    opts:[
+      '5 à 10 minutes suffisent si le judoka reste debout et continue à s\'échauffer légèrement',
+      '30 à 45 minutes avec un repos allongé complet et sans alimentation pour laisser la digestion de côté',
+      '15 à 20 minutes minimum avec réhydratation isotonique, collation légère (banane, dattes) et récupération active douce',
+      '1 heure minimum avec un repas complet glucides-protéines pour reconstituer les réserves épuisées'
+    ],
+    ok:2,
+    expl:'<strong>15 à 20 minutes — réhydratation + collation légère + récupération active douce.</strong> En moins de 15 minutes, la récupération lactique est insuffisante. Au-delà de 30 minutes de repos allongé sans activité, le corps se "refroidit" trop. La fenêtre de 15 à 20 minutes permet : une élimination partielle de l\'acide lactique par activité légère, une réhydratation rapide avec électrolytes, et un apport glucidique express (banane, dattes) pour tamponner la baisse de glycémie.'
+  },
+  { // Q9 → D (index 3)
+    type:'met', cat:'Caféine et performance',
+    text:'La caféine est-elle un ergogène (aide à la performance) légal et efficace pour un judoka en compétition, et comment doit-elle être utilisée ?',
+    opts:[
+      'La caféine est interdite par l\'AMA (Agence Mondiale Antidopage) depuis 2004 — son usage expose à une suspension',
+      'La caféine est efficace uniquement pour les sports d\'endurance longue durée — elle n\'a pas d\'effet sur les sports de combat courts',
+      'La caféine améliore les performances uniquement chez les non-consommateurs habituels — les judokas qui boivent du café régulièrement ne ressentent aucun effet',
+      'La caféine (3 à 6 mg/kg, 45 à 60 min avant) améliore la vigilance, la réactivité et la résistance à la fatigue — elle est légale depuis 2004 et efficace même chez les consommateurs réguliers si la dose est adaptée'
+    ],
+    ok:3,
+    expl:'<strong>Caféine légale depuis 2004, efficace à 3–6 mg/kg.</strong> L\'AMA a retiré la caféine de sa liste d\'interdiction en 2004. Des études montrent qu\'à 3 à 6 mg/kg de poids corporel (environ 200 à 400 mg pour un judoka de 70 kg), prise 45 à 60 minutes avant l\'effort, elle améliore la vigilance, la réactivité, la force explosive et la résistance à la douleur. Un judoka de 70 kg peut donc prendre 2 à 3 cafés serrés avant une compétition.'
+  },
+  { // Q10 → B (index 1)
+    type:'rec', cat:'Stress oxydatif',
+    text:'Qu\'est-ce que le stress oxydatif lié à l\'entraînement intense, et quelle alimentation aide le judoka à le réduire naturellement ?',
+    opts:[
+      'C\'est la tension psychologique créée par la pression de la compétition — elle se réduit par la méditation et la sophrologie',
+      'C\'est la production de radicaux libres lors de l\'effort intense qui endommagent les cellules musculaires — les antioxydants naturels (fruits colorés, légumes, thé vert) aident à les neutraliser',
+      'C\'est l\'acidité musculaire causée par l\'accumulation d\'acide lactique — elle se réduit par une alimentation alcaline',
+      'C\'est la déshydratation cellulaire des muscles pendant l\'effort — elle se traite uniquement par une hyperhydratation préalable'
+    ],
+    ok:1,
+    expl:'<strong>Radicaux libres neutralisés par les antioxydants naturels.</strong> L\'effort intense génère des radicaux libres (molécules instables) qui endommagent les membranes cellulaires et ralentissent la récupération. Les antioxydants naturels (vitamines C et E, polyphénols) présents dans les fruits colorés (baies, agrumes, mangue), les légumes verts, le thé vert et le curcuma neutralisent ces radicaux libres. Une alimentation riche et variée suffit — les suppléments antioxydants en excès peuvent paradoxalement réduire les adaptations à l\'entraînement.'
+  }
+];
+
+let cur=0,score=0,wrongs=0,answered=false,log=[];
+
+function init(){cur=0;score=0;wrongs=0;answered=false;log=[];document.getElementById('results').classList.remove('show');document.getElementById('quiz-area').style.display='';buildProg();render();}
+function buildProg(){const p=document.getElementById('prog');p.innerHTML='';Q.forEach((_,i)=>{const s=document.createElement('div');s.className='ps'+(i===0?' cur':'');s.id='ps'+i;p.appendChild(s);});}
+function updateProg(){Q.forEach((_,i)=>{const s=document.getElementById('ps'+i);if(!s)return;s.className='ps';if(i<log.length)s.classList.add(log[i]?'ok':'ng');else if(i===cur)s.classList.add('cur');});}
+function updateHUD(){document.getElementById('hv-ok').textContent=score;document.getElementById('hv-ng').textContent=wrongs;document.getElementById('hv-q').textContent=`${cur+1}/10`;document.getElementById('hv-pct').textContent=log.length>0?Math.round(score/log.length*100)+'%':'—';}
+
+const bandMap={met:'band-met',hyd:'band-hyd',rec:'band-rec'};
+const catMap ={met:'cat-met', hyd:'cat-hyd', rec:'cat-rec'};
+
+function render(){
+  answered=false;const q=Q[cur];
+  document.getElementById('q-num').textContent=`Q.${String(cur+1).padStart(2,'0')} / 10`;
+  const cat=document.getElementById('q-cat');cat.textContent=q.cat;cat.className='qc-cat '+catMap[q.type];
+  document.getElementById('qc-band').className='qc-band '+bandMap[q.type];
+  document.getElementById('q-text').textContent=q.text;
+  const el=document.getElementById('opts');el.innerHTML='';
+  ['A','B','C','D'].forEach((l,i)=>{const b=document.createElement('button');b.className='opt';b.innerHTML=`<span class="opt-k">${l}</span><span>${q.opts[i]}</span>`;b.onclick=()=>pick(i);el.appendChild(b);});
+  document.getElementById('expl').className='expl';document.getElementById('expl').innerHTML='';
+  document.getElementById('btn-next').className='btn-next';
+  document.getElementById('nav-hint').textContent='Choisissez une réponse';
+  document.getElementById('btn-lbl').textContent=cur<Q.length-1?'Suivant':'Voir les résultats';
+  const card=document.getElementById('q-card');card.style.animation='none';void card.offsetWidth;card.style.animation='cardIn 0.4s cubic-bezier(0.34,1.2,0.64,1)';
+  updateHUD();updateProg();
+}
+
+function pick(idx){
+  if(answered)return;answered=true;const q=Q[cur];
+  const btns=document.querySelectorAll('.opt');btns.forEach(b=>b.disabled=true);
+  if(idx===q.ok){btns[idx].classList.add('correct');score++;log.push(true);}
+  else{btns[idx].classList.add('wrong');btns[q.ok].classList.add('reveal');wrongs++;log.push(false);}
+  document.getElementById('expl').innerHTML=q.expl;document.getElementById('expl').classList.add('show');
+  document.getElementById('btn-next').classList.add('show');document.getElementById('nav-hint').textContent='';
+  updateHUD();updateProg();
+}
+
+document.getElementById('btn-next').addEventListener('click',()=>{cur++;if(cur>=Q.length)showResults();else render();});
+
+function showResults(){
+  document.getElementById('quiz-area').style.display='none';document.getElementById('results').classList.add('show');
+  document.getElementById('res-score').innerHTML=`${score}<span>/10</span>`;
+  const p=score/Q.length;let mention,title,msg;
+  if(p===1)    {mention='優秀 — Excellence';title='Maîtrise parfaite de la nutrition sportive';msg='Exceptionnel ! Filières énergétiques, index glycémique, récupération neurologique, caféine et stress oxydatif — vous maîtrisez la science nutritionnelle du judoka de haut niveau.';}
+  else if(p>=.8){mention='良好 — Très bien';title='Très solide culture nutritionnelle';msg='Excellent niveau intermédiaire. Les concepts avancés (filières énergétiques, boissons isotoniques, timing protéique) sont bien intégrés. Approfondissez la gestion du poids et la caféine.';}
+  else if(p>=.6){mention='合格 — Bien';title='Bonnes bases à approfondir';msg='Les concepts de base sont maîtrisés. Le niveau intermédiaire demande de comprendre les mécanismes : pourquoi l\'isotonique est mieux que l\'eau, pourquoi les protéines lentes la nuit, comment gérer le poids sans se détruire.';}
+  else          {mention:'要努力 — À travailler';title:'La nutrition sportive avancée demande de la rigueur';msg:'Ce niveau touche à la physiologie sportive. Relisez le tableau des nutriments dans les résultats et concentrez-vous sur les concepts de timing : quand manger quoi, avant ou après l\'effort.';}
+  document.getElementById('res-mention').textContent=mention;document.getElementById('res-title').textContent=title;document.getElementById('res-msg').textContent=msg;
+}
+
+function restart(){init();}
+init();
+</script>
+</body>
+</html>
